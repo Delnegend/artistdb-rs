@@ -1,0 +1,18 @@
+[abc]
+__flag__ = "foo1"
+__avatar__ = "bar"
+social_a = "lorem_abc"
+social_b = "ipsum_abc"
+
+[bbc]
+__flag__ = "foo"
+__avatar__ = "bar"
+social_a = "lorem_bbc"
+social_b = "ipsum_bbc"
+
+[ghi]
+__flag__ = "foo_ghi"
+foo = "bar"
+
+[lorem]
+foo = "bar"

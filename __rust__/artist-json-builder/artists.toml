@@ -1,0 +1,23 @@
+[abc]
+flag = "foos"
+avatar = "bar"
+social_a = "lorem_abc"
+social_b = "ipsum_abc"
+alias = ["lorem", "lorem1"]
+
+[bbc]
+flag = "foo"
+avatar = "bar"
+social_a = "lorem_bbc"
+social_b = "ipsum_bbc"
+
+[ghi]
+flag = "foo_ghi"
+"some thing" = "else"
+foo = "bar"
+
+[lorem]
+foo = "bar"
+
+[lorem1]
+alias_of = "lorem"
