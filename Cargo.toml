@@ -1,0 +1,7 @@
+[workspace]
+resolver = "2"
+
+members = ["__rust__/artist-json-builder", "__rust__/wasm"]
+
+[profile.release]
+lto = true

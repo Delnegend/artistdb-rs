@@ -1,0 +1,28 @@
+{
+	"env": {
+		"browser": true,
+		"es2021": true,
+		"node": true
+	},
+	"parserOptions": {
+		"parser": "@typescript-eslint/parser",
+		"sourceType": "module",
+		"ecmaVersion": "latest",
+		"project": "./tsconfig.json",
+		"extraFileExtensions": [".vue"]
+	},
+	"extends": [
+		"plugin:nuxt/recommended",
+		"plugin:prettier/recommended",
+		"plugin:tailwindcss/recommended"
+	],
+	"rules": {
+		"prettier/prettier": [
+			"error",
+			{
+				"tabWidth": 4,
+				"useTabs": true
+			}
+		]
+	}
+}
