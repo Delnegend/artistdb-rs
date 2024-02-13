@@ -1,0 +1,41 @@
+{
+	"name": "artist-db",
+	"private": true,
+	"type": "module",
+	"scripts": {
+		"build": "nuxt build",
+		"dev": "concurrently \"nuxt dev\"",
+		"lint": "eslint --fix ./**/*.{ts,vue}",
+		"generate": "nuxt generate",
+		"build:wasm": "./__rust__/build-wasm.sh",
+		"build:tool": "./__rust__/build-tool.sh",
+		"preview": "nuxt preview",
+		"postinstall": "nuxt prepare"
+	},
+	"dependencies": {
+		"@iarna/toml": "^2.2.5",
+		"concurrently": "^8.2.2",
+		"idb": "^8.0.0",
+		"js-toml": "^1.0.0",
+		"murmurhash-js": "^1.0.0",
+		"nuxt": "^3.10.1",
+		"smol-toml": "^1.1.4",
+		"vue": "^3.4.18",
+		"vue-router": "^4.2.5"
+	},
+	"devDependencies": {
+		"@nuxtjs/eslint-module": "^4.1.0",
+		"@nuxtjs/tailwindcss": "^6.11.3",
+		"@types/murmurhash-js": "^1.0.6",
+		"@types/node": "^20.11.17",
+		"@typescript-eslint/parser": "^6.21.0",
+		"chokidar": "^3.6.0",
+		"eslint": "^8.56.0",
+		"eslint-config-prettier": "^9.1.0",
+		"eslint-plugin-nuxt": "^4.0.0",
+		"eslint-plugin-prettier": "^5.1.3",
+		"eslint-plugin-tailwindcss": "^3.14.2",
+		"tslib": "^2.6.2",
+		"vite-plugin-wasm": "^3.3.0"
+	}
+}
