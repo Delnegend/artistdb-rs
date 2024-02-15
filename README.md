@@ -41,9 +41,13 @@ Bottom to top
 
 <samp>
 
+## 🔁 Refactoring
+
+Fuzzy matching string is something I would do if I don't control the input, a.k.a. writing software for others, but in this case, I can. So I'm replacing the `supported_socials` and `unavatar_socials` Vectors with HashMaps.
+
 ## ❓ Re-evaluate my decision
 
-Why do I even need `wasm`? Why not leverage the power of the build step with `artist-json-builder` and produce standardized JSON files?
+Realizing I could leverage the power of the build step with `artist-json-builder` and produce standardized JSON files, I removed the wasm part.
 
 ## 🔨 restructure "artists.toml"
 
@@ -75,7 +79,7 @@ First, I renamed `process-toml` to `artist-json-builder`, get it? It splits `art
 
 I need a faster language than JS to do this, wondering between Go and Rust, since I already had Rust configured for wasm, why not this one too?
 
-Apparently, [Cargo Workspace](https://doc.rust-lang.org/book/ch14-03-cargo-workspaces.html) is a thing, so I setup a `__rust__` directory at the root of the project and got to work.
+Apparently, [Cargo Workspace](https://doc.rust-lang.org/book/ch14-03-cargo-workspaces.html) is a thing, so I set up a `_`_rust__` directory at the root of the project and got to work.
 
 ## 🙂 [unavatar](https://unavatar.io/) and wasm in Rust
 
