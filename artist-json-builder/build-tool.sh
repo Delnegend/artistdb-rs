@@ -1,5 +1,5 @@
-cd __rust__/artist-json-builder
+cd artist-json-builder
 cargo build --release
-cd ../..
+cd ..
 mv target/release/artist-json-builder ./artist-json-builder
 sudo chmod +x artist-json-builder
