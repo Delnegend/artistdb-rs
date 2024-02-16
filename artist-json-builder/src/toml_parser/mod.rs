@@ -1,6 +1,6 @@
-mod info_parser;
+pub mod info_parser;
 
-use crate::utils::artists_parser::info_parser::InfoParser;
+use info_parser::InfoParser;
 use toml_edit::{Document, Table};
 use tracing::warn;
 
