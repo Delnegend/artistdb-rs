@@ -41,6 +41,19 @@ Bottom to top
 
 <samp>
 
+## ✔️ Write tests when possible
+
+There are 7 total scenarios when parsing the socials:
+
+|              | Social + Description                             | Social               | Description                |
+|--------------|--------------------------------------------------|----------------------|----------------------------|
+| username     | social, desc, username, profile link (best case) | no desc              | no social, no profile link |
+| profile link | no username                                      | no desc, no username | no social, no username     |
+
+Edge case: nothing.
+
+Missing data must be represented by a `None`, got a few cases where I forgot to handle empty strings before writing the tests.
+
 ## 🔁 Refactoring
 
 Fuzzy matching string is something I would do if I don't control the input, a.k.a. writing software for others, but in this case, I can. So I'm replacing the `supported_socials` and `unavatar_socials` Vectors with HashMaps.
