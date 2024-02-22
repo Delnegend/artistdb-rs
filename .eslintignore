@@ -1,6 +1,5 @@
 node_modules/
 .nuxt/
 public/
-__rust__/
-composables/wasm/
+src/composables/bincode-2-artist-wasm
 nuxt.config.ts
