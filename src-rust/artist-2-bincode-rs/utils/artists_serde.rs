@@ -82,12 +82,9 @@ impl<'a> ArtistsSerde<'a> {
                         return;
                     }
 
-                    social.desc = social.desc.clone().or_else(|| {
-                        Some(
-                            self.constants
-                                .format_description(&social.code, &social.desc),
-                        )
-                    });
+                    social.desc = self
+                        .constants
+                        .format_description(&social.code, &social.desc);
 
                     social.link = social
                         .link

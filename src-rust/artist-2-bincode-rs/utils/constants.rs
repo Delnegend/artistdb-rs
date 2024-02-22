@@ -21,15 +21,15 @@ impl Default for Constants {
 }
 
 impl Constants {
-    pub fn format_description(&self, code: &String, desc: &Option<String>) -> String {
+    pub fn format_description(&self, code: &String, desc: &Option<String>) -> Option<String> {
         let display = self
             .extended_socials
             .get(code)
             .map_or(code.clone(), |social| social.display.clone());
 
         match desc {
-            Some(desc) => format!("{} | {}", display, desc),
-            None => display,
+            Some(desc) => Some(format!("{} | {}", display, desc)),
+            None => Some(display),
         }
     }
 
