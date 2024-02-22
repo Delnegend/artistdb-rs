@@ -1,0 +1,22 @@
+name: Build and Deploy
+on:
+  push:
+    branches: [ main ]
+permissions:
+    contents: write
+jobs:
+    build-and-deploy:
+        runs-on: ubuntu-latest
+        steps:
+            -   uses: actions/checkout@v4
+            -   name: ⚡ Install pnpm
+                run: npm install -g pnpm
+            -   name: 📦 Install dependencies
+                run: pnpm install
+            -   name: 🛠️ Build
+                run: pnpm generate
+            -   name: 🚀 Deploy
+                uses: JamesIves/github-pages-deploy-action@v4
+                with:
+                    branch: gh-pages
+                    folder: .output/public
