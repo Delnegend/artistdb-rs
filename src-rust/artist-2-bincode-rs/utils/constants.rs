@@ -112,7 +112,13 @@ fn extended_socials() -> HashMap<String, SupportedSocial> {
         ("plurk", "Plurk", "plurk.com/<USERNAME>"),
         ("linktree", "Linktr.ee", "linktr.ee/<USERNAME>"),
         ("linktr.ee", "Linktr.ee", "linktr.ee/<USERNAME>"),
+        ("carrd", "Carrd.co", "<USERNAME>.carrd.co"),
         ("carrd.co", "Carrd.co", "<USERNAME>.carrd.co"),
+        ("booth", "Booth.pm", "<USERNAME>.booth.pm"),
+        ("booth.pm", "Booth.pm", "<USERNAME>.booth.pm"),
+        ("skeb", "Skeb.jp", "skeb.jp/@<USERNAME>"),
+        ("skeb.jp", "Skeb.jp", "skeb.jp/@<USERNAME>"),
+        ("fanbox", "PixivFanbox", "<USERNAME>.fanbox.cc"),
     ])
     .into_iter()
     .map(|(code, display, url)| {
