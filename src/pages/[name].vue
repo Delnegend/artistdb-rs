@@ -100,7 +100,7 @@ watchEffect(() => {
 		</div>
 
 		<!-- links -->
-		<div class="flex w-full flex-col gap-3">
+		<div class="px-1rem flex w-full flex-col gap-3">
 			<a
 				v-for="social in artistInfo?.socials"
 				:key="social.code"
