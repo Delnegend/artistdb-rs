@@ -4,26 +4,6 @@ export function __wbg_set_wasm(val) {
 }
 
 
-const heap = new Array(128).fill(undefined);
-
-heap.push(undefined, null, true, false);
-
-function getObject(idx) { return heap[idx]; }
-
-let heap_next = heap.length;
-
-function dropObject(idx) {
-    if (idx < 132) return;
-    heap[idx] = heap_next;
-    heap_next = idx;
-}
-
-function takeObject(idx) {
-    const ret = getObject(idx);
-    dropObject(idx);
-    return ret;
-}
-
 const lTextDecoder = typeof TextDecoder === 'undefined' ? (0, module.require)('util').TextDecoder : TextDecoder;
 
 let cachedTextDecoder = new lTextDecoder('utf-8', { ignoreBOM: true, fatal: true });
@@ -44,6 +24,12 @@ function getStringFromWasm0(ptr, len) {
     return cachedTextDecoder.decode(getUint8Memory0().subarray(ptr, ptr + len));
 }
 
+const heap = new Array(128).fill(undefined);
+
+heap.push(undefined, null, true, false);
+
+let heap_next = heap.length;
+
 function addHeapObject(obj) {
     if (heap_next === heap.length) heap.push(heap.length + 1);
     const idx = heap_next;
@@ -52,6 +38,8 @@ function addHeapObject(obj) {
     heap[idx] = obj;
     return idx;
 }
+
+function getObject(idx) { return heap[idx]; }
 
 let WASM_VECTOR_LEN = 0;
 
@@ -124,6 +112,18 @@ function getInt32Memory0() {
     return cachedInt32Memory0;
 }
 
+function dropObject(idx) {
+    if (idx < 132) return;
+    heap[idx] = heap_next;
+    heap_next = idx;
+}
+
+function takeObject(idx) {
+    const ret = getObject(idx);
+    dropObject(idx);
+    return ret;
+}
+
 function passArray8ToWasm0(arg, malloc) {
     const ptr = malloc(arg.length * 1, 1) >>> 0;
     getUint8Memory0().set(arg, ptr / 1);
@@ -136,7 +136,7 @@ function passArray8ToWasm0(arg, malloc) {
 * @returns {Artist | undefined}
 */
 export function decode(data) {
-    const ptr0 = passArray8ToWasm0(data, wasm.__wbindgen_malloc);
+    const ptr0 = passArray8ToWasm0(data, wasm.__wbindgen_export_0);
     const len0 = WASM_VECTOR_LEN;
     const ret = wasm.decode(ptr0, len0);
     return ret === 0 ? undefined : Artist.__wrap(ret);
@@ -150,7 +150,7 @@ export function decode(data) {
 export function get_alias(data) {
     try {
         const retptr = wasm.__wbindgen_add_to_stack_pointer(-16);
-        const ptr0 = passArray8ToWasm0(data, wasm.__wbindgen_malloc);
+        const ptr0 = passArray8ToWasm0(data, wasm.__wbindgen_export_0);
         const len0 = WASM_VECTOR_LEN;
         wasm.get_alias(retptr, ptr0, len0);
         var r0 = getInt32Memory0()[retptr / 4 + 0];
@@ -158,7 +158,7 @@ export function get_alias(data) {
         let v2;
         if (r0 !== 0) {
             v2 = getStringFromWasm0(r0, r1).slice();
-            wasm.__wbindgen_free(r0, r1 * 1, 1);
+            wasm.__wbindgen_export_2(r0, r1 * 1, 1);
         }
         return v2;
     } finally {
@@ -234,7 +234,7 @@ export class Artist {
             let v1;
             if (r0 !== 0) {
                 v1 = getStringFromWasm0(r0, r1).slice();
-                wasm.__wbindgen_free(r0, r1 * 1, 1);
+                wasm.__wbindgen_export_2(r0, r1 * 1, 1);
             }
             return v1;
         } finally {
@@ -245,7 +245,7 @@ export class Artist {
     * @param {string | undefined} [arg0]
     */
     set flag(arg0) {
-        var ptr0 = isLikeNone(arg0) ? 0 : passStringToWasm0(arg0, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
+        var ptr0 = isLikeNone(arg0) ? 0 : passStringToWasm0(arg0, wasm.__wbindgen_export_0, wasm.__wbindgen_export_1);
         var len0 = WASM_VECTOR_LEN;
         wasm.__wbg_set_artist_flag(this.__wbg_ptr, ptr0, len0);
     }
@@ -261,7 +261,7 @@ export class Artist {
             let v1;
             if (r0 !== 0) {
                 v1 = getStringFromWasm0(r0, r1).slice();
-                wasm.__wbindgen_free(r0, r1 * 1, 1);
+                wasm.__wbindgen_export_2(r0, r1 * 1, 1);
             }
             return v1;
         } finally {
@@ -272,7 +272,7 @@ export class Artist {
     * @param {string | undefined} [arg0]
     */
     set avatar(arg0) {
-        var ptr0 = isLikeNone(arg0) ? 0 : passStringToWasm0(arg0, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
+        var ptr0 = isLikeNone(arg0) ? 0 : passStringToWasm0(arg0, wasm.__wbindgen_export_0, wasm.__wbindgen_export_1);
         var len0 = WASM_VECTOR_LEN;
         wasm.__wbg_set_artist_avatar(this.__wbg_ptr, ptr0, len0);
     }
@@ -288,7 +288,7 @@ export class Artist {
             let v1;
             if (r0 !== 0) {
                 v1 = getStringFromWasm0(r0, r1).slice();
-                wasm.__wbindgen_free(r0, r1 * 1, 1);
+                wasm.__wbindgen_export_2(r0, r1 * 1, 1);
             }
             return v1;
         } finally {
@@ -299,7 +299,7 @@ export class Artist {
     * @param {string | undefined} [arg0]
     */
     set name(arg0) {
-        var ptr0 = isLikeNone(arg0) ? 0 : passStringToWasm0(arg0, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
+        var ptr0 = isLikeNone(arg0) ? 0 : passStringToWasm0(arg0, wasm.__wbindgen_export_0, wasm.__wbindgen_export_1);
         var len0 = WASM_VECTOR_LEN;
         wasm.__wbg_set_artist_name(this.__wbg_ptr, ptr0, len0);
     }
@@ -315,7 +315,7 @@ export class Artist {
             let v1;
             if (r0 !== 0) {
                 v1 = getArrayJsValueFromWasm0(r0, r1).slice();
-                wasm.__wbindgen_free(r0, r1 * 4, 4);
+                wasm.__wbindgen_export_2(r0, r1 * 4, 4);
             }
             return v1;
         } finally {
@@ -326,7 +326,7 @@ export class Artist {
     * @param {(string)[] | undefined} [arg0]
     */
     set alias(arg0) {
-        var ptr0 = isLikeNone(arg0) ? 0 : passArrayJsValueToWasm0(arg0, wasm.__wbindgen_malloc);
+        var ptr0 = isLikeNone(arg0) ? 0 : passArrayJsValueToWasm0(arg0, wasm.__wbindgen_export_0);
         var len0 = WASM_VECTOR_LEN;
         wasm.__wbg_set_artist_alias(this.__wbg_ptr, ptr0, len0);
     }
@@ -342,7 +342,7 @@ export class Artist {
             let v1;
             if (r0 !== 0) {
                 v1 = getArrayJsValueFromWasm0(r0, r1).slice();
-                wasm.__wbindgen_free(r0, r1 * 4, 4);
+                wasm.__wbindgen_export_2(r0, r1 * 4, 4);
             }
             return v1;
         } finally {
@@ -353,7 +353,7 @@ export class Artist {
     * @param {(Social)[] | undefined} [arg0]
     */
     set socials(arg0) {
-        var ptr0 = isLikeNone(arg0) ? 0 : passArrayJsValueToWasm0(arg0, wasm.__wbindgen_malloc);
+        var ptr0 = isLikeNone(arg0) ? 0 : passArrayJsValueToWasm0(arg0, wasm.__wbindgen_export_0);
         var len0 = WASM_VECTOR_LEN;
         wasm.__wbg_set_artist_socials(this.__wbg_ptr, ptr0, len0);
     }
@@ -408,14 +408,14 @@ export class Social {
             return getStringFromWasm0(r0, r1);
         } finally {
             wasm.__wbindgen_add_to_stack_pointer(16);
-            wasm.__wbindgen_free(deferred1_0, deferred1_1, 1);
+            wasm.__wbindgen_export_2(deferred1_0, deferred1_1, 1);
         }
     }
     /**
     * @param {string} arg0
     */
     set code(arg0) {
-        const ptr0 = passStringToWasm0(arg0, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
+        const ptr0 = passStringToWasm0(arg0, wasm.__wbindgen_export_0, wasm.__wbindgen_export_1);
         const len0 = WASM_VECTOR_LEN;
         wasm.__wbg_set_social_code(this.__wbg_ptr, ptr0, len0);
     }
@@ -431,7 +431,7 @@ export class Social {
             let v1;
             if (r0 !== 0) {
                 v1 = getStringFromWasm0(r0, r1).slice();
-                wasm.__wbindgen_free(r0, r1 * 1, 1);
+                wasm.__wbindgen_export_2(r0, r1 * 1, 1);
             }
             return v1;
         } finally {
@@ -442,7 +442,7 @@ export class Social {
     * @param {string | undefined} [arg0]
     */
     set name(arg0) {
-        var ptr0 = isLikeNone(arg0) ? 0 : passStringToWasm0(arg0, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
+        var ptr0 = isLikeNone(arg0) ? 0 : passStringToWasm0(arg0, wasm.__wbindgen_export_0, wasm.__wbindgen_export_1);
         var len0 = WASM_VECTOR_LEN;
         wasm.__wbg_set_artist_avatar(this.__wbg_ptr, ptr0, len0);
     }
@@ -458,7 +458,7 @@ export class Social {
             let v1;
             if (r0 !== 0) {
                 v1 = getStringFromWasm0(r0, r1).slice();
-                wasm.__wbindgen_free(r0, r1 * 1, 1);
+                wasm.__wbindgen_export_2(r0, r1 * 1, 1);
             }
             return v1;
         } finally {
@@ -469,7 +469,7 @@ export class Social {
     * @param {string | undefined} [arg0]
     */
     set desc(arg0) {
-        var ptr0 = isLikeNone(arg0) ? 0 : passStringToWasm0(arg0, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
+        var ptr0 = isLikeNone(arg0) ? 0 : passStringToWasm0(arg0, wasm.__wbindgen_export_0, wasm.__wbindgen_export_1);
         var len0 = WASM_VECTOR_LEN;
         wasm.__wbg_set_artist_name(this.__wbg_ptr, ptr0, len0);
     }
@@ -485,7 +485,7 @@ export class Social {
             let v1;
             if (r0 !== 0) {
                 v1 = getStringFromWasm0(r0, r1).slice();
-                wasm.__wbindgen_free(r0, r1 * 1, 1);
+                wasm.__wbindgen_export_2(r0, r1 * 1, 1);
             }
             return v1;
         } finally {
@@ -496,24 +496,24 @@ export class Social {
     * @param {string | undefined} [arg0]
     */
     set link(arg0) {
-        var ptr0 = isLikeNone(arg0) ? 0 : passStringToWasm0(arg0, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
+        var ptr0 = isLikeNone(arg0) ? 0 : passStringToWasm0(arg0, wasm.__wbindgen_export_0, wasm.__wbindgen_export_1);
         var len0 = WASM_VECTOR_LEN;
         wasm.__wbg_set_social_link(this.__wbg_ptr, ptr0, len0);
     }
 }
-
-export function __wbg_social_unwrap(arg0) {
-    const ret = Social.__unwrap(takeObject(arg0));
-    return ret;
-};
 
 export function __wbg_social_new(arg0) {
     const ret = Social.__wrap(arg0);
     return addHeapObject(ret);
 };
 
-export function __wbindgen_object_drop_ref(arg0) {
-    takeObject(arg0);
+export function __wbg_social_unwrap(arg0) {
+    const ret = Social.__unwrap(takeObject(arg0));
+    return ret;
+};
+
+export function __wbindgen_throw(arg0, arg1) {
+    throw new Error(getStringFromWasm0(arg0, arg1));
 };
 
 export function __wbindgen_string_new(arg0, arg1) {
@@ -524,13 +524,13 @@ export function __wbindgen_string_new(arg0, arg1) {
 export function __wbindgen_string_get(arg0, arg1) {
     const obj = getObject(arg1);
     const ret = typeof(obj) === 'string' ? obj : undefined;
-    var ptr1 = isLikeNone(ret) ? 0 : passStringToWasm0(ret, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
+    var ptr1 = isLikeNone(ret) ? 0 : passStringToWasm0(ret, wasm.__wbindgen_export_0, wasm.__wbindgen_export_1);
     var len1 = WASM_VECTOR_LEN;
     getInt32Memory0()[arg0 / 4 + 1] = len1;
     getInt32Memory0()[arg0 / 4 + 0] = ptr1;
 };
 
-export function __wbindgen_throw(arg0, arg1) {
-    throw new Error(getStringFromWasm0(arg0, arg1));
+export function __wbindgen_object_drop_ref(arg0) {
+    takeObject(arg0);
 };
 
