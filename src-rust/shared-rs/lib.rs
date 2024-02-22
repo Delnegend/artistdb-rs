@@ -4,7 +4,7 @@ use serde::{Deserialize, Serialize};
 use wasm_bindgen::prelude::*;
 
 #[wasm_bindgen(getter_with_clone)]
-#[derive(Debug, Serialize, Deserialize, Default, Clone)]
+#[derive(Debug, Serialize, Deserialize, Default, Clone, PartialEq)]
 pub struct Social {
     pub code: String,
     pub name: Option<String>,
@@ -16,7 +16,7 @@ pub type Socials = Vec<Social>;
 pub type Alias = Vec<String>;
 
 #[wasm_bindgen(getter_with_clone)]
-#[derive(Debug, Serialize, Deserialize, Default, Clone)]
+#[derive(Debug, Serialize, Deserialize, Default, Clone, PartialEq)]
 pub struct Artist {
     pub flag: Option<String>,
     pub avatar: Option<String>,
