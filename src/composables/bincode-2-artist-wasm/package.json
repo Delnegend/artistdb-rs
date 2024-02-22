@@ -1,0 +1,16 @@
+{
+  "name": "bincode-2-artist-wasm",
+  "version": "0.1.0",
+  "files": [
+    "bincode_2_artist_wasm_bg.wasm",
+    "bincode_2_artist_wasm.js",
+    "bincode_2_artist_wasm_bg.js",
+    "bincode_2_artist_wasm.d.ts"
+  ],
+  "module": "bincode_2_artist_wasm.js",
+  "types": "bincode_2_artist_wasm.d.ts",
+  "sideEffects": [
+    "./bincode_2_artist_wasm.js",
+    "./snippets/*"
+  ]
+}
