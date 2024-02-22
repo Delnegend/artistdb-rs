@@ -86,7 +86,7 @@ watchEffect(() => {
 		<div class="flex w-full justify-center">
 			<img
 				:src="avatar"
-				class="aspect-square w-full max-w-60 rounded-full object-cover"
+				class="aspect-square w-full max-w-60 rounded-full object-cover shadow-2xl"
 			/>
 		</div>
 
