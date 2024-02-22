@@ -41,6 +41,104 @@ Bottom to top
 
 <samp>
 
+## 🦀 Some tricks I discovered while building the `artist-2-bincode-rs`
+
+> Plan 1: file-based watcher
+
+```
+watch `.toml` file -> modified -> (read -> process -> format) -> write to `.toml`
+```
+
+this would cause an infinite loop
+
+> Plan 2: hash-based watcher
+
+```
+let prev_hash;
+
+watch -> modified -> hash(new) ->  hash changed -> (RPF) -> write -> update prev_hash
+```
+
+sure but what about the formatter of `Even Better TOML`?
+- EBT allow breaking arrays into multiple lines if it's too long
+- `toml_edit` won't
+
+> Plan 3: content-based watcher
+```
+let prev_bincode: Vec<u8>;
+
+watch -> modified -> bincode(new) ->  bincode changed -> (RPF) -> write -> update prev_bincode
+```
+
+this way I can ignore the format, and only focus on the content, but there's a bug and an improvement I can make
+- instead of storing the previous `bincode` & comparing 2 `bincode`, pre-`murmurhash` them first
+- there's a post-processing step after parsing the `.toml`, what about the content DOES change pre-process, but stays the same post-process?
+
+> Plan 4: hashed-content-based + pre-post comparison
+
+```
+let preprocess_hash;
+let postprocess_hash;
+
+let content = parse(toml)
+preprocess_hash = hash(bincode(content))
+
+let processed_content = process(content)
+postprocess_hash = hash(bincode(processed_content))
+
+let content_changed_after_post_process = preprocess_hash != postprocess_hash
+```
+
+## ⚒️ Refactor again?
+
+Seems like Nuxt allows developers to specify the `srcDir`, I'm thinking about `src-nuxt` and `src-rust` to replace the root for Nuxt and `__rust__` for Rust.
+
+## 💖 rust analyzer
+
+By creating another rust library and importing it in both the builder and the wasm, I can refactor and rename any shared structs, enums, and functions in any of the 3 projects, and the changes will be reflected in the other 2.
+
+## ⚡ wasm is back, no more json
+
+After watching [this video](https://youtu.be/MuCK81q1edU) from ThePrimeagen, I switch from `json` to `bincode` to se/deserialize the artist's data.
+
+## 🔨 Restructure "artists.toml" (again)
+
+Using arbitrary `key/value` as `socialcode:description/username` wasn't a good idea. Here's the re-design, TOML-indented
+
+```toml
+[artist]
+"flag" = "🇻🇳"
+"avatar" = "https://example.com/avatar.jpg"
+"alias" = ["alias1", "alias2"]
+
+[[artist.social]]
+code = "instagram"
+description = "Life"
+username = "username"
+link = "https://instagram.com/username"
+
+[[artist.social]]
+code = "deviantart"
+description = "Art"
+username = "username"
+link = "https://twitter.com/username"
+```
+
+Does it look more verbose, less ambiguous, more structured, easier to read, easier to parse, and easier to modify? Yes.
+
+Am I reconsidering my life decisions? Yes.
+
+Using inline tables makes it look cleaner
+
+```toml
+[artist]
+...
+socials = [
+  { code = "instagram", description = "Life", username = "username", link = "https://instagram.com/username" },
+  { code = "deviantart", description = "Art", username = "username", link = "https://twitter.com/username" }
+]
+```
+
 ## ✔️ Write tests when possible
 
 There are 7 total scenarios when parsing the socials:
@@ -62,7 +160,6 @@ Fuzzy matching string is something I would do if I don't control the input, a.k.
 
 Realizing I could leverage the power of the build step with `artist-json-builder` and produce standardized JSON files, I removed the wasm part.
 
-## 🔨 restructure "artists.toml"
 
 Old structure
 ```toml
