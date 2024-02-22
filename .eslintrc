@@ -9,7 +9,9 @@
 		"sourceType": "module",
 		"ecmaVersion": "latest",
 		"project": "./tsconfig.json",
-		"extraFileExtensions": [".vue"]
+		"extraFileExtensions": [
+			".vue"
+		]
 	},
 	"extends": [
 		"plugin:nuxt/recommended",
@@ -23,6 +25,7 @@
 				"tabWidth": 4,
 				"useTabs": true
 			}
-		]
+		],
+		"tailwindcss/no-custom-classname": "off",
 	}
 }

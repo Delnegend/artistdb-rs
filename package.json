@@ -4,17 +4,18 @@
 	"type": "module",
 	"scripts": {
 		"build": "nuxt build",
-		"dev": "concurrently \"nuxt dev\"",
+		"dev": "concurrently \"nuxt dev\" \"./artist-2-bincode -w\"",
 		"lint": "eslint --fix ./**/*.{ts,vue}",
-		"generate": "nuxt generate",
-		"build:wasm": "./__rust__/build-wasm.sh",
-		"build:tool": "./__rust__/build-tool.sh",
+		"generate": "./artist-2-bincode && nuxt generate",
+		"build:wasm": "zsh src-rust/build-wasm.sh",
+		"build:tool": "zsh src-rust/build-tool.sh",
 		"preview": "nuxt preview",
 		"postinstall": "nuxt prepare"
 	},
 	"dependencies": {
 		"@iarna/toml": "^2.2.5",
 		"concurrently": "^8.2.2",
+		"country-flag-emoji-polyfill": "^0.1.8",
 		"idb": "^8.0.0",
 		"js-toml": "^1.0.0",
 		"murmurhash-js": "^1.0.0",
@@ -36,6 +37,7 @@
 		"eslint-plugin-prettier": "^5.1.3",
 		"eslint-plugin-tailwindcss": "^3.14.2",
 		"tslib": "^2.6.2",
+		"vite-plugin-top-level-await": "^1.4.1",
 		"vite-plugin-wasm": "^3.3.0"
 	}
 }
