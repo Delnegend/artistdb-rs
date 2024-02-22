@@ -5,6 +5,8 @@ pub struct Constants {
     pub unavatar_socials: HashMap<String, SupportedSocial>,
     pub extended_socials: HashMap<String, SupportedSocial>,
     pub unavatar_size: u16,
+
+    pub personal_website: String,
 }
 
 impl Default for Constants {
@@ -13,6 +15,7 @@ impl Default for Constants {
             unavatar_socials: unavatar_socials(),
             extended_socials: extended_socials(),
             unavatar_size: 400,
+            personal_website: "Personal website".to_string(),
         }
     }
 }

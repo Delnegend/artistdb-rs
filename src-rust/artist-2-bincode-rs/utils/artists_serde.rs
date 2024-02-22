@@ -71,10 +71,19 @@ impl<'a> ArtistsSerde<'a> {
 
             if let Some(socials) = info.socials.as_mut() {
                 socials.iter_mut().for_each(|social| {
-                    social.desc = Some(
-                        self.constants
-                            .format_description(&social.code, &social.desc),
-                    );
+                    social.desc = if social.code == "_" {
+                        Some(
+                            social
+                                .desc
+                                .clone()
+                                .unwrap_or(self.constants.personal_website.clone()),
+                        )
+                    } else {
+                        Some(
+                            self.constants
+                                .format_description(&social.code, &social.desc),
+                        )
+                    };
                     social.link = self.constants.name_code_to_link(&social.code, &social.name);
                 });
             }
@@ -199,6 +208,10 @@ impl<'a> ArtistsSerde<'a> {
     /// Warning if `name` is missing, `link` is redundant, or `code` is not supported
     fn handle_social(&self, social: &mut Social, username: &mut String) {
         social.code = social.code.to_lowercase();
+
+        if social.code == "_" {
+            return;
+        }
 
         let code_is_supported = self.constants.extended_socials.contains_key(&social.code);
 
