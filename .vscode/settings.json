@@ -3,7 +3,8 @@
         "editor.formatOnSave": true
     },
     "[toml]": {
-        "editor.formatOnSave": true
+        "editor.formatOnSave": true,
+        "files.autoSave": "off"
     },
     "actionButtons": {
         "commands": [
@@ -16,20 +17,12 @@
                 "command": "pnpm dev"
             },
             {
-                "name": "🚀 Build",
-                "command": "pnpm generate"
-            },
-            {
-                "name": "Build wasm",
-                "command": "pnpm build:wasm"
-            },
-            {
-                "name": "Build tool",
-                "command": "pnpm build:tool"
+                "name": "⬆️ artists.toml",
+                "command": "git add artists.toml && git commit -m '🖌️' && git push"
             },
         ],
         "defaultColor": "white",
-        "reloadButton": "🔄 Reload",
+        "reloadButton": "🔄",
         "loadNpmCommands": false
     },
 }
