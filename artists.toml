@@ -10,12 +10,33 @@ socials = [
     { code = "instagram", name = "anjing_kampus" },
 ]
 
+[noswift]
+avatar = "No_SWIFT@twitter"
+name = "NoSWIFT"
+alias = ["no_swift"]
+socials = [
+    { code = "_", desc = "noswift.art", link = "https://noswift.art/" },
+    { code = "patreon", name = "NoSWIFT" },
+    { code = "kofi", name = "noswift" },
+    { code = "bsky", name = "noswift.art" },
+    { code = "fa", name = "noswift" },
+    { code = "x", name = "No_SWIFT" },
+    { code = "telegram", name = "+-P7fIIyqCWowNGYx" },
+]
+
+[ralefov]
+flag = "🇻🇳"
+avatar = "Ralefov@twitter"
+name = "Ralefov"
+alias = ["rale"]
+socials = [
+    { code = "linktree", name = "ssssnowy" },
+    { code = "x", name = "SSSsnowyartist" },
+]
+
 [ssssnowy]
 flag = "🇮🇹"
 avatar = "SSSsnowyartist@twitter"
 name = "SSSsnowy"
 alias = ["snowby", "snowy"]
-socials = [
-    { code = "linktree", name = "ssssnowy" },
-    { code = "x", name = "SSSsnowyartist" },
-]
+socials = [{ code = "x", name = "Ralefov" }, { code = "fa", name = "ralefov" }]
