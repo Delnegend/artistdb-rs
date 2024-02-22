@@ -1,3 +1,35 @@
 {
-    "editor.formatOnSave": true
+    "[rust]": {
+        "editor.formatOnSave": true
+    },
+    "[toml]": {
+        "editor.formatOnSave": true
+    },
+    "actionButtons": {
+        "commands": [
+            {
+                "name": "💄 Lint",
+                "command": "pnpm lint"
+            },
+            {
+                "name": "🧑‍💻 Dev",
+                "command": "pnpm dev"
+            },
+            {
+                "name": "🚀 Build",
+                "command": "pnpm generate"
+            },
+            {
+                "name": "Build wasm",
+                "command": "pnpm build:wasm"
+            },
+            {
+                "name": "Build tool",
+                "command": "pnpm build:tool"
+            },
+        ],
+        "defaultColor": "white",
+        "reloadButton": "🔄 Reload",
+        "loadNpmCommands": false
+    },
 }
