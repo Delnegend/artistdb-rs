@@ -117,9 +117,7 @@ watchEffect(() => {
 		class="flex h-[100vh] flex-col items-center justify-center gap-5"
 	>
 		<span class="text-5xl">🤷</span
-		><span class="text-xl text-white/85"
-			>Artist not found in database</span
-		>
+		><span class="text-xl text-white/85">Artist not found in database</span>
 	</div>
 </template>
 
