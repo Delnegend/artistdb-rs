@@ -71,20 +71,28 @@ impl<'a> ArtistsSerde<'a> {
 
             if let Some(socials) = info.socials.as_mut() {
                 socials.iter_mut().for_each(|social| {
-                    social.desc = if social.code == "_" {
-                        Some(
-                            social
-                                .desc
-                                .clone()
-                                .unwrap_or(self.constants.personal_website.clone()),
-                        )
-                    } else {
+                    if social.code == *"_" {
+                        social.desc = social
+                            .desc
+                            .clone()
+                            .or_else(|| Some(self.constants.personal_website.clone()));
+                        if social.link.is_none() {
+                            warn!("{}: consider add `link` for personal website", &username);
+                        }
+                        return;
+                    }
+
+                    social.desc = social.desc.clone().or_else(|| {
                         Some(
                             self.constants
                                 .format_description(&social.code, &social.desc),
                         )
-                    };
-                    social.link = self.constants.name_code_to_link(&social.code, &social.name);
+                    });
+
+                    social.link = social
+                        .link
+                        .clone()
+                        .or_else(|| self.constants.name_code_to_link(&social.code, &social.name));
                 });
             }
         });
