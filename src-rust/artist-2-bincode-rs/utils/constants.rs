@@ -7,30 +7,41 @@ pub struct Constants {
     pub unavatar_size: u16,
 }
 
-impl Constants {
-    pub fn new() -> Self {
+impl Default for Constants {
+    fn default() -> Self {
         Self {
             unavatar_socials: unavatar_socials(),
             extended_socials: extended_socials(),
             unavatar_size: 400,
         }
     }
+}
 
-    pub fn format_description(
-        &self,
-        social: &Option<SupportedSocial>,
-        desc: &Option<String>,
-    ) -> Option<String> {
-        let result = match (social, desc) {
-            (Some(social), Some(desc)) => format!("{} | {}", social.display, desc),
-            (Some(social), None) => social.display.to_string(),
-            (None, Some(desc)) => desc.to_string(),
-            (None, None) => "".to_string(),
-        };
+impl Constants {
+    pub fn format_description(&self, code: &String, desc: &Option<String>) -> String {
+        let display = self
+            .extended_socials
+            .get(code)
+            .map_or(code.clone(), |social| social.display.clone());
 
-        match result.is_empty() {
-            true => None,
-            false => Some(result),
+        match desc {
+            Some(desc) => format!("{} | {}", display, desc),
+            None => display,
+        }
+    }
+
+    pub fn name_code_to_link(&self, code: &String, username: &Option<String>) -> Option<String> {
+        let url_template: Option<String> = self
+            .extended_socials
+            .get(code)
+            .map(|social| social.url_template.clone())
+            .unwrap_or(None);
+
+        match (username, url_template) {
+            (Some(username), Some(url_template)) => {
+                Some(url_template.replace("<USERNAME>", username))
+            }
+            _ => None,
         }
     }
 }
@@ -96,6 +107,9 @@ fn extended_socials() -> HashMap<String, SupportedSocial> {
         ("patreon", "Patreon", "www.patreon.com/<USERNAME>"),
         ("kofi", "Ko-fi", "ko-fi.com/<USERNAME>"),
         ("plurk", "Plurk", "plurk.com/<USERNAME>"),
+        ("linktree", "Linktr.ee", "linktr.ee/<USERNAME>"),
+        ("linktr.ee", "Linktr.ee", "linktr.ee/<USERNAME>"),
+        ("carrd.co", "Carrd.co", "<USERNAME>.carrd.co"),
     ])
     .into_iter()
     .map(|(code, display, url)| {
@@ -114,40 +128,4 @@ fn extended_socials() -> HashMap<String, SupportedSocial> {
     .collect::<HashMap<String, SupportedSocial>>();
 
     unavatar_socials().into_iter().chain(extended).collect()
-}
-
-#[cfg(test)]
-mod test {
-    use super::*;
-
-    #[test]
-    fn test_format_description() {
-        let constants = Constants::new();
-        let social = Some(SupportedSocial {
-            code: "twitter".to_string(),
-            display: "𝕏".to_string(),
-            url_template: None,
-        });
-
-        // social and desc present
-        assert_eq!(
-            constants.format_description(&social, &Some("foo".to_string())),
-            Some("𝕏 | foo".to_string())
-        );
-
-        // social present, desc absent
-        assert_eq!(
-            constants.format_description(&social, &None),
-            Some("𝕏".to_string())
-        );
-
-        // social absent, desc present
-        assert_eq!(
-            constants.format_description(&None, &Some("foo".to_string())),
-            Some("foo".to_string())
-        );
-
-        // social and desc absent
-        assert_eq!(constants.format_description(&None, &None), None);
-    }
 }
