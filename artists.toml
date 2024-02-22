@@ -10,18 +10,87 @@ socials = [
     { code = "instagram", name = "anjing_kampus" },
 ]
 
+[caronte]
+flag = "🇪🇸"
+avatar = "MightyChorizo@twitter"
+name = "Caronte"
+alias = ["caronte_cafe", "mightychorizo", "carontearts", "car0nte"]
+socials = [
+    { code = "_", desc = "caronte.cafe", link = "https://caronte.cafe/" },
+    { code = "x", name = "MightyChorizo" },
+    { code = "fa", name = "car0nte" },
+    { code = "bsky", name = "caronte.cafe" },
+    { code = "telegram", name = "+DICDyfABQOkyNjk0" },
+]
+
+[kurogon]
+flag = "🇯🇵"
+name = "Kurogon"
+alias = ["kurogon0227", "kuroma"]
+socials = [
+    { code = "twitter", name = "kurogon0227" },
+    { code = "pixiv", name = "kurogon0227" },
+    { code = "fa", name = "kuroma" },
+    { code = "picarto", name = "kurogon" },
+]
+
+[memburu]
+avatar = "https://a.furaffinity.net/1643969840/memburu.gif"
+name = "Memburu"
+socials = [
+    { code = "patreon", name = "memburu" },
+    { code = "fa", name = "memburu" },
+]
+
+[nomifuki]
+flag = "🇯🇵"
+avatar = "nomifuki@twitter"
+socials = [
+    { code = "x", name = "nomifuki" },
+    { code = "x", name = "nomifuki2", desc = "SFW" },
+    { code = "booth", name = "nomifuki" },
+    { code = "patreon", name = "nomifuki" },
+    { code = "fanbox", name = "nomifuki" },
+]
+
 [noswift]
 avatar = "No_SWIFT@twitter"
 name = "NoSWIFT"
 alias = ["no_swift"]
 socials = [
     { code = "_", desc = "noswift.art", link = "https://noswift.art/" },
-    { code = "patreon", name = "NoSWIFT" },
-    { code = "kofi", name = "noswift" },
     { code = "bsky", name = "noswift.art" },
     { code = "fa", name = "noswift" },
     { code = "x", name = "No_SWIFT" },
     { code = "telegram", name = "+-P7fIIyqCWowNGYx" },
+    { code = "patreon", name = "NoSWIFT" },
+    { code = "kofi", name = "noswift" },
+]
+
+[nullghost]
+avatar = "NullGhost_Art@twitter"
+name = "Null-Ghost"
+alias = ["null-ghost", "nullghostart"]
+socials = [
+    { code = "twitter", name = "NullGhostArt" },
+    { code = "twitter", name = "NullGhost_Art", desc = "Alt" },
+    { code = "bsky", name = "nullghostart.bsky.social" },
+    { code = "telegram", name = "NullGhostArt" },
+    { code = "patreon", name = "NullGhostArt" },
+    { code = "gumroad", name = "nullghost" },
+]
+
+[raccoon21]
+flag = "🇰🇷"
+name = "Raccoon21"
+alias = ["raccoon21c", "21c-raccoon", "21centuryraccoon"]
+socials = [
+    { code = "_", desc = "Raccoon21C Comic", link = "https://www.21craccooncomic.com/" },
+    { code = "twitter", name = "Raccoon_21C" },
+    { code = "bsky", name = "raccoon21c.bsky.social" },
+    { code = "itaku", name = "21c-Raccoon" },
+    { code = "patreon", name = "21CenturyRaccoon" },
+    { code = "gumroad", name = "21centuryraccoon" },
 ]
 
 [ralefov]
@@ -40,3 +109,15 @@ avatar = "SSSsnowyartist@twitter"
 name = "SSSsnowy"
 alias = ["snowby", "snowy"]
 socials = [{ code = "x", name = "Ralefov" }, { code = "fa", name = "ralefov" }]
+
+[tokuni]
+flag = "🇯🇵"
+avatar = "toktoktokuni@twitter"
+name = "𝐓𝐨𝐤𝐮𝐧𝐢"
+alias = ["toktoktokuni", "tokuni-naihito"]
+socials = [
+    { code = "x", name = "toktoktokuni" },
+    { code = "pixiv", name = "98281842" },
+    { code = "booth", name = "tokuni-naihito" },
+    { code = "skeb", name = "vLW4zegrsGtSI6e" },
+]
