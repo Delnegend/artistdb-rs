@@ -1,0 +1,21 @@
+[asumono_krom]
+flag = "🇮🇩"
+avatar = "asumono_krom@twitter"
+name = "Joseph A.K"
+alias = ["choroi_dragon", "asumonokrom", "joseph"]
+socials = [
+    { code = "x", name = "asumono_krom", desc = "JOSEPH A.K" },
+    { code = "x", name = "Choroi_dragon", desc = "ChoroGon! 🔞" },
+    { code = "bsky", name = "asumonokrom.bsky.social" },
+    { code = "instagram", name = "anjing_kampus" },
+]
+
+[ssssnowy]
+flag = "🇮🇹"
+avatar = "SSSsnowyartist@twitter"
+name = "SSSsnowy"
+alias = ["snowby", "snowy"]
+socials = [
+    { code = "linktree", name = "ssssnowy" },
+    { code = "x", name = "SSSsnowyartist" },
+]
