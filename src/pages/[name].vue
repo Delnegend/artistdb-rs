@@ -118,7 +118,7 @@ watchEffect(() => {
 	>
 		<span class="text-5xl">🤷</span
 		><span class="text-xl text-white/85"
-			>Username not found in database</span
+			>Artist not found in database</span
 		>
 	</div>
 </template>
