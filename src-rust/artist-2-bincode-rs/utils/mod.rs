@@ -12,7 +12,7 @@ pub fn artists_hasher(artists: &Artists) -> u128 {
         return 0;
     }
 
-    let content: Vec<u8> = match bincode::serialize(&artists)
+    let content: Vec<u8> = match shared::to_bitcode(&artists)
         .map_err(|err| warn!("failed to serialize artists: {}", err))
     {
         Ok(content) => content,

@@ -87,7 +87,7 @@ impl<'a> Pipeline<'a> {
 
     fn write_bincode(&mut self, username: &String, artist: Artist) -> Result<(), String> {
         // Main files
-        let bincode_string = artist.to_bincode()?;
+        let bincode_string = artist.to_bitcode()?;
         let path = PathBuf::from(format!(
             "{}/{}",
             self.args.output_dir,

@@ -4,7 +4,7 @@ use wasm_bindgen::prelude::*;
 #[wasm_bindgen]
 /// Deserialize a `Vec<u8>` into an `Artist` struct.
 pub fn decode(data: Vec<u8>) -> Option<Artist> {
-    Artist::from_bincode(&data)
+    Artist::from_bitcode(&data)
 }
 
 #[wasm_bindgen]
@@ -40,7 +40,7 @@ mod tests {
             socials: Some(socials),
         };
 
-        let encoded = artist.to_bincode().unwrap();
+        let encoded = artist.to_bitcode().unwrap();
         let decoded = decode(encoded).unwrap();
 
         assert_eq!(artist, decoded);
