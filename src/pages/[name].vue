@@ -71,14 +71,8 @@ watchEffect(() => {
 
 <template>
 	<div
-		class="blurred fixed -z-10 h-[100vh] w-full bg-black"
-		:style="{
-			'background-image': `url(${avatar})`,
-			'background-repeat': 'no-repeat',
-			'background-size': 'cover',
-			'background-position': 'center',
-			filter: 'brightness(0.5)',
-		}"
+		class="fixed -z-10 h-[100vh] w-full scale-125 bg-black bg-cover bg-center bg-no-repeat blur-2xl brightness-50"
+		:style="{ 'background-image': `url(${avatar})` }"
 	/>
 
 	<div class="mx-auto max-w-96 py-12" v-if="networkStatus === 'loaded'">
@@ -120,14 +114,3 @@ watchEffect(() => {
 		><span class="text-xl text-white/85">Artist not found in database</span>
 	</div>
 </template>
-
-<style scoped>
-.blurred::after {
-	content: "";
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	backdrop-filter: blur(50px);
-	pointer-events: none;
-}
-</style>
