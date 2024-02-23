@@ -55,12 +55,10 @@ pub fn avatar_parser(
 
     socials
         .iter()
-        // I don't like how I need to take 30 seconds to understand this so here
-        // is how this works:
-        // - filter_map: takes list of Option<thing>, keep Some(thing), discard None
-        // - `social.name` would just return the list of Option<name>, so I map
-        //   its corespoinding `social.code` to the `name` and return it as a tuple
-        .filter_map(|social| social.name.as_ref().map(|name| (&social.code, name)))
+        .filter_map(|social| {
+            let social_specific_uname = social.name.as_ref();
+            social_specific_uname.map(|name| (&social.code, name))
+        })
         .find_map(|(code, username)| {
             constants.unavatar_socials.get(code).map(|_| {
                 format!(
