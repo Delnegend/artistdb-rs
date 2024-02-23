@@ -21,3 +21,15 @@ jobs:
                 with:
                     branch: gh-pages
                     folder: .output/public
+    delete-old-runs:
+        runs-on: ubuntu-latest
+        permissions:
+            actions: write
+            contents: read
+        steps:
+            -   name: Delete workflow runs
+                uses: Mattraks/delete-workflow-runs@v2
+                with:
+                    token: ${{ github.token }}
+                    repository: ${{ github.repository }}
+                    keep_minimum_runs: 1
