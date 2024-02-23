@@ -8,13 +8,14 @@ jobs:
     build-and-deploy:
         runs-on: ubuntu-latest
         steps:
+            -   uses: oven-sh/setup-bun@v1
+                with:
+                    bun-version: latest
             -   uses: actions/checkout@v4
-            -   name: ⚡ Install pnpm
-                run: npm install -g pnpm
             -   name: 📦 Install dependencies
-                run: pnpm install
+                run: bun install --frozen-lockfile
             -   name: 🛠️ Build
-                run: pnpm generate
+                run: bun run --bun generate
             -   name: 🚀 Deploy
                 uses: JamesIves/github-pages-deploy-action@v4
                 with:
