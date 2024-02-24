@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useRoute } from "vue-router";
-import { Artist, decode, get_alias } from "~/composables/bincode-2-artist-wasm";
+import { Artist, get_alias } from "~/composables/bridge";
 
 type NetworkStatus = "loading" | "loaded" | "error";
 
@@ -21,7 +21,7 @@ if (Array.isArray(router.params.name)) {
 	try {
 		const res = await fetch(`/artists/${username.value}`);
 		const body = new Uint8Array(await res.arrayBuffer());
-		artistInfo.value = decode(body);
+		artistInfo.value = Artist.from_bitcode(body);
 
 		if (artistInfo.value !== undefined) {
 			networkStatus.value = "loaded";
@@ -37,7 +37,7 @@ if (Array.isArray(router.params.name)) {
 		const res_alias = await fetch(`/artists/${alias}`);
 		const body_alias = new Uint8Array(await res_alias.arrayBuffer());
 
-		artistInfo.value = decode(body_alias);
+		artistInfo.value = Artist.from_bitcode(body_alias);
 		if (artistInfo.value !== undefined) {
 			networkStatus.value = "loaded";
 			return;
@@ -54,39 +54,24 @@ watchEffect(() => {
 		avatar.value = artistInfo.value.avatar ?? "/avatar.svg";
 	}
 	document.title = `${artistInfo?.value?.name ?? username.value} | Artist DB`;
-	defineNuxtComponent({
-		head() {
-			return {
-				link: [
-					{
-						rel: "favicon",
-						href: avatar.value,
-					},
-				],
-			};
-		},
-	});
 });
 </script>
 
 <template>
 	<div
 		class="fixed -z-10 h-[100vh] w-full scale-125 bg-black bg-cover bg-center bg-no-repeat blur-2xl brightness-50"
-		:style="{ 'background-image': `url(${avatar})` }"
-	/>
+		:style="{ 'background-image': `url(${avatar})` }" />
 
 	<div class="mx-auto max-w-96 py-12" v-if="networkStatus === 'loaded'">
 		<!-- avatar -->
 		<div class="flex w-full justify-center">
 			<img
 				:src="avatar"
-				class="aspect-square w-full max-w-60 rounded-full object-cover shadow-2xl"
-			/>
+				class="aspect-square w-full max-w-60 rounded-full object-cover shadow-2xl" />
 		</div>
 
 		<div
-			class="flex w-full flex-row items-center justify-center gap-3 py-7 text-center text-3xl font-bold text-white"
-		>
+			class="flex w-full flex-row items-center justify-center gap-3 py-7 text-center text-3xl font-bold text-white">
 			<div>{{ artistInfo?.name ?? username }}</div>
 			<Flag v-if="artistInfo?.flag !== undefined">{{
 				artistInfo?.flag
@@ -100,17 +85,13 @@ watchEffect(() => {
 				:key="social.code"
 				:href="social.link"
 				target="_blank"
-				class="flex w-full justify-center border-4 border-solid border-black px-6 py-3 text-lg text-white/60 transition-colors hover:bg-black hover:text-white"
-				>{{ social.desc }}</a
-			>
+				class="flex w-full justify-center border-4 border-solid border-black px-6 py-3 text-lg text-white/60 transition-colors hover:bg-black hover:text-white">{{ social.desc }}</a>
 		</div>
 	</div>
 
 	<div
 		v-if="networkStatus === 'error'"
-		class="flex h-[100vh] flex-col items-center justify-center gap-5"
-	>
-		<span class="text-5xl">🤷</span
-		><span class="text-xl text-white/85">Artist not found in database</span>
+		class="flex h-[100vh] flex-col items-center justify-center gap-5">
+		<span class="text-5xl">🤷</span><span class="text-xl text-white/85">Artist not found in database</span>
 	</div>
 </template>
