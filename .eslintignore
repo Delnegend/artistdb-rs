@@ -1,5 +1,5 @@
 node_modules/
 .nuxt/
 public/
-src/composables/bincode-2-artist-wasm
+src/composables/bridge/
 nuxt.config.ts
