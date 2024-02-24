@@ -124,48 +124,6 @@ function takeObject(idx) {
     return ret;
 }
 
-function passArray8ToWasm0(arg, malloc) {
-    const ptr = malloc(arg.length * 1, 1) >>> 0;
-    getUint8Memory0().set(arg, ptr / 1);
-    WASM_VECTOR_LEN = arg.length;
-    return ptr;
-}
-/**
-* Deserialize a `Vec<u8>` into an `Artist` struct.
-* @param {Uint8Array} data
-* @returns {Artist | undefined}
-*/
-export function decode(data) {
-    const ptr0 = passArray8ToWasm0(data, wasm.__wbindgen_export_0);
-    const len0 = WASM_VECTOR_LEN;
-    const ret = wasm.decode(ptr0, len0);
-    return ret === 0 ? undefined : Artist.__wrap(ret);
-}
-
-/**
-* If the `Vec<u8>` is a valid alias, remove the `@` and return it as a `String`.
-* @param {Uint8Array} data
-* @returns {string | undefined}
-*/
-export function get_alias(data) {
-    try {
-        const retptr = wasm.__wbindgen_add_to_stack_pointer(-16);
-        const ptr0 = passArray8ToWasm0(data, wasm.__wbindgen_export_0);
-        const len0 = WASM_VECTOR_LEN;
-        wasm.get_alias(retptr, ptr0, len0);
-        var r0 = getInt32Memory0()[retptr / 4 + 0];
-        var r1 = getInt32Memory0()[retptr / 4 + 1];
-        let v2;
-        if (r0 !== 0) {
-            v2 = getStringFromWasm0(r0, r1).slice();
-            wasm.__wbindgen_export_2(r0, r1 * 1, 1);
-        }
-        return v2;
-    } finally {
-        wasm.__wbindgen_add_to_stack_pointer(16);
-    }
-}
-
 let cachedUint32Memory0 = null;
 
 function getUint32Memory0() {
@@ -194,6 +152,41 @@ function passArrayJsValueToWasm0(array, malloc) {
     }
     WASM_VECTOR_LEN = array.length;
     return ptr;
+}
+
+function getArrayU8FromWasm0(ptr, len) {
+    ptr = ptr >>> 0;
+    return getUint8Memory0().subarray(ptr / 1, ptr / 1 + len);
+}
+
+function passArray8ToWasm0(arg, malloc) {
+    const ptr = malloc(arg.length * 1, 1) >>> 0;
+    getUint8Memory0().set(arg, ptr / 1);
+    WASM_VECTOR_LEN = arg.length;
+    return ptr;
+}
+/**
+* If the `Vec<u8>` is a valid alias, remove the `@` and return it as a `String`.
+* @param {Uint8Array} data
+* @returns {string | undefined}
+*/
+export function get_alias(data) {
+    try {
+        const retptr = wasm.__wbindgen_add_to_stack_pointer(-16);
+        const ptr0 = passArray8ToWasm0(data, wasm.__wbindgen_export_0);
+        const len0 = WASM_VECTOR_LEN;
+        wasm.get_alias(retptr, ptr0, len0);
+        var r0 = getInt32Memory0()[retptr / 4 + 0];
+        var r1 = getInt32Memory0()[retptr / 4 + 1];
+        let v2;
+        if (r0 !== 0) {
+            v2 = getStringFromWasm0(r0, r1).slice();
+            wasm.__wbindgen_export_2(r0, r1 * 1, 1);
+        }
+        return v2;
+    } finally {
+        wasm.__wbindgen_add_to_stack_pointer(16);
+    }
 }
 
 const ArtistFinalization = (typeof FinalizationRegistry === 'undefined')
@@ -357,6 +350,38 @@ export class Artist {
         var len0 = WASM_VECTOR_LEN;
         wasm.__wbg_set_artist_socials(this.__wbg_ptr, ptr0, len0);
     }
+    /**
+    * @returns {Uint8Array}
+    */
+    to_bitcode() {
+        try {
+            const retptr = wasm.__wbindgen_add_to_stack_pointer(-16);
+            wasm.artist_to_bitcode(retptr, this.__wbg_ptr);
+            var r0 = getInt32Memory0()[retptr / 4 + 0];
+            var r1 = getInt32Memory0()[retptr / 4 + 1];
+            var r2 = getInt32Memory0()[retptr / 4 + 2];
+            var r3 = getInt32Memory0()[retptr / 4 + 3];
+            if (r3) {
+                throw takeObject(r2);
+            }
+            var v1 = getArrayU8FromWasm0(r0, r1).slice();
+            wasm.__wbindgen_export_2(r0, r1 * 1, 1);
+            return v1;
+        } finally {
+            wasm.__wbindgen_add_to_stack_pointer(16);
+        }
+    }
+    /**
+    * wasm-pack intepreted this as `Artist | undefined`, using Result is unnecessary
+    * @param {Uint8Array} bytes
+    * @returns {Artist | undefined}
+    */
+    static from_bitcode(bytes) {
+        const ptr0 = passArray8ToWasm0(bytes, wasm.__wbindgen_export_0);
+        const len0 = WASM_VECTOR_LEN;
+        const ret = wasm.artist_from_bitcode(ptr0, len0);
+        return ret === 0 ? undefined : Artist.__wrap(ret);
+    }
 }
 
 const SocialFinalization = (typeof FinalizationRegistry === 'undefined')
@@ -512,13 +537,13 @@ export function __wbg_social_unwrap(arg0) {
     return ret;
 };
 
-export function __wbindgen_throw(arg0, arg1) {
-    throw new Error(getStringFromWasm0(arg0, arg1));
-};
-
 export function __wbindgen_string_new(arg0, arg1) {
     const ret = getStringFromWasm0(arg0, arg1);
     return addHeapObject(ret);
+};
+
+export function __wbindgen_throw(arg0, arg1) {
+    throw new Error(getStringFromWasm0(arg0, arg1));
 };
 
 export function __wbindgen_string_get(arg0, arg1) {

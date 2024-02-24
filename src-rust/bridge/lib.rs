@@ -26,15 +26,26 @@ pub struct Artist {
     pub socials: Option<Socials>,
 }
 
+#[wasm_bindgen]
 impl Artist {
     pub fn to_bitcode(&self) -> Result<Vec<u8>, String> {
         encode(&self).map_err(|err| format!("Failed to serialize artist: {}", err))
     }
 
     /// wasm-pack intepreted this as `Artist | undefined`, using Result is unnecessary
-    pub fn from_bitcode(bytes: &[u8]) -> Option<Self> {
+    pub fn from_bitcode(bytes: &[u8]) -> Option<Artist> {
         decode(bytes).ok()
     }
+}
+
+#[wasm_bindgen]
+/// If the `Vec<u8>` is a valid alias, remove the `@` and return it as a `String`.
+pub fn get_alias(data: Vec<u8>) -> Option<String> {
+    let s = String::from_utf8(data).ok()?;
+
+    s.strip_prefix('@')
+        .map(|s| s.to_string())
+        .map(|alias| alias.to_string())
 }
 
 pub type Artists = BTreeMap<String, Artist>;

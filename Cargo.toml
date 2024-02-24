@@ -1,11 +1,7 @@
 [workspace]
 resolver = "2"
 
-members = [
-    "src-rust/bincode-2-artist-wasm",
-    "src-rust/artist-2-bincode-rs",
-    "src-rust/shared-rs",
-]
+members = ["src-rust/artist-encoder", "src-rust/bridge"]
 
 [profile.release]
 lto = true

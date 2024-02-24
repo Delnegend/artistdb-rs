@@ -1,6 +1,6 @@
 use std::collections::{BTreeMap, HashMap, HashSet};
 
-use shared::{Artists, Social};
+use bridge::{Artists, Social};
 use toml_edit::Document;
 use tracing::warn;
 
