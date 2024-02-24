@@ -8,20 +8,14 @@ export default defineNuxtConfig({
 		baseURL: "/",
 		buildAssetsDir: "assets",
 	},
-	devtools: { enabled: true },
-	modules: ["@nuxtjs/tailwindcss", "@nuxtjs/eslint-module"],
+	devtools: { enabled: false },
+	modules: ["@nuxtjs/tailwindcss"],
 	css: ["~/assets/css/main.css"],
-	eslint: { lintOnStart: false },
 	experimental: { viewTransition: true },
 	vite: {
 		plugins: [wasm()],
 		build: {
 			target: "esnext",
 		}
-	},
-	nitro: {
-		experimental: {
-			wasm: true,
-		},
 	},
 });
