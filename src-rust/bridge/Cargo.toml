@@ -1,14 +1,16 @@
 [package]
-name = "bincode-2-artist-wasm"
+name = "bridge"
 version = "0.1.0"
 edition = "2021"
 
 [lib]
-crate-type = ["cdylib", "rlib"]
 path = "lib.rs"
+crate-type = ["cdylib", "rlib"]
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-shared = { path = "../shared-rs" }
+bitcode = { version = "0.5.1", features = ["serde"] }
+serde = { version = "1.0.197", features = ["derive"] }
+tracing = "0.1.40"
 wasm-bindgen = "0.2.91"

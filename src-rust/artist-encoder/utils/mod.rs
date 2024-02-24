@@ -1,5 +1,5 @@
+use bridge::Artists;
 use murmur3::murmur3_x64_128;
-use shared::Artists;
 use tracing::warn;
 
 pub mod artists_serde;
@@ -12,7 +12,7 @@ pub fn artists_hasher(artists: &Artists) -> u128 {
         return 0;
     }
 
-    let content: Vec<u8> = match shared::to_bitcode(&artists)
+    let content: Vec<u8> = match bridge::to_bitcode(&artists)
         .map_err(|err| warn!("failed to serialize artists: {}", err))
     {
         Ok(content) => content,

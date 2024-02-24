@@ -1,4 +1,4 @@
-use shared::Socials;
+use bridge::Socials;
 use tracing::warn;
 
 use crate::utils::constants::Constants;
@@ -71,7 +71,7 @@ pub fn avatar_parser(
 
 #[cfg(test)]
 mod test {
-    use shared::Social;
+    use bridge::Social;
 
     use crate::utils::constants::Constants;
 

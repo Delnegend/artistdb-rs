@@ -4,7 +4,7 @@ use crate::{
     utils::{artists_serde::ArtistsSerde, constants::Constants},
     Args,
 };
-use shared::Artist;
+use bridge::Artist;
 use tracing::{error, info};
 
 pub struct Pipeline<'a> {

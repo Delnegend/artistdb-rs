@@ -1,11 +1,11 @@
 [package]
-name = "artist-2-bincode-rs"
+name = "artist-encoder"
 version = "0.1.0"
 edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [[bin]]
-name = "artist-2-bincode"
+name = "artist-encoder"
 path = "main.rs"
 
 [dependencies]
@@ -17,4 +17,4 @@ toml_edit = { version = "0.22.6", features = ["serde"] }
 tracing = "0.1.40"
 tracing-subscriber = "0.3.18"
 inotify = "0.10.2"
-shared = { path = "../shared-rs" }
+bridge = { path = "../bridge" }

@@ -1,42 +1,37 @@
 {
-	"name": "artist-db",
-	"private": true,
-	"type": "module",
-	"scripts": {
-		"build": "nuxt build",
-		"dev": "concurrently \"nuxt dev\" \"./artist-2-bincode -w\"",
-		"lint": "eslint --fix ./**/*.{ts,vue}",
-		"generate": "./artist-2-bincode && nuxt generate",
-		"build:wasm": "zsh src-rust/build-wasm.sh",
-		"build:tool": "zsh src-rust/build-tool.sh",
-		"preview": "nuxt preview",
-		"postinstall": "nuxt prepare"
-	},
-	"dependencies": {
-		"@iarna/toml": "^2.2.5",
-		"concurrently": "^8.2.2",
-		"country-flag-emoji-polyfill": "^0.1.8",
-		"idb": "^8.0.0",
-		"js-toml": "^1.0.0",
-		"murmurhash-js": "^1.0.0",
-		"nuxt": "^3.10.1",
-		"smol-toml": "^1.1.4",
-		"vue": "^3.4.18",
-		"vue-router": "^4.2.5"
-	},
-	"devDependencies": {
-		"@nuxtjs/eslint-module": "^4.1.0",
-		"@nuxtjs/tailwindcss": "^6.11.3",
-		"@types/murmurhash-js": "^1.0.6",
-		"@types/node": "^20.11.17",
-		"@typescript-eslint/parser": "^6.21.0",
-		"chokidar": "^3.6.0",
-		"eslint": "^8.56.0",
-		"eslint-config-prettier": "^9.1.0",
-		"eslint-plugin-nuxt": "^4.0.0",
-		"eslint-plugin-prettier": "^5.1.3",
-		"eslint-plugin-tailwindcss": "^3.14.2",
-		"tslib": "^2.6.2",
-		"vite-plugin-wasm": "^3.3.0"
-	}
+  "name": "artist-db",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently \"nuxt dev\" \"./artist-encoder -w\"",
+    "lint": "eslint --fix --cache ./**/*.vue",
+    "generate": "./artist-encoder && nuxt generate",
+    "build-bridge": "zsh src-rust/build-bridge.sh",
+    "build-tool": "zsh src-rust/build-tool.sh",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "dependencies": {
+    "@iarna/toml": "^2.2.5",
+    "concurrently": "^8.2.2",
+    "country-flag-emoji-polyfill": "^0.1.8",
+    "idb": "^8.0.0",
+    "js-toml": "^1.0.0",
+    "murmurhash-js": "^1.0.0",
+    "nuxt": "^3.10.1",
+    "smol-toml": "^1.1.4",
+    "vue": "^3.4.18",
+    "vue-router": "^4.2.5"
+  },
+  "devDependencies": {
+    "@nuxtjs/tailwindcss": "^6.11.3",
+    "@typescript-eslint/parser": "^6.21.0",
+    "eslint": "^8.56.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-nuxt": "^4.0.0",
+    "eslint-plugin-prettier": "^5.1.3",
+    "eslint-plugin-tailwindcss": "^3.14.2",
+    "vite-plugin-wasm": "^3.3.0",
+    "vue-eslint-parser": "^9.4.2"
+  }
 }
