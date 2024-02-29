@@ -46,6 +46,19 @@ socials = [
     { code = "kofi", name = "cass_notgay" },
 ]
 
+[chung]
+flag = "🇰🇷"
+avatar = "chung0u0@twitter"
+name = "Chung"
+alias = ["chung0u0", "chung0_0"]
+socials = [
+    { code = "x", name = "chung0u0" },
+    { code = "x", name = "chung0_0", desc = "Alt" },
+    { code = "fa", name = "chung0u0" },
+    { code = "patreon", name = "chung0u0" },
+    { code = "fanbox", name = "chung0u0" },
+]
+
 [drboumboom]
 avatar = "DrBoom32@twitter"
 name = "DrBoumBoom32"
