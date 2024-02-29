@@ -71,6 +71,16 @@ socials = [
     { code = "fanbox", name = "chung0u0" },
 ]
 
+[diffusedlizard]
+avatar = "DiffusedLizard@twitter"
+name = "DiffusedLizard"
+socials = [
+    { code = "x", name = "DiffusedLizard" },
+    { code = "fa", name = "diffusedlizard" },
+    { code = "patreon", name = "DiffusedLizard" },
+    { code = "subscribestar", name = "diffusedlizard" },
+]
+
 [drboumboom]
 avatar = "DrBoom32@twitter"
 name = "DrBoumBoom32"
