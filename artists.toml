@@ -37,6 +37,7 @@ socials = [
 
 [cass_ito]
 avatar = "lewd_bunnie@twitter"
+name = "Mr. Cass"
 alias = ["cassito", "mrcass", "lewd_bunnie"]
 socials = [
     { code = "x", name = "Lewd_bunnie" },
