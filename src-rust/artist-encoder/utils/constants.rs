@@ -76,6 +76,7 @@ fn unavatar_socials() -> HashMap<String, SupportedSocial> {
         ("soundcloud", "SoundCloud", "soundcloud.com/<USERNAME>"),
         ("substack", "Substack", "<USERNAME>.substack.com/"),
         ("youtube", "YouTube", "youtube.com/@<USERNAME>"),
+        ("subscribestar", "SubscribeStar", "subscribestar.adult/<USERNAME>")
     ])
     .into_iter()
     .map(|(code, display, url)| {
