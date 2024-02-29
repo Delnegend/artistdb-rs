@@ -10,6 +10,18 @@ socials = [
     { code = "instagram", name = "anjing_kampus" },
 ]
 
+[basch]
+flag = "🇦🇷"
+avatar = "BaschIsTaken@twitter"
+name = "Basch"
+alias = ["baschistaken"]
+socials = [
+    { code = "x", name = "BaschIsTaken" },
+    { code = "fa", name = "basch" },
+    { code = "picarto", name = "basch" },
+    { code = "patreon", name = "BaschWasTaken" },
+]
+
 [caronte]
 flag = "🇪🇸"
 avatar = "MightyChorizo@twitter"
@@ -21,6 +33,37 @@ socials = [
     { code = "fa", name = "car0nte" },
     { code = "bsky", name = "caronte.cafe" },
     { code = "telegram", name = "+DICDyfABQOkyNjk0" },
+]
+
+[cass_ito]
+avatar = "lewd_bunnie@twitter"
+alias = ["cassito", "mrcass", "lewd_bunnie"]
+socials = [
+    { code = "x", name = "Lewd_bunnie" },
+    { code = "x", name = "cass_ito", desc = "Alt" },
+    { code = "twitter", name = "cassitochannel18" },
+    { code = "kofi", name = "cass_notgay" },
+]
+
+[drboumboom]
+avatar = "DrBoom32@twitter"
+name = "DrBoumBoom32"
+alias = ["drboom32", "drboumboom32"]
+socials = [
+    { code = "x", name = "DrBoom32" },
+    { code = "patreon", name = "drboumboom32" },
+]
+
+[kamyuel]
+flag = "🇰🇷"
+avatar = "kamyuelo@twitter"
+name = "Kamyuel"
+alias = ["kamyuelo"]
+socials = [
+    { code = "x", name = "Kamyuelo" },
+    { code = "fa", name = "kamyuel" },
+    { code = "patreon", name = "kamyuel" },
+    { code = "gumroad", name = "kamyuel" },
 ]
 
 [kurogon]
