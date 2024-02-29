@@ -10,6 +10,18 @@ socials = [
     { code = "instagram", name = "anjing_kampus" },
 ]
 
+[bakemonoy]
+flag = "🇧🇷"
+avatar = "Bakemonoy@twitter"
+name = "Bakemonoy"
+alias = ["bakeboy"]
+socials = [
+    { code = "x", name = "Bakemonoy" },
+    { code = "fa", name = "bakemonoy" },
+    { code = "itaku", name = "bakemonoy" },
+    { code = "patreon", name = "bakemonoy" },
+]
+
 [basch]
 flag = "🇦🇷"
 avatar = "BaschIsTaken@twitter"
@@ -177,4 +189,19 @@ socials = [
     { code = "pixiv", name = "98281842" },
     { code = "booth", name = "tokuni-naihito" },
     { code = "skeb", name = "vLW4zegrsGtSI6e" },
+]
+
+[zex]
+flag = "🇯🇵"
+avatar = "zex_art@twitter"
+name = "Zex"
+alias = ["zethvalg", "zexart"]
+socials = [
+    { code = "_", desc = "lit.link", link = "https://lit.link/zexart/" },
+    { code = "x", name = "zex_art" },
+    { code = "bsky", name = "zexart.bsky.social" },
+    { code = "twitch", name = "daha_saegami" },
+    { code = "patreon", name = "zethvalgxfurryart" },
+    { code = "pixiv", name = "zexart" },
+    { code = "fanbox", name = "zexart" },
 ]
