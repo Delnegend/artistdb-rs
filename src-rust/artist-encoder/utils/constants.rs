@@ -122,6 +122,7 @@ fn extended_socials() -> HashMap<String, SupportedSocial> {
         ("picarto", "Picarto", "www.picarto.tv/<USERNAME>"),
         ("picarto.tv", "Picarto", "www.picarto.tv/<USERNAME>"),
         ("gumroad", "Gumroad", "<USERNAME>.gumroad.com"),
+        ("twitch", "Twitch", "www.twitch.tv/<USERNAME>"),
     ])
     .into_iter()
     .map(|(code, display, url)| {
