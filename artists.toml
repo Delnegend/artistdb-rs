@@ -34,6 +34,22 @@ socials = [
     { code = "patreon", name = "BaschWasTaken" },
 ]
 
+[canynekhai]
+flag = "🇹🇼"
+avatar = "CanyneKhai@twitter"
+name = "Canyne Khai"
+alias = ["canyne_khai", "canynekhai_studio"]
+socials = [
+    { code = "_", desc = "potofu.me", link = "https://potofu.me/canynekhai/" },
+    { code = "x", name = "CanyneKhai", desc = "🔞" },
+    { code = "x", name = "Canyne_Khai" },
+    { code = "fb", name = "canynekhai.studio" },
+    { code = "bsky", name = "canynekhai.bsky.social" },
+    { code = "instagram", name = "canynekhai" },
+    { code = "gumroad", name = "canynekhai" },
+    { code = "patreon", name = "CanyneKhai" },
+]
+
 [caronte]
 flag = "🇪🇸"
 avatar = "MightyChorizo@twitter"
@@ -114,6 +130,30 @@ socials = [
     { code = "gumroad", name = "kamyuel" },
 ]
 
+[kkaeshi]
+flag = "🇯🇵"
+avatar = "IMPwitter@twitter"
+name = "Kkaeshi"
+alias = ["impwitter", "spacechanneru", "channeru"]
+socials = [
+    { code = "x", name = "IMPwitter", desc = "🔞" },
+    { code = "x", name = "SPACECHANNERU", desc = "SFW" },
+    { code = "patreon", name = "impwitter" },
+    { code = "fanbox", name = "kkaeshi" },
+]
+
+[kultwolf]
+flag = "🇻🇳"
+avatar = "Kult2k@twitter"
+name = "Kult Wolf"
+alias = ["kult2k", "kult"]
+socials = [
+    { code = "x", name = "Kult2k" },
+    { code = "itaku", name = "kultwolf" },
+    { code = "fb", name = "Kult2000" },
+    { code = "instagram", name = "Kult2000" },
+]
+
 [kurogon]
 flag = "🇯🇵"
 name = "Kurogon"
@@ -192,6 +232,15 @@ alias = ["rale"]
 socials = [
     { code = "linktree", name = "ssssnowy" },
     { code = "x", name = "SSSsnowyartist" },
+]
+
+[seatohao]
+flag = "🇨🇳"
+avatar = "seatohao@twitter"
+alias = ["seato-hao"]
+socials = [
+    { code = "x", name = "SeatoHao" },
+    { code = "bsky", name = "seatohao.bsky.social" },
 ]
 
 [ssssnowy]
