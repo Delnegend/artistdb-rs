@@ -1,5 +1,5 @@
 <template>
-	<span style="font-family: &quot;Twemoji Country Flags&quot;">
+	<span style="font-family: 'Twemoji Country Flags'">
 		<slot />
 	</span>
 </template>
