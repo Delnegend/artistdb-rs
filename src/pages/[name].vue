@@ -55,19 +55,38 @@ watchEffect(() => {
 	}
 	document.title = `${artistInfo?.value?.name ?? username.value} | Artist DB`;
 });
+
+const avatarLoaded = ref(false);
 </script>
 
 <template>
 	<div
-		class="fixed -z-10 h-[100vh] w-full scale-125 bg-black bg-cover bg-center bg-no-repeat blur-2xl brightness-50"
-		:style="{ 'background-image': `url(${avatar})` }" />
+		class="fixed -z-10 h-[100vh] w-full scale-125 bg-black blur-2xl brightness-50"
+	>
+		<img
+			v-show="avatarLoaded"
+			:src="avatar"
+			class="fixed -z-10 w-full h-full object-cover" />
+
+		<img
+			v-show="!avatarLoaded"
+			src="/avatar.svg"
+			class="fixed -z-10 w-full h-full object-cover" />
+	</div>
+
 
 	<div class="mx-auto max-w-96 py-12" v-if="networkStatus === 'loaded'">
 		<!-- avatar -->
 		<div class="flex w-full justify-center">
 			<img
+				v-show="avatarLoaded"
+				@load="avatarLoaded = true"
 				:src="avatar"
 				class="aspect-square w-full max-w-60 rounded-full object-cover shadow-2xl" />
+			<img
+				v-show="!avatarLoaded"
+				src="/avatar.svg"
+				class="animate-pulse aspect-square w-full max-w-60 rounded-full object-cover shadow-2xl" />
 		</div>
 
 		<div
