@@ -90,6 +90,18 @@ socials = [
     { code = "patreon", name = "drboumboom32" },
 ]
 
+[forge]
+flag = "🇺🇸"
+avatar = "ForgeWalfhammer@twitter"
+name = "Forge Walfhammer"
+alias = ["zeforge", "forgewalfhammer"]
+socials = [
+    { code = "x", name = "Forgewalfhammer" },
+    { code = "fa", name = "forgewalfhammer" },
+    { code = "itaku", name = "zeforge" },
+    { code = "patreon", name = "zeforge" },
+]
+
 [kamyuel]
 flag = "🇰🇷"
 avatar = "kamyuelo@twitter"
