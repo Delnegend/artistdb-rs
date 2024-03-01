@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { useRoute } from "vue-router";
-import { Artist, get_alias } from "~/composables/bridge";
+import { Artist, get_alias as getAlias } from "~/composables/bridge";
 
-type NetworkStatus = "loading" | "loaded" | "error";
+type NetworkStatus = "error" | "loaded" | "loading";
 
 const router = useRoute();
 const networkStatus = ref<NetworkStatus>("loading");
@@ -21,24 +21,29 @@ if (Array.isArray(router.params.name)) {
 	try {
 		const res = await fetch(`/artists/${username.value}`);
 		const body = new Uint8Array(await res.arrayBuffer());
-		artistInfo.value = Artist.from_bitcode(body);
 
-		if (artistInfo.value !== undefined) {
+		const artistFromBitcode = Artist.from_bitcode(body);
+
+		if (artistFromBitcode !== undefined) {
+			artistInfo.value = artistFromBitcode;
 			networkStatus.value = "loaded";
 			return;
 		}
 
-		const alias = get_alias(body);
+		const alias = getAlias(body);
+
 		if (alias === undefined) {
 			networkStatus.value = "error";
 			return;
 		}
 
-		const res_alias = await fetch(`/artists/${alias}`);
-		const body_alias = new Uint8Array(await res_alias.arrayBuffer());
+		const resAlias = await fetch(`/artists/${alias}`);
+		const bodyAlias = new Uint8Array(await resAlias.arrayBuffer());
 
-		artistInfo.value = Artist.from_bitcode(body_alias);
-		if (artistInfo.value !== undefined) {
+		const artistFromAliasBitcode = Artist.from_bitcode(bodyAlias);
+
+		if (artistFromAliasBitcode !== undefined) {
+			artistInfo.value = artistFromAliasBitcode;
 			networkStatus.value = "loaded";
 			return;
 		}
@@ -47,33 +52,29 @@ if (Array.isArray(router.params.name)) {
 	} catch {
 		networkStatus.value = "error";
 	}
-})();
+})().catch(() => {
+	networkStatus.value = "error";
+});
 
 watchEffect(() => {
 	if (artistInfo.value !== undefined) {
 		avatar.value = artistInfo.value.avatar ?? "/avatar.svg";
 	}
-	document.title = `${artistInfo?.value?.name ?? username.value} | Artist DB`;
+
+	document.title = `${artistInfo.value?.name ?? username.value} | Artist DB`;
 });
 
 const avatarLoaded = ref(false);
+
+/** */
 </script>
 
 <template>
-	<div
-		class="fixed -z-10 h-[100vh] w-full scale-125 bg-black blur-2xl brightness-50"
-	>
-		<img
-			v-show="avatarLoaded"
-			:src="avatar"
-			class="fixed -z-10 w-full h-full object-cover" />
+	<div class="fixed -z-10 h-[100vh] w-full scale-125 bg-black blur-2xl brightness-50">
+		<img v-show="avatarLoaded" :src="avatar" class="fixed -z-10 size-full object-cover" />
 
-		<img
-			v-show="!avatarLoaded"
-			src="/avatar.svg"
-			class="fixed -z-10 w-full h-full object-cover" />
+		<img v-show="!avatarLoaded" src="/avatar.svg" class="fixed -z-10 size-full object-cover" />
 	</div>
-
 
 	<div class="mx-auto max-w-96 py-12" v-if="networkStatus === 'loaded'">
 		<!-- avatar -->
@@ -82,19 +83,19 @@ const avatarLoaded = ref(false);
 				v-show="avatarLoaded"
 				@load="avatarLoaded = true"
 				:src="avatar"
-				class="aspect-square w-full max-w-60 rounded-full object-cover shadow-2xl" />
-			<img
+				class="aspect-square w-full max-w-60 rounded-full object-cover shadow-2xl"
+			/>
+			<div
 				v-show="!avatarLoaded"
-				src="/avatar.svg"
-				class="animate-pulse aspect-square w-full max-w-60 rounded-full object-cover shadow-2xl" />
+				class="aspect-square w-full max-w-60 animate-pulse rounded-full bg-black shadow-2xl"
+			/>
 		</div>
 
 		<div
-			class="flex w-full flex-row items-center justify-center gap-3 py-7 text-center text-3xl font-bold text-white">
+			class="flex w-full flex-row items-center justify-center gap-3 py-7 text-center text-3xl font-bold text-white"
+		>
 			<div>{{ artistInfo?.name ?? username }}</div>
-			<Flag v-if="artistInfo?.flag !== undefined">{{
-				artistInfo?.flag
-			}}</Flag>
+			<Flag v-if="artistInfo?.flag !== undefined">{{ artistInfo?.flag }}</Flag>
 		</div>
 
 		<!-- links -->
@@ -104,13 +105,17 @@ const avatarLoaded = ref(false);
 				:key="social.code"
 				:href="social.link"
 				target="_blank"
-				class="flex w-full justify-center border-4 border-solid border-black px-6 py-3 text-lg text-white/60 transition-colors hover:bg-black hover:text-white">{{ social.desc }}</a>
+				class="flex w-full justify-center border-4 border-solid border-white/20 px-6 py-3 text-lg text-white/60 transition-all hover:border-black hover:bg-black hover:font-bold hover:text-white"
+				>{{ social.desc }}</a
+			>
 		</div>
 	</div>
 
 	<div
 		v-if="networkStatus === 'error'"
-		class="flex h-[100vh] flex-col items-center justify-center gap-5">
-		<span class="text-5xl">🤷</span><span class="text-xl text-white/85">Artist not found in database</span>
+		class="flex h-[100vh] flex-col items-center justify-center gap-5"
+	>
+		<span class="text-5xl">🤷</span
+		><span class="text-xl text-white/85">Artist not found in database</span>
 	</div>
 </template>
