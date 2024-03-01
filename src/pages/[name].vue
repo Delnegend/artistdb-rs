@@ -12,9 +12,9 @@ const artistInfo = ref<Artist | undefined>(undefined);
 const avatar = ref<string>("");
 
 if (Array.isArray(router.params.name)) {
-	username.value = router.params.name[0].toLowerCase();
+	username.value = router.params.name[0].toLowerCase().trim();
 } else {
-	username.value = router.params.name.toLowerCase();
+	username.value = router.params.name.toLowerCase().trim();
 }
 
 (async () => {
