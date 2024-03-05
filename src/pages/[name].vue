@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useRoute } from "vue-router";
-import { Artist, get_alias as getAlias } from "~/composables/bridge";
+import { Artist, get_alias as getAlias, is_special as isSpecial } from "~/composables/bridge";
 
 type NetworkStatus = "error" | "loaded" | "loading";
 
@@ -105,7 +105,8 @@ const avatarLoaded = ref(false);
 				:key="social.code"
 				:href="social.link"
 				target="_blank"
-				class="flex w-full justify-center border-4 border-solid border-white/20 px-6 py-3 text-lg text-white/60 transition-all hover:border-black hover:bg-black hover:font-bold hover:text-white"
+				class="both flex w-full justify-center px-6 py-3 text-lg hover:font-bold"
+				:class="isSpecial(social.link ?? '') ? 'special-link' : 'normal-link'"
 				>{{ social.desc }}</a
 			>
 		</div>
@@ -119,3 +120,27 @@ const avatarLoaded = ref(false);
 		><span class="text-xl text-white/85">Artist not found in database</span>
 	</div>
 </template>
+
+<style scoped>
+.both {
+	transition-property: background, color, border, font-weight;
+	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+	transition-duration: 150ms;
+}
+
+.normal-link {
+	@apply text-white/60 hover:bg-black hover:text-white hover:border-black border-4 border-solid border-white/20;
+}
+
+.special-link {
+	@apply text-black/70 shadow-2xl;
+
+	background: linear-gradient(323deg, #ff7777, #e3ff00, #00ff42, #73d9ff, #fd00ff);
+	background-size: 200% 200%;
+	background-position: left center;
+}
+
+.special-link:hover {
+	background-position: right center;
+}
+</style>

@@ -189,6 +189,17 @@ export function get_alias(data) {
     }
 }
 
+/**
+* @param {string} link
+* @returns {boolean}
+*/
+export function is_special(link) {
+    const ptr0 = passStringToWasm0(link, wasm.__wbindgen_export_0, wasm.__wbindgen_export_1);
+    const len0 = WASM_VECTOR_LEN;
+    const ret = wasm.is_special(ptr0, len0);
+    return ret !== 0;
+}
+
 const ArtistFinalization = (typeof FinalizationRegistry === 'undefined')
     ? { register: () => {}, unregister: () => {} }
     : new FinalizationRegistry(ptr => wasm.__wbg_artist_free(ptr >>> 0));
