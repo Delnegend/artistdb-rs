@@ -106,6 +106,19 @@ socials = [
     { code = "patreon", name = "drboumboom32" },
 ]
 
+[estper]
+flag = "🇹🇭"
+avatar = "TIGER_EST@twitter"
+name = "ESTPER"
+alias = ["tiger_est", "whitebeast20ofong"]
+socials = [
+    { code = "x", name = "TIGER_EST" },
+    { code = "fa", name = "estper" },
+    { code = "fb", name = "Estpertigerwork" },
+    { code = "patreon", name = "estperart" },
+    { code = "_", desc = "sellfy", link = "https://estpergallery.sellfy.store/" },
+]
+
 [forge]
 flag = "🇺🇸"
 avatar = "ForgeWalfhammer@twitter"
@@ -128,6 +141,18 @@ socials = [
     { code = "fa", name = "kamyuel" },
     { code = "patreon", name = "kamyuel" },
     { code = "gumroad", name = "kamyuel" },
+]
+
+[kenzofong]
+flag = "🇹🇭"
+avatar = "kenzofong_@twitter"
+name = "KenZoFong"
+alias = ["kenzofong_"]
+socials = [
+    { code = "twitter", name = "KenZoFong_" },
+    { code = "patreon", name = "KenZoFong" },
+    { code = "gumroad", name = "kenzofong" },
+    { code = "telegram", name = "KenZoFong" },
 ]
 
 [kkaeshi]
@@ -163,6 +188,20 @@ socials = [
     { code = "pixiv", name = "kurogon0227" },
     { code = "fa", name = "kuroma" },
     { code = "picarto", name = "kurogon" },
+]
+
+[lemus]
+flag = "🇨🇺"
+avatar = "lemusuniverse@twitter"
+name = "Lemus"
+alias = ["lemusuniverse", "corrupteddonuts", "lemusxnero"]
+socials = [
+    { code = "x", name = "lemusuniverse" },
+    { code = "x", name = "_BadDonut_", desc = "NSFW" },
+    { code = "kofi", name = "lemussoul" },
+    { code = "instagram", name = "lemusuniverse" },
+    { code = "_", desc = "Tiktok", link = "https://tiktok.com/@lemusuniverse" },
+    { code = "patreon", name = "lemusuniverse" },
 ]
 
 [memburu]
@@ -262,6 +301,30 @@ socials = [
     { code = "skeb", name = "vLW4zegrsGtSI6e" },
 ]
 
+[uriex]
+flag = "🇨🇳"
+avatar = "Xherlock1@twitter"
+name = "UrieX"
+alias = ["xherlock1"]
+socials = [
+    { code = "x", name = "Xherlock1" },
+    { code = "patreon", name = "uriex" },
+]
+
+[werethrope]
+flag = "🏴󠁧󠁢󠁳󠁣󠁴󠁿"
+avatar = "Werethrope@twitter"
+name = "Werethrope"
+socials = [
+    { code = "linktree", name = "werethrope" },
+    { code = "x", name = "Werethrope" },
+    { code = "x", name = "WerethropeAD", desc = "AD" },
+    { code = "fa", name = "werethrope" },
+    { code = "bsky", name = "werethrope.bsky.social" },
+    { code = "instagram", name = "werethrope" },
+    { code = "patreon", name = "Werethrope" },
+]
+
 [zex]
 flag = "🇯🇵"
 avatar = "zex_art@twitter"
@@ -275,4 +338,18 @@ socials = [
     { code = "patreon", name = "zethvalgxfurryart" },
     { code = "pixiv", name = "zexart" },
     { code = "fanbox", name = "zexart" },
+]
+
+[wuedti]
+flag = "🇹🇼"
+avatar = "wuedti@twitter"
+name = "卓羽 Zoyu"
+alias = ["zoyu"]
+socials = [
+    { code = "x", name = "wuedti" },
+    { code = "fa", name = "wuedti" },
+    { code = "plurk", name = "Curtisacloud" },
+    { code = "pixiv", name = "10194091" },
+    { code = "kofi", name = "zoyu0236" },
+    { code = "patreon", name = "wuedti" },
 ]
