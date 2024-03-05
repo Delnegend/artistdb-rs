@@ -10,7 +10,7 @@
         "commands": [
             {
                 "name": "💄 Lint",
-                "command": "bun run --bun lint"
+                "command": "time bun run --bun lint"
             },
             {
                 "name": "🧑‍💻 Dev",
