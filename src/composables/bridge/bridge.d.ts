@@ -7,6 +7,11 @@
 */
 export function get_alias(data: Uint8Array): string | undefined;
 /**
+* @param {string} link
+* @returns {boolean}
+*/
+export function is_special(link: string): boolean;
+/**
 */
 export class Artist {
   free(): void;
