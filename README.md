@@ -6,21 +6,11 @@ Database of artists' social media links
 Requires [`wasm-pack`](https://rustwasm.github.io/wasm-pack/installer/) to be installed
 
 Must be compiled first before running/developing the Nuxt app
-
-Everything related contain in the `__rust__` directory
-- `artist-json-builder` | `tool`
-  - `artists.toml` -> multiple `<name>.json` files
-  - `cargo build --release` and place it in the root directory
-  - `-w` to watch file changes, `-i` input toml file, `-o` output directory
-
-- `unavatar` | `wasm`
-  - Faster data processing + I want to try `rust-wasm`
-  - `import { ... } from "~/composables/unavatar"`
-  - `pnpm build:wasm` to (re)build the library
-  - `pnpm dev`, `pnpm generate` won't because I don't want to complexify the Github Action script.
+- `bun run build-tool`: the tool to generate files for separate artists from one .toml file and watch for changes
+- `bun run build-bridge`: the wasm bridge to communicate between the generated files and the Nuxt app
 
 ## Nuxt
-- `pnpm i`, `pnpm dev`, `pnpm generate`, `pnpm lint`
+- `bun run i`, `bun run --bun dev`, `bun run --bun generate`, `bun run --bun lint`
 
 # Motivation
 I repost art from various places to my Telegram channel, with full credits, I need to include
