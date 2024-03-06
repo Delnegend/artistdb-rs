@@ -73,7 +73,18 @@ impl<'a> ArtistsSerde<'a> {
 
             if let Some(socials) = info.socials.as_mut() {
                 socials.iter_mut().for_each(|social| {
-                    if social.code.is_none() {
+                    let special_empty = social.special.is_none();
+                    let code_empty = social.code.is_none();
+                    let code_special = social
+                        .code
+                        .as_ref()
+                        .map_or(false, |code| self.constants.special_socials.contains(code));
+
+                    if special_empty && (code_empty || code_special) {
+                        social.special = Some(true);
+                    }
+
+                    if code_empty {
                         social.desc = social
                             .desc
                             .clone()
@@ -89,17 +100,6 @@ impl<'a> ArtistsSerde<'a> {
                         .link
                         .clone()
                         .or_else(|| self.constants.name_code_to_link(&social.code, &social.name));
-
-                    let special_not_set = social.special.is_none();
-                    let social_not_set = social.code.is_none();
-                    let social_is_special = social
-                        .code
-                        .as_ref()
-                        .map_or(false, |code| self.constants.special_socials.contains(code));
-
-                    if special_not_set && (social_not_set || social_is_special) {
-                        social.special = Some(true);
-                    }
                 });
             }
         });
