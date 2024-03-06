@@ -3,284 +3,155 @@ flag = "🇮🇩"
 avatar = "asumono_krom@twitter"
 name = "Joseph A.K"
 alias = ["choroi_dragon", "asumonokrom", "joseph"]
-socials = [
-    { code = "x", name = "asumono_krom", desc = "JOSEPH A.K" },
-    { code = "x", name = "Choroi_dragon", desc = "ChoroGon! 🔞" },
-    { code = "bsky", name = "asumonokrom.bsky.social" },
-    { code = "instagram", name = "anjing_kampus" },
-]
+socials = [{ code = "x", name = "asumono_krom", desc = "JOSEPH A.K" }, { code = "x", name = "Choroi_dragon", desc = "ChoroGon! 🔞" }, { code = "bsky", name = "asumonokrom.bsky.social" }, { code = "instagram", name = "anjing_kampus" }]
 
 [bakemonoy]
 flag = "🇧🇷"
 avatar = "Bakemonoy@twitter"
 name = "Bakemonoy"
 alias = ["bakeboy"]
-socials = [
-    { code = "x", name = "Bakemonoy" },
-    { code = "fa", name = "bakemonoy" },
-    { code = "itaku", name = "bakemonoy" },
-    { code = "patreon", name = "bakemonoy" },
-]
+socials = [{ code = "x", name = "Bakemonoy" }, { code = "fa", name = "bakemonoy" }, { code = "itaku", name = "bakemonoy" }, { code = "patreon", name = "bakemonoy" }]
 
 [basch]
 flag = "🇦🇷"
 avatar = "BaschIsTaken@twitter"
 name = "Basch"
 alias = ["baschistaken"]
-socials = [
-    { code = "x", name = "BaschIsTaken" },
-    { code = "fa", name = "basch" },
-    { code = "picarto", name = "basch" },
-    { code = "patreon", name = "BaschWasTaken" },
-]
+socials = [{ code = "x", name = "BaschIsTaken" }, { code = "fa", name = "basch" }, { code = "picarto", name = "basch" }, { code = "patreon", name = "BaschWasTaken" }]
 
 [canynekhai]
 flag = "🇹🇼"
 avatar = "CanyneKhai@twitter"
 name = "Canyne Khai"
 alias = ["canyne_khai", "canynekhai_studio"]
-socials = [
-    { code = "_", desc = "potofu.me", link = "https://potofu.me/canynekhai/" },
-    { code = "x", name = "CanyneKhai", desc = "🔞" },
-    { code = "x", name = "Canyne_Khai" },
-    { code = "fb", name = "canynekhai.studio" },
-    { code = "bsky", name = "canynekhai.bsky.social" },
-    { code = "instagram", name = "canynekhai" },
-    { code = "gumroad", name = "canynekhai" },
-    { code = "patreon", name = "CanyneKhai" },
-]
+socials = [{ desc = "potofu.me", link = "https://potofu.me/canynekhai/" }, { code = "x", name = "CanyneKhai", desc = "🔞" }, { code = "x", name = "Canyne_Khai" }, { code = "fb", name = "canynekhai.studio" }, { code = "bsky", name = "canynekhai.bsky.social" }, { code = "instagram", name = "canynekhai" }, { code = "gumroad", name = "canynekhai" }, { code = "patreon", name = "CanyneKhai" }]
 
 [caronte]
 flag = "🇪🇸"
 avatar = "MightyChorizo@twitter"
 name = "Caronte"
 alias = ["caronte_cafe", "mightychorizo", "carontearts", "car0nte"]
-socials = [
-    { code = "_", desc = "caronte.cafe", link = "https://caronte.cafe/" },
-    { code = "x", name = "MightyChorizo" },
-    { code = "fa", name = "car0nte" },
-    { code = "bsky", name = "caronte.cafe" },
-    { code = "telegram", name = "+DICDyfABQOkyNjk0" },
-]
+socials = [{ desc = "caronte.cafe", link = "https://caronte.cafe/" }, { code = "x", name = "MightyChorizo" }, { code = "fa", name = "car0nte" }, { code = "bsky", name = "caronte.cafe" }, { code = "telegram", name = "+DICDyfABQOkyNjk0" }]
 
 [cass_ito]
 avatar = "lewd_bunnie@twitter"
 name = "Mr. Cass"
 alias = ["cassito", "mrcass", "lewd_bunnie"]
-socials = [
-    { code = "x", name = "Lewd_bunnie" },
-    { code = "x", name = "cass_ito", desc = "Alt" },
-    { code = "twitter", name = "cassitochannel18" },
-    { code = "kofi", name = "cass_notgay" },
-]
+socials = [{ code = "x", name = "Lewd_bunnie" }, { code = "x", name = "cass_ito", desc = "Alt" }, { code = "twitter", name = "cassitochannel18" }, { code = "kofi", name = "cass_notgay" }]
 
 [chung]
 flag = "🇰🇷"
 avatar = "chung0u0@twitter"
 name = "Chung"
 alias = ["chung0u0", "chung0_0"]
-socials = [
-    { code = "x", name = "chung0u0" },
-    { code = "x", name = "chung0_0", desc = "Alt" },
-    { code = "fa", name = "chung0u0" },
-    { code = "patreon", name = "chung0u0" },
-    { code = "fanbox", name = "chung0u0" },
-]
+socials = [{ code = "x", name = "chung0u0" }, { code = "x", name = "chung0_0", desc = "Alt" }, { code = "fa", name = "chung0u0" }, { code = "patreon", name = "chung0u0" }, { code = "fanbox", name = "chung0u0" }]
 
 [diffusedlizard]
 avatar = "DiffusedLizard@twitter"
 name = "DiffusedLizard"
-socials = [
-    { code = "x", name = "DiffusedLizard" },
-    { code = "fa", name = "diffusedlizard" },
-    { code = "patreon", name = "DiffusedLizard" },
-    { code = "subscribestar", name = "diffusedlizard" },
-]
+socials = [{ code = "x", name = "DiffusedLizard" }, { code = "fa", name = "diffusedlizard" }, { code = "patreon", name = "DiffusedLizard" }, { code = "subscribestar", name = "diffusedlizard" }]
 
 [drboumboom]
 avatar = "DrBoom32@twitter"
 name = "DrBoumBoom32"
 alias = ["drboom32", "drboumboom32"]
-socials = [
-    { code = "x", name = "DrBoom32" },
-    { code = "patreon", name = "drboumboom32" },
-]
+socials = [{ code = "x", name = "DrBoom32" }, { code = "patreon", name = "drboumboom32" }]
 
 [estper]
 flag = "🇹🇭"
 avatar = "TIGER_EST@twitter"
 name = "ESTPER"
 alias = ["tiger_est", "whitebeast20ofong"]
-socials = [
-    { code = "x", name = "TIGER_EST" },
-    { code = "fa", name = "estper" },
-    { code = "fb", name = "Estpertigerwork" },
-    { code = "patreon", name = "estperart" },
-    { code = "_", desc = "sellfy", link = "https://estpergallery.sellfy.store/" },
-]
+socials = [{ code = "x", name = "TIGER_EST" }, { code = "fa", name = "estper" }, { code = "fb", name = "Estpertigerwork" }, { code = "patreon", name = "estperart" }, { desc = "sellfy", link = "https://estpergallery.sellfy.store/", special = false }]
 
 [forge]
 flag = "🇺🇸"
 avatar = "ForgeWalfhammer@twitter"
 name = "Forge Walfhammer"
 alias = ["zeforge", "forgewalfhammer"]
-socials = [
-    { code = "x", name = "Forgewalfhammer" },
-    { code = "fa", name = "forgewalfhammer" },
-    { code = "itaku", name = "zeforge" },
-    { code = "patreon", name = "zeforge" },
-]
+socials = [{ code = "x", name = "Forgewalfhammer" }, { code = "fa", name = "forgewalfhammer" }, { code = "itaku", name = "zeforge" }, { code = "patreon", name = "zeforge" }]
 
 [kamyuel]
 flag = "🇰🇷"
 avatar = "kamyuelo@twitter"
 name = "Kamyuel"
 alias = ["kamyuelo"]
-socials = [
-    { code = "x", name = "Kamyuelo" },
-    { code = "fa", name = "kamyuel" },
-    { code = "patreon", name = "kamyuel" },
-    { code = "gumroad", name = "kamyuel" },
-]
+socials = [{ code = "x", name = "Kamyuelo" }, { code = "fa", name = "kamyuel" }, { code = "patreon", name = "kamyuel" }, { code = "gumroad", name = "kamyuel" }]
 
 [kenzofong]
 flag = "🇹🇭"
 avatar = "kenzofong_@twitter"
 name = "KenZoFong"
 alias = ["kenzofong_"]
-socials = [
-    { code = "twitter", name = "KenZoFong_" },
-    { code = "patreon", name = "KenZoFong" },
-    { code = "gumroad", name = "kenzofong" },
-    { code = "telegram", name = "KenZoFong" },
-]
+socials = [{ code = "twitter", name = "KenZoFong_" }, { code = "patreon", name = "KenZoFong" }, { code = "gumroad", name = "kenzofong" }, { code = "telegram", name = "KenZoFong" }]
 
 [kkaeshi]
 flag = "🇯🇵"
 avatar = "IMPwitter@twitter"
 name = "Kkaeshi"
 alias = ["impwitter", "spacechanneru", "channeru"]
-socials = [
-    { code = "x", name = "IMPwitter", desc = "🔞" },
-    { code = "x", name = "SPACECHANNERU", desc = "SFW" },
-    { code = "patreon", name = "impwitter" },
-    { code = "fanbox", name = "kkaeshi" },
-]
+socials = [{ code = "x", name = "IMPwitter", desc = "🔞" }, { code = "x", name = "SPACECHANNERU", desc = "SFW" }, { code = "patreon", name = "impwitter" }, { code = "fanbox", name = "kkaeshi" }]
 
 [kultwolf]
 flag = "🇻🇳"
 avatar = "Kult2k@twitter"
 name = "Kult Wolf"
 alias = ["kult2k", "kult"]
-socials = [
-    { code = "x", name = "Kult2k" },
-    { code = "itaku", name = "kultwolf" },
-    { code = "fb", name = "Kult2000" },
-    { code = "instagram", name = "Kult2000" },
-]
+socials = [{ code = "x", name = "Kult2k" }, { code = "itaku", name = "kultwolf" }, { code = "fb", name = "Kult2000" }, { code = "instagram", name = "Kult2000" }]
 
 [kurogon]
 flag = "🇯🇵"
 name = "Kurogon"
 alias = ["kurogon0227", "kuroma"]
-socials = [
-    { code = "twitter", name = "kurogon0227" },
-    { code = "pixiv", name = "kurogon0227" },
-    { code = "fa", name = "kuroma" },
-    { code = "picarto", name = "kurogon" },
-]
+socials = [{ code = "twitter", name = "kurogon0227" }, { code = "pixiv", name = "kurogon0227" }, { code = "fa", name = "kuroma" }, { code = "picarto", name = "kurogon" }]
 
 [lemus]
 flag = "🇨🇺"
 avatar = "lemusuniverse@twitter"
 name = "Lemus"
 alias = ["lemusuniverse", "corrupteddonuts", "lemusxnero"]
-socials = [
-    { code = "x", name = "lemusuniverse" },
-    { code = "x", name = "_BadDonut_", desc = "NSFW" },
-    { code = "kofi", name = "lemussoul" },
-    { code = "instagram", name = "lemusuniverse" },
-    { code = "_", desc = "Tiktok", link = "https://tiktok.com/@lemusuniverse" },
-    { code = "patreon", name = "lemusuniverse" },
-]
+socials = [{ code = "x", name = "lemusuniverse" }, { code = "x", name = "_BadDonut_", desc = "NSFW" }, { code = "kofi", name = "lemussoul" }, { code = "instagram", name = "lemusuniverse" }, { desc = "Tiktok", link = "https://tiktok.com/@lemusuniverse", special = false }, { code = "patreon", name = "lemusuniverse" }]
 
 [memburu]
 avatar = "https://a.furaffinity.net/1643969840/memburu.gif"
 name = "Memburu"
-socials = [
-    { code = "patreon", name = "memburu" },
-    { code = "fa", name = "memburu" },
-]
+socials = [{ code = "patreon", name = "memburu" }, { code = "fa", name = "memburu" }]
 
 [nomifuki]
 flag = "🇯🇵"
 avatar = "nomifuki@twitter"
-socials = [
-    { code = "x", name = "nomifuki" },
-    { code = "x", name = "nomifuki2", desc = "SFW" },
-    { code = "booth", name = "nomifuki" },
-    { code = "patreon", name = "nomifuki" },
-    { code = "fanbox", name = "nomifuki" },
-]
+socials = [{ code = "x", name = "nomifuki" }, { code = "x", name = "nomifuki2", desc = "SFW" }, { code = "booth", name = "nomifuki" }, { code = "patreon", name = "nomifuki" }, { code = "fanbox", name = "nomifuki" }]
 
 [noswift]
 avatar = "No_SWIFT@twitter"
 name = "NoSWIFT"
 alias = ["no_swift"]
-socials = [
-    { code = "_", desc = "noswift.art", link = "https://noswift.art/" },
-    { code = "bsky", name = "noswift.art" },
-    { code = "fa", name = "noswift" },
-    { code = "x", name = "No_SWIFT" },
-    { code = "telegram", name = "+-P7fIIyqCWowNGYx" },
-    { code = "patreon", name = "NoSWIFT" },
-    { code = "kofi", name = "noswift" },
-]
+socials = [{ desc = "noswift.art", link = "https://noswift.art/" }, { code = "bsky", name = "noswift.art" }, { code = "fa", name = "noswift" }, { code = "x", name = "No_SWIFT" }, { code = "telegram", name = "+-P7fIIyqCWowNGYx" }, { code = "patreon", name = "NoSWIFT" }, { code = "kofi", name = "noswift" }]
 
 [nullghost]
 avatar = "NullGhost_Art@twitter"
 name = "Null-Ghost"
 alias = ["null-ghost", "nullghostart"]
-socials = [
-    { code = "twitter", name = "NullGhostArt" },
-    { code = "twitter", name = "NullGhost_Art", desc = "Alt" },
-    { code = "bsky", name = "nullghostart.bsky.social" },
-    { code = "telegram", name = "NullGhostArt" },
-    { code = "patreon", name = "NullGhostArt" },
-    { code = "gumroad", name = "nullghost" },
-]
+socials = [{ code = "twitter", name = "NullGhostArt" }, { code = "twitter", name = "NullGhost_Art", desc = "Alt" }, { code = "bsky", name = "nullghostart.bsky.social" }, { code = "telegram", name = "NullGhostArt" }, { code = "patreon", name = "NullGhostArt" }, { code = "gumroad", name = "nullghost" }]
 
 [raccoon21]
 flag = "🇰🇷"
 name = "Raccoon21"
 alias = ["raccoon21c", "21c-raccoon", "21centuryraccoon"]
-socials = [
-    { code = "_", desc = "Raccoon21C Comic", link = "https://www.21craccooncomic.com/" },
-    { code = "twitter", name = "Raccoon_21C" },
-    { code = "bsky", name = "raccoon21c.bsky.social" },
-    { code = "itaku", name = "21c-Raccoon" },
-    { code = "patreon", name = "21CenturyRaccoon" },
-    { code = "gumroad", name = "21centuryraccoon" },
-]
+socials = [{ desc = "Raccoon21C Comic", link = "https://www.21craccooncomic.com/" }, { code = "twitter", name = "Raccoon_21C" }, { code = "bsky", name = "raccoon21c.bsky.social" }, { code = "itaku", name = "21c-Raccoon" }, { code = "patreon", name = "21CenturyRaccoon" }, { code = "gumroad", name = "21centuryraccoon" }]
 
 [ralefov]
 flag = "🇻🇳"
 avatar = "Ralefov@twitter"
 name = "Ralefov"
 alias = ["rale"]
-socials = [
-    { code = "linktree", name = "ssssnowy" },
-    { code = "x", name = "SSSsnowyartist" },
-]
+socials = [{ code = "linktr.ee", name = "ssssnowy" }, { code = "x", name = "SSSsnowyartist" }]
 
 [seatohao]
 flag = "🇨🇳"
 avatar = "seatohao@twitter"
 alias = ["seato-hao"]
-socials = [
-    { code = "x", name = "SeatoHao" },
-    { code = "bsky", name = "seatohao.bsky.social" },
-]
+socials = [{ code = "x", name = "SeatoHao" }, { code = "bsky", name = "seatohao.bsky.social" }]
 
 [ssssnowy]
 flag = "🇮🇹"
@@ -294,62 +165,31 @@ flag = "🇯🇵"
 avatar = "toktoktokuni@twitter"
 name = "𝐓𝐨𝐤𝐮𝐧𝐢"
 alias = ["toktoktokuni", "tokuni-naihito"]
-socials = [
-    { code = "x", name = "toktoktokuni" },
-    { code = "pixiv", name = "98281842" },
-    { code = "booth", name = "tokuni-naihito" },
-    { code = "skeb", name = "vLW4zegrsGtSI6e" },
-]
+socials = [{ code = "x", name = "toktoktokuni" }, { code = "pixiv", name = "98281842" }, { code = "booth", name = "tokuni-naihito" }, { code = "skeb", name = "vLW4zegrsGtSI6e" }]
 
 [uriex]
 flag = "🇨🇳"
 avatar = "Xherlock1@twitter"
 name = "UrieX"
 alias = ["xherlock1"]
-socials = [
-    { code = "x", name = "Xherlock1" },
-    { code = "patreon", name = "uriex" },
-]
+socials = [{ code = "x", name = "Xherlock1" }, { code = "patreon", name = "uriex" }]
 
 [werethrope]
 flag = "🏴󠁧󠁢󠁳󠁣󠁴󠁿"
 avatar = "Werethrope@twitter"
 name = "Werethrope"
-socials = [
-    { code = "linktree", name = "werethrope" },
-    { code = "x", name = "Werethrope" },
-    { code = "x", name = "WerethropeAD", desc = "AD" },
-    { code = "fa", name = "werethrope" },
-    { code = "bsky", name = "werethrope.bsky.social" },
-    { code = "instagram", name = "werethrope" },
-    { code = "patreon", name = "Werethrope" },
-]
-
-[zex]
-flag = "🇯🇵"
-avatar = "zex_art@twitter"
-name = "Zex"
-alias = ["zethvalg", "zexart"]
-socials = [
-    { code = "_", desc = "lit.link", link = "https://lit.link/zexart/" },
-    { code = "x", name = "zex_art" },
-    { code = "bsky", name = "zexart.bsky.social" },
-    { code = "twitch", name = "daha_saegami" },
-    { code = "patreon", name = "zethvalgxfurryart" },
-    { code = "pixiv", name = "zexart" },
-    { code = "fanbox", name = "zexart" },
-]
+socials = [{ code = "linktr.ee", name = "werethrope" }, { code = "x", name = "Werethrope" }, { code = "x", name = "WerethropeAD", desc = "AD" }, { code = "fa", name = "werethrope" }, { code = "bsky", name = "werethrope.bsky.social" }, { code = "instagram", name = "werethrope" }, { code = "patreon", name = "Werethrope" }]
 
 [wuedti]
 flag = "🇹🇼"
 avatar = "wuedti@twitter"
 name = "卓羽 Zoyu"
 alias = ["zoyu"]
-socials = [
-    { code = "x", name = "wuedti" },
-    { code = "fa", name = "wuedti" },
-    { code = "plurk", name = "Curtisacloud" },
-    { code = "pixiv", name = "10194091" },
-    { code = "kofi", name = "zoyu0236" },
-    { code = "patreon", name = "wuedti" },
-]
+socials = [{ code = "x", name = "wuedti" }, { code = "fa", name = "wuedti" }, { code = "plurk", name = "Curtisacloud" }, { code = "pixiv", name = "10194091" }, { code = "kofi", name = "zoyu0236" }, { code = "patreon", name = "wuedti" }]
+
+[zex]
+flag = "🇯🇵"
+avatar = "zex_art@twitter"
+name = "Zex"
+alias = ["zethvalg", "zexart"]
+socials = [{ desc = "lit.link", link = "https://lit.link/zexart/" }, { code = "x", name = "zex_art" }, { code = "bsky", name = "zexart.bsky.social" }, { code = "twitch", name = "daha_saegami" }, { code = "patreon", name = "zethvalgxfurryart" }, { code = "pixiv", name = "zexart" }, { code = "fanbox", name = "zexart" }]
