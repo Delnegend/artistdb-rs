@@ -223,7 +223,6 @@ impl<'a> ArtistsSerde<'a> {
         artists
     }
 
-        social.code = social.code.to_lowercase();
         if social.code == "_" {
             return;
         }
@@ -234,6 +233,7 @@ impl<'a> ArtistsSerde<'a> {
     /// Various checks and warnings for socials.
     /// Only mutate social.code to lowercase.
     fn social_validator(&self, social: &mut Social, username: &String) {
+        social.code = social.code.as_ref().map(|code| code.to_lowercase());
             // Best case
             (true, Some(_), None) => (),
             (_, None, _) => {
