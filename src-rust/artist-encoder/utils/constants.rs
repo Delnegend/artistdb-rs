@@ -91,7 +91,11 @@ fn unavatar_socials() -> HashMap<String, SupportedSocial> {
         ("soundcloud", "SoundCloud", "soundcloud.com/<USERNAME>"),
         ("substack", "Substack", "<USERNAME>.substack.com/"),
         ("youtube", "YouTube", "youtube.com/@<USERNAME>"),
-        ("subscribestar", "SubscribeStar", "subscribestar.adult/<USERNAME>"),
+        (
+            "subscribestar",
+            "SubscribeStar",
+            "subscribestar.adult/<USERNAME>",
+        ),
         ("facebook", "Facebook", "fb.com/<USERNAME>"),
         ("fb", "Facebook", "fb.com/<USERNAME>"),
     ])
