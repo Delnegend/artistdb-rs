@@ -2,7 +2,7 @@ use std::collections::{BTreeMap, HashMap, HashSet};
 
 use bridge::{Artists, Social};
 use toml_edit::Document;
-use tracing::warn;
+use tracing::{info, warn};
 
 use super::{avatar_parser::avatar_parser, constants::Constants};
 
