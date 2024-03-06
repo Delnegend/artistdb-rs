@@ -156,7 +156,7 @@ impl<'a> ArtistsSerde<'a> {
 
         // Warning missing fields, normalizes
         artists_.into_iter().for_each(|(username, info)| {
-            let mut username = ArtistsSerde::cleanup_string(username);
+            let username = ArtistsSerde::cleanup_string(username);
             let mut info = info;
 
             if artists.get(&username).is_some() {
