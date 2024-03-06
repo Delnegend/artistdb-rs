@@ -7,10 +7,11 @@ use wasm_bindgen::prelude::*;
 #[wasm_bindgen(getter_with_clone)]
 #[derive(Debug, Serialize, Deserialize, Default, Clone, PartialEq, Encode, Decode)]
 pub struct Social {
-    pub code: String,
+    pub code: Option<String>,
     pub name: Option<String>,
     pub desc: Option<String>,
     pub link: Option<String>,
+    pub special: Option<bool>,
 }
 
 pub type Socials = Vec<Social>;
