@@ -89,6 +89,17 @@ impl<'a> ArtistsSerde<'a> {
                         .link
                         .clone()
                         .or_else(|| self.constants.name_code_to_link(&social.code, &social.name));
+
+                    let special_not_set = social.special.is_none();
+                    let social_not_set = social.code.is_none();
+                    let social_is_special = social
+                        .code
+                        .as_ref()
+                        .map_or(false, |code| self.constants.special_socials.contains(code));
+
+                    if special_not_set && (social_not_set || social_is_special) {
+                        social.special = Some(true);
+                    }
                 });
             }
         });
