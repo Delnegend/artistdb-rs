@@ -54,7 +54,7 @@ impl<'a> Pipeline<'a> {
             .unwrap_or_else(|err| error!("{}", err));
 
         artists_serde
-            .pre_bincode_ser()
+            .pre_bitcode_ser()
             .into_iter()
             .for_each(|(username, artist)| {
                 self.write_bincode(&username, artist)

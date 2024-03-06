@@ -60,8 +60,10 @@ impl<'a> ArtistsSerde<'a> {
     }
 
     /// Add avatar to artists, format description, and name_code_to_link before
-    /// bincode::serialize
-    pub fn pre_bincode_ser(&self) -> Artists {
+    /// serializing to bitcode, for example: the descriptions I want to keep
+    /// intact in the toml file, but want to format it into `Social name | Desc`
+    /// in the distributed bitcode.
+    pub fn pre_bitcode_ser(&self) -> Artists {
         let mut artists = self.artists.clone();
 
         artists.iter_mut().for_each(|(username, info)| {
