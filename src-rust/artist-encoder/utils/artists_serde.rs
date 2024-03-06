@@ -188,7 +188,6 @@ impl<'a> ArtistsSerde<'a> {
 
             // Avatar handling
             let avatar = avatar_parser(self.constants, &info.socials, &info.avatar, &username);
-
             if let Some(avatar) = &avatar {
                 self.avatar.insert(username.clone(), avatar.clone());
             }
