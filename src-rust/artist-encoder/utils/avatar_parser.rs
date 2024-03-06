@@ -15,6 +15,9 @@ pub fn avatar_parser(
         .map(|avatar| {
             let http = avatar.starts_with("http://");
             let https = avatar.starts_with("https://");
+            if http {
+                warn!("{}: avatar URL is not secure", log_username)
+            }
             http || https
         })
         .unwrap_or(false);
