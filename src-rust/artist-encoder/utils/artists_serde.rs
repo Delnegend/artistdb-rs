@@ -78,9 +78,6 @@ impl<'a> ArtistsSerde<'a> {
                             .desc
                             .clone()
                             .or_else(|| Some(self.constants.personal_website.clone()));
-                        if social.link.is_none() {
-                            warn!("{}: consider add `link` for personal website", &username);
-                        }
                         return;
                     }
 
