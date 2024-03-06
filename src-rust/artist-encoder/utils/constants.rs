@@ -21,19 +21,34 @@ impl Default for Constants {
 }
 
 impl Constants {
-    pub fn format_description(&self, code: &String, desc: &Option<String>) -> Option<String> {
-        let display = self
-            .extended_socials
-            .get(code)
-            .map_or(code.clone(), |social| social.display.clone());
-
-        match desc {
-            Some(desc) => Some(format!("{} | {}", display, desc)),
-            None => Some(display),
+    pub fn format_description(&self, code: &Option<String>, desc: &Option<String>) -> String {
+        match (code, desc) {
+            (Some(code), Some(desc)) => {
+                let display = self
+                    .extended_socials
+                    .get(code)
+                    .map_or(code.clone(), |social| social.display.clone());
+                format!("{} | {}", display, desc)
+            }
+            (Some(code), None) => self
+                .extended_socials
+                .get(code)
+                .map_or(code.clone(), |social| social.display.clone()),
+            (None, Some(desc)) => desc.clone(),
+            _ => "🤷".to_string(),
         }
     }
 
-    pub fn name_code_to_link(&self, code: &String, username: &Option<String>) -> Option<String> {
+    pub fn name_code_to_link(
+        &self,
+        code: &Option<String>,
+        username: &Option<String>,
+    ) -> Option<String> {
+        let code = match code {
+            Some(code) => code,
+            None => return None,
+        };
+
         let url_template: Option<String> = self
             .extended_socials
             .get(code)
