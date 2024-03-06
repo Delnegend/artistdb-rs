@@ -58,9 +58,9 @@ pub fn avatar_parser(
 
     socials
         .iter()
-        .filter_map(|social| {
-            let social_specific_uname = social.name.as_ref();
-            social_specific_uname.map(|name| (&social.code, name))
+        .filter_map(|social| match (&social.code, &social.name) {
+            (Some(code), Some(name)) => Some((code, name)),
+            _ => None,
         })
         .find_map(|(code, username)| {
             constants.unavatar_socials.get(code).map(|_| {
