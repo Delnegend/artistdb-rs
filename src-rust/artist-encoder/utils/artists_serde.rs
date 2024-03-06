@@ -223,10 +223,6 @@ impl<'a> ArtistsSerde<'a> {
         artists
     }
 
-        if social.code == "_" {
-            return;
-        }
-
         let code_is_supported = self.constants.extended_socials.contains_key(&social.code);
 
         match (code_is_supported, &social.name, &social.link) {
