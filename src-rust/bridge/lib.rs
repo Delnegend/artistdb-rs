@@ -57,10 +57,3 @@ where
 {
     encode(value).map_err(|err| format!("Failed to serialize: {}", err))
 }
-
-#[wasm_bindgen]
-pub fn is_special(link: &str) -> bool {
-    ["linktr.ee", "carrd.co", "potofu.me"]
-        .iter()
-        .any(|special| link.contains(special))
-}
