@@ -31,6 +31,38 @@ Bottom to top
 
 <samp>
 
+## ✅ Small updates
+Improved TOML structure
+```toml
+[loremipsum] # will be lowercased
+name = "Mr. Lorem Ipsum"
+avatar = "loremipsum@google" # or url, starts with `http://` or `https://`, using http will results in a warning.
+flag = "💡" # doesn't matter what it is, will be formatted into `<name> <flag>`
+alias = ["lorem", "ipsum"] # optional, will be lowercased, if one exists as another artist's name, or in another artist's alias, it will be removed
+
+# case: social code is supported
+[loremipsum.social]
+code = "google" # get
+name = "LoremIpsum"
+desc = "How to contact me" # will be formatted as `Google | How to contact me`, if empty then just `Google`
+link = "https://google.com/profile/loremipsum" # will be removed
+
+# case: social code not supported, or too lazy to add support
+[loremipsum.social]
+# code = "???" # warn "social not supported" if specify; omit to infer this as personal website
+name = "LoremIpsum" # I guess it doesn't use for anything
+url = "http://example.com/user/loremipsum" # warn if doesn't specify
+special = false # default: true if this was infer as personal website OR it's linktr.ee, carrd.co,..., it will have special styling on the frontend
+desc = "🤷"
+
+# a cleaner way to write the above, also will be how the file will be formatted
+# socials = [
+#     { code = "google", name = "Lipsum", desc = "Msg me", special = false },
+#     # ...
+# ]
+
+```
+
 ## 🦀 Some tricks I discovered while building the `artist-2-bincode-rs`
 
 > Plan 1: file-based watcher
