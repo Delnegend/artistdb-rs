@@ -223,13 +223,18 @@ impl<'a> ArtistsSerde<'a> {
         artists
     }
 
-        let code_is_supported = self.constants.extended_socials.contains_key(&social.code);
-
         match (code_is_supported, &social.name, &social.link) {
     /// Various checks and warnings for socials.
     /// Only mutate social.code to lowercase.
     fn social_validator(&self, social: &mut Social, username: &String) {
-        social.code = social.code.as_ref().map(|code| code.to_lowercase());
+        let code = match &social.code {
+            Some(code) => code.to_ascii_lowercase(),
+            None => return,
+        };
+
+        social.code = Some(code.clone());
+        let code_supported = self.constants.extended_socials.contains_key(&code);
+
             // Best case
             (true, Some(_), None) => (),
             (_, None, _) => {
