@@ -223,7 +223,6 @@ impl<'a> ArtistsSerde<'a> {
         artists
     }
 
-        match (code_is_supported, &social.name, &social.link) {
     /// Various checks and warnings for socials.
     /// Only mutate social.code to lowercase.
     fn social_validator(&self, social: &mut Social, username: &String) {
@@ -235,21 +234,36 @@ impl<'a> ArtistsSerde<'a> {
         social.code = Some(code.clone());
         let code_supported = self.constants.extended_socials.contains_key(&code);
 
+        match (
+            code_supported,
+            &social.code,
+            &social.name,
+            &social.link,
+            &social.desc,
+        ) {
             // Best case
-            (true, Some(_), None) => (),
-            (_, None, _) => {
-                warn!("{}: missing `name` for {}", &username, &social.code);
+            (true, Some(_), Some(_), _, _) => social.link = None,
+
+            // Code not present, enough information -> asume personal website
+            // -> automatically remove code and name and continue with life
+            (_, None, _, Some(_), Some(_)) => (social.code, social.name) = (None, None),
+            // Same as above but missing link or desc
+            (_, None, _, None, _) => {
+                warn!("{}: missing `link` for personal website", &username);
             }
-            // Link is redundant
-            (true, _, Some(_)) => {
-                warn!("{}: consider remove `link` for {}", &username, &social.code);
+            (_, None, _, _, None) => {
+                warn!("{}: missing `desc` for personal website", &username);
             }
-            // Social is not supported
-            (false, _, _) => {
-                warn!(
-                    "{}: consider add support for social {}",
-                    &username, &social.code
-                );
+
+            // Code not supported, but not provide enough information, warn to
+            // add support for social
+            (false, Some(code), _, _, _) => {
+                info!("{}: consider add support for social {}", &username, &code);
+            }
+
+            // Code supported but missing name to generate link
+            (true, _, None, _, _) => {
+                warn!("{}: missing `name` for {}", &username, &code);
             }
         };
     }
