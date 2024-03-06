@@ -156,7 +156,7 @@ impl<'a> ArtistsSerde<'a> {
 
             if let Some(socials) = info.socials.as_mut() {
                 socials.iter_mut().for_each(|social| {
-                    self.handle_social(social, &mut username);
+                    self.social_validator(social, &username);
                 });
             } else {
                 warn!("{}: there is no socials", &username);
@@ -210,7 +210,6 @@ impl<'a> ArtistsSerde<'a> {
     }
 
     /// Warning if `name` is missing, `link` is redundant, or `code` is not supported
-    fn handle_social(&self, social: &mut Social, username: &mut String) {
         social.code = social.code.to_lowercase();
 
         if social.code == "_" {
@@ -220,6 +219,7 @@ impl<'a> ArtistsSerde<'a> {
         let code_is_supported = self.constants.extended_socials.contains_key(&social.code);
 
         match (code_is_supported, &social.name, &social.link) {
+    fn social_validator(&self, social: &mut Social, username: &String) {
             // Best case
             (true, Some(_), None) => (),
             (_, None, _) => {
