@@ -50,7 +50,7 @@ watch -> modified -> hash(new) ->  hash changed -> (RPF) -> write -> update prev
 ```
 
 sure but what about the formatter of `Even Better TOML`?
-- EBT allow breaking arrays into multiple lines if it's too long
+- EBT allows breaking arrays into multiple lines if it's too long
 - `toml_edit` won't
 
 > Plan 3: content-based watcher
@@ -62,7 +62,7 @@ watch -> modified -> bincode(new) ->  bincode changed -> (RPF) -> write -> updat
 
 this way I can ignore the format, and only focus on the content, but there's a bug and an improvement I can make
 - instead of storing the previous `bincode` & comparing 2 `bincode`, pre-`murmurhash` them first
-- there's a post-processing step after parsing the `.toml`, what about the content DOES change pre-process, but stays the same post-process?
+- there's a post-processing step after parsing the `.toml`, what if the content DOES change pre-process, but stays the same post-process?
 
 > Plan 4: hashed-content-based + pre-post comparison
 
