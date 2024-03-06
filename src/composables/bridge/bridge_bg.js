@@ -189,17 +189,6 @@ export function get_alias(data) {
     }
 }
 
-/**
-* @param {string} link
-* @returns {boolean}
-*/
-export function is_special(link) {
-    const ptr0 = passStringToWasm0(link, wasm.__wbindgen_export_0, wasm.__wbindgen_export_1);
-    const len0 = WASM_VECTOR_LEN;
-    const ret = wasm.is_special(ptr0, len0);
-    return ret !== 0;
-}
-
 const ArtistFinalization = (typeof FinalizationRegistry === 'undefined')
     ? { register: () => {}, unregister: () => {} }
     : new FinalizationRegistry(ptr => wasm.__wbg_artist_free(ptr >>> 0));
@@ -429,31 +418,31 @@ export class Social {
         wasm.__wbg_social_free(ptr);
     }
     /**
-    * @returns {string}
+    * @returns {string | undefined}
     */
     get code() {
-        let deferred1_0;
-        let deferred1_1;
         try {
             const retptr = wasm.__wbindgen_add_to_stack_pointer(-16);
-            wasm.__wbg_get_social_code(retptr, this.__wbg_ptr);
+            wasm.__wbg_get_artist_flag(retptr, this.__wbg_ptr);
             var r0 = getInt32Memory0()[retptr / 4 + 0];
             var r1 = getInt32Memory0()[retptr / 4 + 1];
-            deferred1_0 = r0;
-            deferred1_1 = r1;
-            return getStringFromWasm0(r0, r1);
+            let v1;
+            if (r0 !== 0) {
+                v1 = getStringFromWasm0(r0, r1).slice();
+                wasm.__wbindgen_export_2(r0, r1 * 1, 1);
+            }
+            return v1;
         } finally {
             wasm.__wbindgen_add_to_stack_pointer(16);
-            wasm.__wbindgen_export_2(deferred1_0, deferred1_1, 1);
         }
     }
     /**
-    * @param {string} arg0
+    * @param {string | undefined} [arg0]
     */
     set code(arg0) {
-        const ptr0 = passStringToWasm0(arg0, wasm.__wbindgen_export_0, wasm.__wbindgen_export_1);
-        const len0 = WASM_VECTOR_LEN;
-        wasm.__wbg_set_social_code(this.__wbg_ptr, ptr0, len0);
+        var ptr0 = isLikeNone(arg0) ? 0 : passStringToWasm0(arg0, wasm.__wbindgen_export_0, wasm.__wbindgen_export_1);
+        var len0 = WASM_VECTOR_LEN;
+        wasm.__wbg_set_artist_flag(this.__wbg_ptr, ptr0, len0);
     }
     /**
     * @returns {string | undefined}
@@ -535,6 +524,19 @@ export class Social {
         var ptr0 = isLikeNone(arg0) ? 0 : passStringToWasm0(arg0, wasm.__wbindgen_export_0, wasm.__wbindgen_export_1);
         var len0 = WASM_VECTOR_LEN;
         wasm.__wbg_set_social_link(this.__wbg_ptr, ptr0, len0);
+    }
+    /**
+    * @returns {boolean | undefined}
+    */
+    get special() {
+        const ret = wasm.__wbg_get_social_special(this.__wbg_ptr);
+        return ret === 0xFFFFFF ? undefined : ret !== 0;
+    }
+    /**
+    * @param {boolean | undefined} [arg0]
+    */
+    set special(arg0) {
+        wasm.__wbg_set_social_special(this.__wbg_ptr, isLikeNone(arg0) ? 0xFFFFFF : arg0 ? 1 : 0);
     }
 }
 
