@@ -223,9 +223,7 @@ impl<'a> ArtistsSerde<'a> {
         artists
     }
 
-    /// Warning if `name` is missing, `link` is redundant, or `code` is not supported
         social.code = social.code.to_lowercase();
-
         if social.code == "_" {
             return;
         }
@@ -233,6 +231,8 @@ impl<'a> ArtistsSerde<'a> {
         let code_is_supported = self.constants.extended_socials.contains_key(&social.code);
 
         match (code_is_supported, &social.name, &social.link) {
+    /// Various checks and warnings for socials.
+    /// Only mutate social.code to lowercase.
     fn social_validator(&self, social: &mut Social, username: &String) {
             // Best case
             (true, Some(_), None) => (),
