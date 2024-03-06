@@ -91,7 +91,7 @@ mod test {
             avatar_parser(
                 &constants,
                 &Some(vec![Social {
-                    code: "reddit".to_string(),
+                    code: Some("reddit".to_string()),
                     name: Some("foo".to_string()),
                     ..Default::default()
                 }]),
@@ -106,7 +106,7 @@ mod test {
             avatar_parser(
                 &constants,
                 &Some(vec![Social {
-                    code: "reddit".to_string(),
+                    code: Some("reddit".to_string()),
                     name: Some("foo".to_string()),
                     ..Default::default()
                 }]),
@@ -127,7 +127,7 @@ mod test {
             avatar_parser(
                 &constants,
                 &Some(vec![Social {
-                    code: "example".to_string(),
+                    code: Some("example".to_string()),
                     name: Some("foo".to_string()),
                     ..Default::default()
                 }]),
@@ -144,7 +144,7 @@ mod test {
             avatar_parser(
                 &constants,
                 &Some(vec![Social {
-                    code: "example".to_string(),
+                    code: Some("example".to_string()),
                     name: Some("foo".to_string()),
                     ..Default::default()
                 }]),
@@ -159,7 +159,7 @@ mod test {
             avatar_parser(
                 &constants,
                 &Some(vec![Social {
-                    code: "reddit".to_string(),
+                    code: Some("reddit".to_string()),
                     name: None,
                     ..Default::default()
                 }]),
@@ -196,7 +196,7 @@ mod test {
             avatar_parser(
                 &constants,
                 &Some(vec![Social {
-                    code: "reddit".to_string(),
+                    code: Some("reddit".to_string()),
                     name: Some("foo".to_string()),
                     ..Default::default()
                 }]),
