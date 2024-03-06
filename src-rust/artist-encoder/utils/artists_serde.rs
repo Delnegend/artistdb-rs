@@ -73,7 +73,7 @@ impl<'a> ArtistsSerde<'a> {
 
             if let Some(socials) = info.socials.as_mut() {
                 socials.iter_mut().for_each(|social| {
-                    if social.code == *"_" {
+                    if social.code.is_none() {
                         social.desc = social
                             .desc
                             .clone()
