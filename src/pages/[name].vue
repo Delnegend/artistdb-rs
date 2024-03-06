@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useRoute } from "vue-router";
-import { Artist, get_alias as getAlias, is_special as isSpecial } from "~/composables/bridge";
+import { Artist, get_alias as getAlias } from "~/composables/bridge";
 
 type NetworkStatus = "error" | "loaded" | "loading";
 
@@ -106,7 +106,7 @@ const avatarLoaded = ref(false);
 				:href="social.link"
 				target="_blank"
 				class="both flex w-full justify-center px-6 py-3 text-lg hover:font-bold"
-				:class="isSpecial(social.link ?? '') ? 'special-link' : 'normal-link'"
+				:class="(social.special === true) ? 'special-link' : 'normal-link'"
 				>{{ social.desc }}</a
 			>
 		</div>
