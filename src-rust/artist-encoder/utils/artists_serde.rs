@@ -159,12 +159,14 @@ impl<'a> ArtistsSerde<'a> {
             let username = ArtistsSerde::cleanup_string(username);
             let mut info = info;
 
+            // Duplication
             if artists.get(&username).is_some() {
                 warn!("found duplicated: {}", &username);
                 artists.insert(format!("__duplicated__{}", &username), info);
                 return;
             }
 
+            // Socials cleanup
             if let Some(socials) = info.socials.as_mut() {
                 socials.iter_mut().for_each(|social| {
                     self.social_validator(social, &username);
@@ -173,6 +175,7 @@ impl<'a> ArtistsSerde<'a> {
                 warn!("{}: there is no socials", &username);
             }
 
+            // Alias cleanup
             if let Some(alias) = info.alias.as_mut() {
                 alias.iter_mut().for_each(|alias| {
                     *alias = ArtistsSerde::cleanup_string(alias.clone());
@@ -183,6 +186,7 @@ impl<'a> ArtistsSerde<'a> {
                 }
             }
 
+            // Avatar handling
             let avatar = avatar_parser(self.constants, &info.socials, &info.avatar, &username);
 
             if let Some(avatar) = &avatar {
