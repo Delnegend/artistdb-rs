@@ -1,9 +1,10 @@
-use std::collections::HashMap;
+use std::collections::{HashMap, HashSet};
 
 #[derive(Debug, Clone)]
 pub struct Constants {
     pub unavatar_socials: HashMap<String, SupportedSocial>,
     pub extended_socials: HashMap<String, SupportedSocial>,
+    pub special_socials: HashSet<String>,
     pub unavatar_size: u16,
 }
 
@@ -12,6 +13,8 @@ impl Default for Constants {
         Self {
             unavatar_socials: unavatar_socials(),
             extended_socials: extended_socials(),
+            special_socials: special_socials(),
+
             unavatar_size: 400,
         }
     }
@@ -141,4 +144,11 @@ fn extended_socials() -> HashMap<String, SupportedSocial> {
     .collect::<HashMap<String, SupportedSocial>>();
 
     unavatar_socials().into_iter().chain(extended).collect()
+}
+
+fn special_socials() -> HashSet<String> {
+    vec!["potofu.me", "carrd.co", "linktr.ee"]
+        .into_iter()
+        .map(|s| s.to_string())
+        .collect()
 }
