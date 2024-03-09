@@ -88,7 +88,7 @@ impl<'a> ArtistsSerde<'a> {
                         social.desc = social
                             .desc
                             .clone()
-                            .or_else(|| Some("Personal website".to_string()));
+                            .or_else(|| Some(self.constants.default_description.clone()));
                         return;
                     }
 

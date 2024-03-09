@@ -6,6 +6,8 @@ pub struct Constants {
     pub extended_socials: HashMap<String, SupportedSocial>,
     pub special_socials: HashSet<String>,
     pub unavatar_size: u16,
+
+    pub default_description: String,
 }
 
 impl Default for Constants {
@@ -16,6 +18,7 @@ impl Default for Constants {
             special_socials: special_socials(),
 
             unavatar_size: 400,
+            default_description: "No description provided".to_string(),
         }
     }
 }
