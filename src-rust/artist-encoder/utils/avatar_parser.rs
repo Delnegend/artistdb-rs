@@ -3,6 +3,13 @@ use tracing::warn;
 
 use crate::utils::constants::Constants;
 
+fn unavatar(code: &str, username: &str, size: u16, fallback: &str) -> String {
+    format!(
+        "https://unavatar.io/{}/{}?size={}&fallback={}",
+        code, username, size, fallback
+    )
+}
+
 /// Given a list of Socials, return the avatar URL of the first supported social.
 pub fn avatar_parser(
     constants: &Constants,
@@ -35,9 +42,15 @@ pub fn avatar_parser(
         match avatar.split('@').collect::<Vec<&str>>().as_slice() {
             [target_uname, social_code] => match constants.unavatar_socials.get(*social_code) {
                 Some(_) => {
-                    return Some(format!(
-                        "https://unavatar.io/{}/{}?size={}",
-                        &social_code, &target_uname, &constants.unavatar_size
+                    let code = match social_code {
+                        &"x" => "twitter".to_string(),
+                        _ => social_code.to_string(),
+                    };
+                    return Some(unavatar(
+                        &code,
+                        target_uname,
+                        constants.unavatar_size,
+                        &constants.fallback_avatar,
                     ));
                 }
                 None => warn!(
@@ -63,10 +76,12 @@ pub fn avatar_parser(
             _ => None,
         })
         .find_map(|(code, username)| {
-            constants.unavatar_socials.get(code).map(|_| {
-                format!(
-                    "https://unavatar.io/{}/{}?size={}",
-                    code, username, constants.unavatar_size
+            constants.unavatar_socials.get(&code).map(|_| {
+                unavatar(
+                    &code,
+                    username,
+                    constants.unavatar_size,
+                    &constants.fallback_avatar,
                 )
             })
         })
@@ -91,14 +106,19 @@ mod test {
             avatar_parser(
                 &constants,
                 &Some(vec![Social {
-                    code: Some("reddit".to_string()),
+                    code: Some("x".to_string()),
                     name: Some("foo".to_string()),
                     ..Default::default()
                 }]),
                 &None,
                 &empty_string
             ),
-            Some("https://unavatar.io/reddit/foo?size=400".to_string())
+            Some(unavatar(
+                "twitter",
+                "foo",
+                400,
+                "https://artistdb.delnegend.com/avatar.svg"
+            ))
         );
 
         // same as above, but override everything
@@ -177,7 +197,12 @@ mod test {
                 &Some("foo@reddit".to_string()),
                 &empty_string
             ),
-            Some("https://unavatar.io/reddit/foo?size=400".to_string())
+            Some(unavatar(
+                "reddit",
+                "foo",
+                400,
+                "https://artistdb.delnegend.com/avatar.svg"
+            ))
         );
 
         // ... but when not found
@@ -203,7 +228,12 @@ mod test {
                 &Some("foo@example".to_string()),
                 &empty_string
             ),
-            Some("https://unavatar.io/reddit/foo?size=400".to_string())
+            Some(unavatar(
+                "reddit",
+                "foo",
+                400,
+                "https://artistdb.delnegend.com/avatar.svg"
+            ))
         );
     }
 }
