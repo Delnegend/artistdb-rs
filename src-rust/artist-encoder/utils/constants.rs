@@ -152,6 +152,7 @@ fn extended_socials() -> HashMap<String, SupportedSocial> {
         ("picarto", "Picarto", "www.picarto.tv/<USERNAME>"),
         ("gumroad", "Gumroad", "<USERNAME>.gumroad.com"),
         ("twitch", "Twitch", "www.twitch.tv/<USERNAME>"),
+        ("lit.link", "Lit.link", "lit.link/<USERNAME>"),
     ])
     .into_iter()
     .map(|(code, display, url)| {
@@ -173,7 +174,7 @@ fn extended_socials() -> HashMap<String, SupportedSocial> {
 }
 
 fn special_socials() -> HashSet<String> {
-    vec!["potofu.me", "carrd.co", "linktr.ee"]
+    vec!["potofu.me", "carrd.co", "linktr.ee", "lit.link"]
         .into_iter()
         .map(|s| s.to_string())
         .collect()
