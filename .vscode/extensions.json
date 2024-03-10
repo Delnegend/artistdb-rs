@@ -3,7 +3,6 @@
         "tamasfe.even-better-toml",
         "rust-lang.rust-analyzer",
         "bradlc.vscode-tailwindcss",
-        "vue.vscode-typescript-vue-plugin",
         "vue.volar"
     ]
 }
