@@ -28,13 +28,18 @@ pub fn avatar_parser(
             http || https
         })
         .unwrap_or(false);
+    let avatar_is_root = avatar
+        .as_ref()
+        .map(|avatar| avatar.starts_with('/'))
+        .unwrap_or(false);
 
-    let avatar = match (avatar_is_url, avatar) {
-        (true, Some(avatar)) => {
+    let avatar = match (avatar_is_root, avatar_is_url, avatar) {
+        (true, _, Some(avatar)) => return Some(format!("/avatars{}", &avatar)),
+        (false, true, Some(avatar)) => {
             return Some(avatar.clone());
         }
-        (false, Some(avatar)) => Some(avatar),
-        (_, None) => None,
+        (false, false, Some(avatar)) => Some(avatar.clone()),
+        (_, _, None) => None,
     };
 
     // Manually specify `username@social`
@@ -76,6 +81,11 @@ pub fn avatar_parser(
             _ => None,
         })
         .find_map(|(code, username)| {
+            let code = if code == "x" {
+                "twitter".to_string()
+            } else {
+                code.to_string()
+            };
             constants.unavatar_socials.get(&code).map(|_| {
                 unavatar(
                     &code,
