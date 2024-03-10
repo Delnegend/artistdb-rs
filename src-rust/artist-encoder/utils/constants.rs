@@ -8,6 +8,7 @@ pub struct Constants {
     pub unavatar_size: u16,
 
     pub default_description: String,
+    pub fallback_avatar: String,
 }
 
 impl Default for Constants {
@@ -19,6 +20,7 @@ impl Default for Constants {
 
             unavatar_size: 400,
             default_description: "No description provided".to_string(),
+            fallback_avatar: "https://artistdb.delnegend.com/avatar.svg".to_string(),
         }
     }
 }
