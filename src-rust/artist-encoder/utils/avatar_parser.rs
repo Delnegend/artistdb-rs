@@ -54,7 +54,7 @@ pub fn avatar_parser(
                     ));
                 }
                 None => warn!(
-                    "{}: unavatar not support for {}",
+                    "{}: unavatar doesn't support {}",
                     log_username, &social_code
                 ),
             },
