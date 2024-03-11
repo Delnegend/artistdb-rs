@@ -158,6 +158,15 @@ socials = [
     { code = "kofi", name = "cass_notgay" },
 ]
 
+[chiboco]
+name = "Chiboco"
+alias = ["chiboco3"]
+socials = [
+    { code = "x", name = "Chiboco3" },
+    { desc = "Payhip", link = "https://payhip.com/anhru" },
+    { code = "patreon", name = "Chicobo" },
+]
+
 [chung]
 flag = "🇰🇷"
 name = "Chung"
@@ -318,6 +327,11 @@ socials = [
     { desc = "Discord", link = "https://discord.gg/C4fQeAPT9E", special = false },
 ]
 
+[fungiteh]
+flag = "🇵🇸"
+name = "FungiTeh"
+socials = [{ code = "x", name = "FungiTeh" }]
+
 [fwgrandall]
 flag = "🇵🇭"
 name = "FWgrandall"
@@ -372,6 +386,15 @@ socials = [
 [headsetails]
 name = "HeadsETails"
 socials = [{ code = "x", name = "HeadsETails" }]
+
+[hunkuma_th]
+flag = "🇹🇭"
+name = "Hunkuma_TH"
+alias = ["hunkumath"]
+socials = [
+    { code = "x", name = "Hunkuma_TH" },
+    { code = "facebook", name = "HunkumaTH" },
+]
 
 [jiushi_is_90]
 socials = [{ code = "x", name = "Jiushi_is_90" }]
@@ -693,6 +716,15 @@ socials = [{ code = "x", name = "Ralefov" }, { code = "fa", name = "ralefov" }]
 [rashuubanana]
 name = "RashuuBanana"
 socials = [{ code = "x", name = "RashuuBanana" }]
+
+[risebernold]
+name = "RiseBernold"
+alias = ["riseson"]
+socials = [
+    { code = "x", name = "RiseBernold" },
+    { code = "fa", name = "riseson" },
+    { code = "kofi", name = "riseson" },
+]
 
 [ritsukaxan]
 alias = ["ritsuladies"]
