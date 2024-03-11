@@ -1,3 +1,11 @@
+[1kogito1]
+name = "Kogito"
+alias = ["kogito"]
+socials = [
+    { code = "x", name = "1kogito1" },
+    { code = "telegram", name = "+flV8sy4M0JgyYzUy" },
+]
+
 [adios]
 name = "Adios"
 alias = ["adiosart"]
@@ -36,6 +44,13 @@ socials = [
     { code = "kofi", name = "arkkus" },
 ]
 
+[art_roki]
+alias = ["rookierocky"]
+socials = [
+    { code = "x", name = "art_roki" },
+    { code = "bsky", name = "rookierocky.bsky.social" },
+]
+
 [arun_six]
 flag = "🇨🇳"
 name = "ARUN"
@@ -53,6 +68,14 @@ socials = [
     { code = "x", name = "Choroi_dragon", desc = "ChoroGon! 🔞" },
     { code = "bsky", name = "asumonokrom.bsky.social" },
     { code = "instagram", name = "anjing_kampus" },
+]
+
+[axxon]
+name = "Axxon"
+alias = ["dendryte_axxon"]
+socials = [
+    { code = "x", name = "dendryte_axxon", desc = "🔞" },
+    { code = "x", name = "axxon_dendryte", desc = "SFW" },
 ]
 
 [bakemonoy]
@@ -87,7 +110,7 @@ socials = [
 name = "BearlyFeline"
 alias = ["thattopmilk"]
 socials = [
-    { code = "x", name = "ThatTopMilk", desc = "NSFW" },
+    { code = "x", name = "ThatTopMilk", desc = "🔞" },
     { code = "x", name = "BearlyFeline", desc = "SFW" },
     { code = "bsky", name = "bearlyfeline.bsky.social" },
     { code = "kofi", name = "bearlyfeline" },
@@ -235,6 +258,9 @@ socials = [
     { code = "patreon", name = "dollymolly" },
 ]
 
+[dottodottodott0]
+socials = [{ code = "x", name = "dottodottodott0" }]
+
 [draftgon]
 flag = "🇨🇴"
 name = "Draftgon"
@@ -281,6 +307,16 @@ name = "EyepatchedFloof"
 socials = [
     { code = "x", name = "EyepatchedFloof" },
     { code = "bsky", name = "eyepatchedfloof" },
+]
+
+[felstorm]
+flag = "🇺🇸"
+name = "Felstorm"
+alias = ["feniks_felstorm"]
+socials = [
+    { code = "x", name = "Feniks_Felstorm" },
+    { code = "fa", name = "feniksfelstorm" },
+    { code = "twitch", name = "feniksfelstorm" },
 ]
 
 [fenwick]
@@ -337,6 +373,16 @@ flag = "🇵🇭"
 name = "FWgrandall"
 socials = [{ code = "linktr.ee", name = "fwgrandall" }]
 
+[gato]
+name = "GATO"
+alias = ["gatomatero", "lewdocat", "lewdo_cat", "gatoporn"]
+socials = [
+    { code = "x", name = "LewdoCat", desc = "🔞" },
+    { code = "x", name = "Gato_Matero", desc = "SFW" },
+    { code = "telegram", name = "GatoPorn" },
+    { code = "kofi", name = "gatomatero" },
+]
+
 [ggan_ggandi]
 flag = "🇰🇷"
 name = "GGAN-GGANDI"
@@ -387,6 +433,15 @@ socials = [
 name = "HeadsETails"
 socials = [{ code = "x", name = "HeadsETails" }]
 
+[heart_beats_2]
+name = "shinyheartbeats"
+alias = ["shinyheartbeats"]
+socials = [
+    { code = "x", name = "heart_beats_2" },
+    { code = "fa", name = "heartbeats2" },
+    { code = "patreon", name = "shinyheartbeats" },
+]
+
 [hunkuma_th]
 flag = "🇹🇭"
 name = "Hunkuma_TH"
@@ -396,8 +451,27 @@ socials = [
     { code = "facebook", name = "HunkumaTH" },
 ]
 
+[ictonica]
+flag = "🇹🇭"
+name = "Ictonica"
+alias = ["ictonicawip"]
+socials = [
+    { code = "x", name = "ictonica" },
+    { code = "x", name = "Ictonicawip", desc = "WIP" },
+    { code = "kofi", name = "ictonica" },
+    { code = "patreon", name = "ictonica" },
+    { code = "gumroad", name = "ictonica" },
+    { desc = "SubscribeStar", link = "http://subscribestar.adult/ictonica", special = false },
+]
+
 [jiushi_is_90]
 socials = [{ code = "x", name = "Jiushi_is_90" }]
+
+[juna_tah]
+socials = [
+    { code = "x", name = "juna_tah" },
+    { code = "kofi", name = "junatah" },
+]
 
 [kamyuel]
 flag = "🇰🇷"
@@ -487,7 +561,7 @@ name = "Lemus"
 alias = ["lemusuniverse", "corrupteddonuts", "lemusxnero"]
 socials = [
     { code = "x", name = "lemusuniverse" },
-    { code = "x", name = "_BadDonut_", desc = "NSFW" },
+    { code = "x", name = "_BadDonut_", desc = "🔞" },
     { code = "kofi", name = "lemussoul" },
     { code = "instagram", name = "lemusuniverse" },
     { desc = "Tiktok", link = "https://tiktok.com/@lemusuniverse", special = false },
@@ -707,6 +781,13 @@ socials = [
     { code = "gumroad", name = "21centuryraccoon" },
 ]
 
+[raki0v0]
+name = "Raki0v0"
+socials = [
+    { code = "x", name = "Raki0v0" },
+    { name = "https://weibo.com/raki0v0", desc = "Weibo", special = false },
+]
+
 [ralefov]
 flag = "🇻🇳"
 name = "Ralefov"
@@ -763,6 +844,16 @@ socials = [
     { code = "pixiv", name = "86224131" },
 ]
 
+[scarlena4]
+flag = "🇺🇦"
+name = "Scarlena"
+alias = ["scarlena"]
+socials = [
+    { code = "linktr.ee", name = "scarlena3d" },
+    { code = "x", name = "Scarlena4" },
+    { code = "patreon", name = "scarlena4" },
+]
+
 [seatohao]
 flag = "🇨🇳"
 alias = ["seato-hao"]
@@ -788,14 +879,45 @@ socials = [
     { code = "patreon", name = "shockjaws" },
 ]
 
+[sigmaxart]
+flag = "🇺🇸"
+name = "Sigmax"
+socials = [
+    { code = "x", name = "SigmaxArt", desc = "🔞" },
+    { code = "x", name = "SigmaDoodles", desc = "SFW" },
+    { code = "fa", name = "sigmax" },
+    { code = "patreon", name = "SigmaX" },
+]
+
 [silver_foxxo]
 flag = "🇵🇭"
 name = "Shiro"
 socials = [{ code = "x", name = "Silver_foxxo" }]
 
+[simloveyou]
+socials = [
+    { code = "linktr.ee", name = "simloveyou" },
+    { code = "x", name = "simloveyou" },
+    { code = "x", name = "simshoong", desc = "Game" },
+]
+
 [skomnk]
 name = "skomnk"
 socials = [{ code = "x", name = "skomnk" }]
+
+[sollyz]
+flag = "🇹🇭"
+name = "Sollyz Sundyz"
+alias = ["sollyzsundyz"]
+socials = [
+    { desc = "sollyz.store", link = "https://sollyz.store" },
+    { code = "x", name = "SollyzSundyz" },
+    { code = "fa", name = "sollyzsundyz" },
+    { code = "patreon", name = "sollyz_sundyz", desc = "Furry" },
+    { code = "patreon", name = "sollyz_haruz", desc = "Female" },
+    { code = "patreon", name = "sollyz_gallery", desc = "Fanart" },
+    { code = "gumroad", name = "sollynaka" },
+]
 
 [spamzillaa]
 socials = [{ code = "x", name = "spamzillaa" }]
@@ -808,6 +930,14 @@ socials = [
     { code = "linktr.ee", name = "ssssnowy" },
     { code = "x", name = "SSSsnowyartist" },
     { code = "patreon", name = "Snowby" },
+]
+
+[sweatysabel]
+name = "SweatySabel"
+alias = ["sabel1"]
+socials = [
+    { code = "linktr.ee", name = "sabel1" },
+    { code = "x", name = "sweatysabel" },
 ]
 
 [tigerlukke]
@@ -903,6 +1033,11 @@ socials = [
     { code = "deviantart", name = "utakoloid" },
     { code = "youtube", name = "Utakoloid" },
 ]
+
+[vawdkot]
+name = "VodKot"
+alias = ["vodcat"]
+socials = [{ code = "x", name = "VawdKot" }, { code = "fa", name = "vodcat" }]
 
 [vexedlupine]
 flag = "🇺🇸"
