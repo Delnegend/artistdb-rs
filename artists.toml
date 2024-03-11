@@ -831,6 +831,18 @@ socials = [
     { code = "x", name = "tritscrits" },
 ]
 
+[tupid]
+flag = "🇲🇾"
+name = "Tupid"
+alias = ["tupidwithouts"]
+socials = [
+    { code = "x", name = "TupidwithoutS", desc = "🔞" },
+    { code = "x", name = "Doodoofell", desc = "SFW" },
+    { code = "bsky", name = "tupidwithouts.bsky.social" },
+    { code = "gumroad", name = "tupidwithouts" },
+    { code = "patreon", name = "tupidwithouts" },
+]
+
 [uiokv]
 avatar = "/uiokv.jpg"
 name = "Uiokv"
