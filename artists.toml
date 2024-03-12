@@ -130,6 +130,17 @@ socials = [
     { code = "kofi", name = "bearlyfeline" },
 ]
 
+[bearry19_]
+name = "BEARRY19"
+socials = [
+    { code = "linktr.ee", name = "bearry19" },
+    { code = "x", name = "bearry19_" },
+    { code = "itaku", name = "bearry19" },
+    { code = "fa", name = "bearry19" },
+    { code = "patreon", name = "bearry19" },
+    { code = "gumroad", name = "bearry19" },
+]
+
 [blazekemono]
 name = "BlazeKemono"
 socials = [
@@ -163,7 +174,7 @@ flag = "🇹🇼"
 name = "Canyne Khai"
 alias = ["canyne_khai", "canynekhai_studio"]
 socials = [
-    { desc = "potofu.me", link = "https://potofu.me/canynekhai/" },
+    { code = "potofu.me", name = "canynekhai" },
     { code = "x", name = "CanyneKhai", desc = "🔞" },
     { code = "x", name = "Canyne_Khai" },
     { code = "fb", name = "canynekhai.studio" },
@@ -252,6 +263,29 @@ socials = [
     { code = "patreon", name = "xcxcc" },
 ]
 
+[dangpa]
+name = "Dangpa"
+alias = ["dangpaart"]
+socials = [
+    { desc = "dangpa.art", link = "https://dangpa.art" },
+    { code = "x", name = "Wufrick" },
+    { code = "bsky", name = "dangpa.bsky.social" },
+    { code = "fa", name = "dangpa" },
+    { code = "patreon", name = "dangpa" },
+    { code = "telegram", name = "DangpaArt" },
+]
+
+[darkgemrawr]
+flag = "🇬🇧"
+name = "DarkGem"
+alias = ["darkgem", "dgarts", "darkgemartchannel"]
+socials = [
+    { code = "x", name = "Darkgemrawr" },
+    { code = "fa", name = "darkgem" },
+    { code = "telegram", name = "DarkgemArtChannel" },
+    { code = "patreon", name = "DGarts" },
+]
+
 [diffusedlizard]
 name = "DiffusedLizard"
 socials = [
@@ -290,6 +324,16 @@ alias = ["drboom32", "drboumboom32"]
 socials = [
     { code = "x", name = "DrBoom32" },
     { code = "patreon", name = "drboumboom32" },
+]
+
+[e_zoid]
+name = "E-Zoid"
+socials = [
+    { code = "x", name = "E_Zoid" },
+    { code = "fa", name = "e-zoid" },
+    { desc = "Discord", link = "https://discord.gg/DNTr4vgnxR", special = false },
+    { code = "patreon", name = "E_Zoid" },
+    { code = "kofi", name = "e_zoid" },
 ]
 
 [elthebuff]
@@ -344,6 +388,7 @@ socials = [
 [fenwick]
 flag = "🇸🇬"
 name = "Fenwick"
+alias = ["fenwick_art"]
 socials = [
     { code = "carrd.co", name = "fengriff" },
     { code = "x", name = "Fenwick_Art" },
@@ -351,6 +396,15 @@ socials = [
     { code = "telegram", name = "+CcJC85JlR_QyNmE9" },
     { desc = "Gallery", link = "https://rb.gy/dcspsg/", special = false },
     { code = "patreon", name = "FenGriff" },
+]
+
+[ferskyed]
+flag = "🇻🇪"
+name = "FerSkyed"
+alias = ["ferskycommissions"]
+socials = [
+    { code = "carrd.co", name = "ferskycommissions" },
+    { code = "x", name = "FerSkyed" },
 ]
 
 [flomsnakes]
@@ -477,6 +531,17 @@ socials = [
     { code = "patreon", name = "shinyheartbeats" },
 ]
 
+[hikaze]
+flag = "🇺🇸"
+name = "Hikaze"
+alias = ["hikazedragon"]
+socials = [
+    { code = "carrd.co", name = "hikaze" },
+    { code = "x", name = "HikazeDragon" },
+    { code = "patreon", name = "hikaze" },
+    { code = "kofi", name = "hikazearts" },
+]
+
 [hunkuma_th]
 flag = "🇹🇭"
 name = "Hunkuma_TH"
@@ -496,7 +561,7 @@ socials = [
     { code = "kofi", name = "ictonica" },
     { code = "patreon", name = "ictonica" },
     { code = "gumroad", name = "ictonica" },
-    { desc = "SubscribeStar", link = "http://subscribestar.adult/ictonica", special = false },
+    { code = "subscribestar", name = "ictonica" },
 ]
 
 [jaynator]
@@ -538,6 +603,16 @@ flag = "🇨🇦"
 name = "Katto 🍞"
 alias = ["katto"]
 socials = [{ code = "x", name = "kattoloaf" }]
+
+[kd_gai]
+flag = "🇨🇳"
+name = "KD_gai"
+socials = [
+    { code = "x", name = "KD_gai" },
+    { code = "itaku", name = "kdgai" },
+    { code = "pixiv", name = "36195200" },
+    { desc = "Weibo", link = "https://weibo.com/kdgai", special = false },
+]
 
 [kenjilokung]
 flag = "🇹🇭"
@@ -586,6 +661,16 @@ socials = [
     { code = "instagram", name = "Kult2000" },
 ]
 
+[kunn00_]
+name = "KNN"
+alias = ["knn", "kunn"]
+socials = [
+    { code = "x", name = "Kunn00_" },
+    { code = "fa", name = "kunn" },
+    { code = "patreon", name = "Knn" },
+    { code = "gumroad", name = "kunn" },
+]
+
 [kurogon]
 flag = "🇯🇵"
 name = "Kurogon"
@@ -613,6 +698,7 @@ socials = [
 [lindong]
 flag = "🇨🇳"
 name = "LinDong"
+alias = ["lindong030"]
 socials = [
     { code = "x", name = "LinDong030" },
     { code = "patreon", name = "Lindong" },
@@ -633,6 +719,26 @@ socials = [
     { code = "x", name = "MacheNSFW" },
     { code = "fa", name = "dirtymache" },
     { code = "patreon", name = "DirtyMache" },
+]
+
+[macrosteen]
+name = "MacroSteen"
+socials = [
+    { code = "x", name = "MacroSteen" },
+    { code = "fa", name = "steen" },
+    { code = "bsky", name = "macrosteen.bsky.social" },
+    { code = "itaku", name = "MacroSteen" },
+    { code = "patreon", name = "MacroSteen" },
+]
+
+[makidogang]
+flag = "🇰🇷"
+name = "Magangz"
+alias = ["magangz"]
+socials = [
+    { code = "x", name = "makidogang" },
+    { code = "patreon", name = "magangz" },
+    { code = "gumroad", name = "magangz" },
 ]
 
 [mako]
@@ -656,11 +762,32 @@ socials = [
     { code = "patreon", name = "Manyu_art" },
 ]
 
+[mao_jjj]
+flag = "🇹🇼"
+name = "Mao.J"
+alias = ["logia28", "mao_j"]
+socials = [
+    { code = "x", name = "Mao_JJJ" },
+    { code = "x", name = "CaramelMaoJ", desc = "Fursuit" },
+    { code = "twitch", name = "logia28" },
+    { code = "plurk", name = "mao_j" },
+]
+
 [masedumpy]
 name = "Masedumpy"
 socials = [
     { code = "x", name = "Masedumpy" },
     { code = "bsky", name = "masedumpy.bsky.social" },
+]
+
+[matcha_ryu]
+flag = "🇮🇩"
+name = "Matcha_ryu"
+socials = [
+    { code = "linktr.ee", name = "matcha_ryu" },
+    { code = "x", name = "Matcha_ryu" },
+    { code = "bsky", name = "matcharyu.bsky.social" },
+    { code = "patreon", name = "MatchaRyu" },
 ]
 
 [may0nnaixe]
@@ -676,6 +803,15 @@ socials = [
     { code = "fa", name = "memburu" },
 ]
 
+[merdekyle]
+name = "MerDeKyle"
+alias = ["merdekyle7", "merfiller"]
+socials = [
+    { code = "x", name = "MerDeKyle7" },
+    { code = "fa", name = "merfiller" },
+    { desc = "InkBuddy", link = "https://inkbunny.net/Merfiller", special = false },
+]
+
 [mikky]
 flag = "🇯🇵"
 avatar = "M_IKKY_C@x"
@@ -686,6 +822,15 @@ socials = [
     { code = "fanbox", name = "mikky" },
     { code = "patreon", name = "M_IKKY" },
     { desc = "PayPal", link = "https://www.paypal.com/paypalme/mikky0", special = false },
+]
+
+[milkydynamike]
+flag = "🇳🇮"
+name = "MilkyDynamike"
+alias = ["dynamike"]
+socials = [
+    { code = "twitter", name = "MilkyDynamike" },
+    { code = "kofi", name = "dynamike" },
 ]
 
 [mon3trevici]
@@ -705,6 +850,12 @@ socials = [
     { code = "linktr.ee", name = "moshihun" },
     { code = "x", name = "Moshihun" },
     { code = "telegram", name = "moshihun" },
+]
+
+[mrkeypoo]
+socials = [
+    { code = "carrd.co", name = "mrkeypoo" },
+    { code = "x", name = "mrkeypoo" },
 ]
 
 [n_art_en]
@@ -734,6 +885,14 @@ socials = [
     { code = "x", name = "Neilos0526" },
     { code = "patreon", name = "Neilos" },
     { code = "fanbox", name = "Neilos" },
+]
+
+[nekku]
+flag = "🇮🇩"
+alias = ["nekku_guy"]
+socials = [
+    { code = "x", name = "nekku_guy" },
+    { code = "fa", name = "neku-neku" },
 ]
 
 [nekogaki0324]
@@ -814,6 +973,12 @@ name = "Pitan"
 alias = ["pitania4"]
 socials = [{ code = "x", name = "Pitania4" }]
 
+[popodunk]
+socials = [
+    { code = "x", name = "popodunk" },
+    { code = "fa", name = "popodunk" },
+]
+
 [prime_viridian]
 name = "Prime"
 socials = [
@@ -869,6 +1034,16 @@ socials = [
     { code = "fa", name = "ritsukaxan" },
 ]
 
+[robinmg_45]
+flag = "🇺🇸"
+name = "Robin"
+alias = ["robin"]
+socials = [
+    { code = "x", name = "Robinmg_45" },
+    { code = "bsky", name = "robinmg45.bsky.social" },
+    { code = "kofi", name = "robinmg_45" },
+]
+
 [safelessobaum]
 flag = "🇧🇷"
 alias = ["obaum", "obaumdoragon"]
@@ -890,6 +1065,7 @@ socials = [
 [satogaku]
 flag = "🇯🇵"
 name = "SatoGaku"
+alias = ["satogakunsfw", "oelaue2"]
 socials = [
     { code = "x", name = "SatoGakuNSFW" },
     { code = "skeb", name = "oelaue2" },
@@ -922,6 +1098,13 @@ name = "Shan Yao Jun"
 socials = [
     { code = "x", name = "Shan_Yao_Jun" },
     { desc = "Weibo", link = "https://weibo.com/u/5557884846", special = false },
+]
+
+[sharkinn]
+name = "Sharkinn"
+socials = [
+    { code = "linktr.ee", name = "Sharkinn" },
+    { code = "x", name = "Sharkinn" },
 ]
 
 [shiinrai]
@@ -971,9 +1154,26 @@ socials = [
     { code = "x", name = "simshoong", desc = "Game" },
 ]
 
+[sir_arion]
+flag = "🇵🇪"
+name = "Arion ☕"
+socials = [
+    { code = "x", name = "Sir_Arion" },
+    { code = "fa", name = "sirarion" },
+    { code = "kofi", name = "sirarion" },
+]
+
 [skomnk]
 name = "skomnk"
 socials = [{ code = "x", name = "skomnk" }]
+
+[solard0gg0]
+name = "SolarD0GG0"
+alias = ["solard0gg0art"]
+socials = [
+    { code = "x", name = "SolarD0GG0" },
+    { code = "telegram", name = "SolarD0GG0Art" },
+]
 
 [sollyz]
 flag = "🇹🇭"
@@ -1002,12 +1202,34 @@ socials = [
     { code = "patreon", name = "Snowby" },
 ]
 
+[studio_hatake]
+flag = "🇯🇵"
+name = "STUDIO_HATAKE"
+socials = [
+    { code = "lit.link", name = "StudioHatake" },
+    { code = "x", name = "STUDIO_HATAKE" },
+    { code = "patreon", name = "Studio_Hatake" },
+    { code = "skeb", name = "studio_hatake" },
+]
+
 [sweatysabel]
 name = "SweatySabel"
 alias = ["sabel1"]
 socials = [
     { code = "linktr.ee", name = "sabel1" },
     { code = "x", name = "sweatysabel" },
+]
+
+[takemoto]
+flag = "🇹🇼"
+name = "Takemoto Arashi"
+alias = ["arashi_takemoto"]
+socials = [
+    { code = "x", name = "arashi_takemoto" },
+    { code = "fb", name = "arashi.takemoto" },
+    { code = "plurk", name = "lam_299426" },
+    { code = "youtube", name = "TakemotoLife" },
+    { code = "kofi", name = "takemoto" },
 ]
 
 [tigerlukke]
@@ -1030,6 +1252,10 @@ socials = [
     { code = "booth", name = "tokuni-naihito" },
     { code = "skeb", name = "vLW4zegrsGtSI6e" },
 ]
+
+[tonygonza15]
+name = "Tony"
+socials = [{ code = "x", name = "Tonygonza15" }]
 
 [tonymagnum129]
 flag = "🇺🇸"
@@ -1084,6 +1310,27 @@ socials = [
     { code = "patreon", name = "tupidwithouts" },
 ]
 
+[twitchy]
+name = "Twitchy"
+alias = ["twitchyanimation", "fishprison"]
+socials = [
+    { code = "carrd.co", name = "twitchyanimation" },
+    { code = "twitter", name = "FishPrison" },
+    { code = "kofi", name = "twitchy" },
+    { code = "patreon", name = "TwitchyAnimation" },
+    { code = "subscribestar", name = "twitchy" },
+]
+
+[tyarashi]
+flag = "🇹🇼"
+name = "TYArashi"
+alias = ["tyarashiart"]
+socials = [
+    { code = "x", name = "TYArashiArt" },
+    { code = "bsky", name = "tyarashi.bsky.social" },
+    { code = "plurk", name = "TY_Arashi" },
+]
+
 [uiokv]
 avatar = "/uiokv.jpg"
 name = "Uiokv"
@@ -1133,6 +1380,29 @@ socials = [
     { code = "fa", name = "vinstacc" },
 ]
 
+[vitash]
+flag = "🇲🇽"
+name = "Vitash 🍊"
+socials = [
+    { code = "x", name = "Vitashifurro", desc = "🔞" },
+    { code = "x", name = "VitashLite", desc = "SFW" },
+    { code = "patreon", name = "vitash" },
+    { code = "kofi", name = "vitashifurro" },
+]
+
+[vorusu]
+flag = "🇹🇼"
+name = "Vorusu"
+alias = ["vorusuarts2", "vorusuarts"]
+socials = [
+    { code = "x", name = "VorusuArts2" },
+    { code = "twitch", name = "vorusu" },
+    { code = "bsky", name = "vorusuarts2.bsky.social" },
+    { code = "itaku", name = "vorusuarts2" },
+    { code = "patreon", name = "vorusuarts" },
+    { code = "gumroad", name = "vorusu" },
+]
+
 [werethrope]
 flag = "🏴󠁧󠁢󠁳󠁣󠁴󠁿"
 name = "Werethrope"
@@ -1144,6 +1414,12 @@ socials = [
     { code = "bsky", name = "werethrope.bsky.social" },
     { code = "instagram", name = "werethrope" },
     { code = "patreon", name = "Werethrope" },
+]
+
+[whore_ni]
+socials = [
+    { code = "x", name = "whore_ni" },
+    { code = "bsky", name = "whoreni.bsky.social" },
 ]
 
 [whymete]
@@ -1180,6 +1456,36 @@ name = "Wufrick"
 socials = [
     { code = "x", name = "Wufrick" },
     { code = "patreon", name = "WufrickWulf" },
+]
+
+[x_kusunagi_x]
+flag = "🇻🇳"
+name = "x_Kusunagi_x"
+alias = ["kusunagi"]
+socials = [
+    { code = "x", name = "x_Kusunagi_x" },
+    { code = "bsky", name = "kusunagi.bsky.social" },
+    { code = "fa", name = "kusunagi" },
+    { code = "patreon", name = "Kusunagi" },
+    { code = "gumroad", name = "kusunagi" },
+]
+
+[zai_illus]
+flag = "🇨🇦"
+name = "Vinstacc"
+alias = ["zai"]
+socials = [{ code = "x", name = "zai_illus" }]
+
+[zcik]
+name = "ZCIK"
+alias = ["zcikart"]
+socials = [
+    { desc = "zcik.art", link = "https://zcik.art" },
+    { code = "x", name = "zcikart" },
+    { code = "fa", name = "zcik" },
+    { name = "https://discord.gg/bZQGwae3rd", desc = "Discord", special = false },
+    { code = "kofi", name = "zcikart" },
+    { code = "patreon", name = "zcik" },
 ]
 
 [zex]
