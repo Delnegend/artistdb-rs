@@ -1488,12 +1488,15 @@ socials = [
     { code = "patreon", name = "zcik" },
 ]
 
+[yibian_sz]
+socials = [{ code = "x", name = "yibian_sz" }]
+
 [zex]
 flag = "🇯🇵"
 name = "Zex"
 alias = ["zethvalg", "zexart"]
 socials = [
-    { desc = "lit.link", link = "https://lit.link/zexart/" },
+    { code = "lit.link", name = "zexart" },
     { code = "x", name = "zex_art" },
     { code = "bsky", name = "zexart.bsky.social" },
     { code = "twitch", name = "daha_saegami" },
