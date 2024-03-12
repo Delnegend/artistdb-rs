@@ -142,9 +142,9 @@ fn extended_socials() -> HashMap<String, SupportedSocial> {
         ("tumblr", "Tumblr", "<USERNAME>.tumblr.com"),
         ("pixiv", "Pixiv", "www.pixiv.net/en/users/<USERNAME>"),
         ("patreon", "Patreon", "www.patreon.com/<USERNAME>"),
-        ("kofi", "Ko-fi", "ko-fi.com/<USERNAME>"),
+        ("kofi", "Ko-fi 🍵", "ko-fi.com/<USERNAME>"),
         ("plurk", "Plurk", "plurk.com/<USERNAME>"),
-        ("linktr.ee", "Linktr.ee", "linktr.ee/<USERNAME>"),
+        ("linktr.ee", "Linktr.ee 🌲", "linktr.ee/<USERNAME>"),
         ("carrd.co", "Carrd.co", "<USERNAME>.carrd.co"),
         ("booth", "Booth.pm", "<USERNAME>.booth.pm"),
         ("skeb", "Skeb.jp", "skeb.jp/@<USERNAME>"),
@@ -153,6 +153,7 @@ fn extended_socials() -> HashMap<String, SupportedSocial> {
         ("gumroad", "Gumroad", "<USERNAME>.gumroad.com"),
         ("twitch", "Twitch", "www.twitch.tv/<USERNAME>"),
         ("lit.link", "Lit.link", "lit.link/<USERNAME>"),
+        ("potofu.me", "Potofu.me", "potofu.me/<USERNAME>"),
     ])
     .into_iter()
     .map(|(code, display, url)| {
