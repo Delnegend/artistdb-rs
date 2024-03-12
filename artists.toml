@@ -6,6 +6,13 @@ socials = [
     { code = "telegram", name = "+flV8sy4M0JgyYzUy" },
 ]
 
+[_koiikat]
+alias = ["koiikat"]
+socials = [
+    { code = "carrd.co", name = "koiikat" },
+    { code = "x", name = "_koiikat" },
+]
+
 [adios]
 name = "Adios"
 alias = ["adiosart"]
@@ -28,6 +35,13 @@ socials = [
     { code = "itaku", name = "amonsyd" },
     { code = "telegram", name = "amonsgallery" },
     { code = "patreon", name = "AmonSyd" },
+]
+
+[apoddawow]
+name = "Apoddawow"
+socials = [
+    { code = "linktr.ee", name = "therealapodda" },
+    { code = "x", name = "Apoddawow" },
 ]
 
 [arange]
@@ -278,6 +292,14 @@ socials = [
     { code = "patreon", name = "drboumboom32" },
 ]
 
+[elthebuff]
+flag = "🇦🇷"
+alias = ["elbuffaloart"]
+socials = [
+    { code = "linktr.ee", name = "elthebuff" },
+    { code = "x", name = "elbuffaloart" },
+]
+
 [eru]
 flag = "🇻🇳"
 name = "Eru"
@@ -341,6 +363,19 @@ socials = [
     { code = "x", name = "snomflakes_tw", desc = "Main/SFW" },
     { code = "bsky", name = "flomsnakes.bsky.social" },
     { code = "bsky", name = "snomflakes.bsky.social", desc = "Main/SFW" },
+]
+
+[flunky]
+flag = "🇲🇾"
+name = "Flunky"
+alias = ["blackflunky", "fwflunky", "b_flunky"]
+socials = [
+    { code = "linktr.ee", name = "fwflunky" },
+    { code = "x", name = "b_flunky", desc = "🔞" },
+    { code = "x", name = "fwflunky", desc = "SFW" },
+    { code = "kofi", name = "fwflunky" },
+    { code = "patreon", name = "fwflunky" },
+    { code = "gumroad", name = "blackflunky" },
 ]
 
 [forge]
@@ -462,6 +497,13 @@ socials = [
     { code = "patreon", name = "ictonica" },
     { code = "gumroad", name = "ictonica" },
     { desc = "SubscribeStar", link = "http://subscribestar.adult/ictonica", special = false },
+]
+
+[jaynator]
+alias = ["jaynator1_nsfw"]
+socials = [
+    { code = "linktr.ee", name = "jaynator" },
+    { code = "x", name = "JayNator1_NSFW" },
 ]
 
 [jiushi_is_90]
@@ -694,6 +736,18 @@ socials = [
     { code = "fanbox", name = "Neilos" },
 ]
 
+[nekogaki0324]
+flag = "🇰🇷"
+name = "Nekogaki"
+alias = ["nekogaki"]
+socials = [
+    { code = "x", name = "nekogaki0324" },
+    { code = "pixiv", name = "3357421" },
+    { code = "fanbox", name = "nekogaki" },
+    { code = "patreon", name = "nekogaki" },
+    { code = "gumroad", name = "nekogaki" },
+]
+
 [nomifuki]
 flag = "🇯🇵"
 socials = [
@@ -870,6 +924,14 @@ socials = [
     { desc = "Weibo", link = "https://weibo.com/u/5557884846", special = false },
 ]
 
+[shiinrai]
+flag = "🇺🇸"
+name = "Shiinrai"
+socials = [
+    { code = "linktr.ee", name = "Shiinrai" },
+    { code = "x", name = "Shiinrai" },
+]
+
 [shockjaws]
 name = "shockjaws"
 socials = [
@@ -893,6 +955,14 @@ socials = [
 flag = "🇵🇭"
 name = "Shiro"
 socials = [{ code = "x", name = "Silver_foxxo" }]
+
+[simarglartist]
+name = "Simargl"
+socials = [
+    { desc = "simarglartist.com", link = "https://simarglartist.com" },
+    { code = "x", name = "SimarglArtist" },
+    { code = "patreon", name = "simarglartist" },
+]
 
 [simloveyou]
 socials = [
@@ -959,6 +1029,15 @@ socials = [
     { code = "pixiv", name = "98281842" },
     { code = "booth", name = "tokuni-naihito" },
     { code = "skeb", name = "vLW4zegrsGtSI6e" },
+]
+
+[tonymagnum129]
+flag = "🇺🇸"
+name = "TonyMagnum"
+alias = ["tonymagnum"]
+socials = [
+    { code = "x", name = "TonyMagnum129" },
+    { desc = "YouTube", link = "https://www.youtube.com/channel/UCtd28mKoLBAiool6S4T5CFQ", special = false },
 ]
 
 [tralalabara]
@@ -1066,6 +1145,11 @@ socials = [
     { code = "instagram", name = "werethrope" },
     { code = "patreon", name = "Werethrope" },
 ]
+
+[whymete]
+flag = "🇧🇷"
+name = "Méte"
+socials = [{ code = "x", name = "WhyMete" }]
 
 [wolfanine]
 flag = "🇵🇭"
