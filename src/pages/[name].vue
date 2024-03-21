@@ -70,7 +70,7 @@ const avatarLoaded = ref(false);
 </script>
 
 <template>
-	<div class="fixed -z-10 h-[100vh] w-full scale-125 bg-black blur-2xl brightness-50">
+	<div class="fixed -z-10 h-screen w-full scale-125 bg-black blur-2xl brightness-50">
 		<img v-show="avatarLoaded" :src="avatar" class="fixed -z-10 size-full object-cover" />
 
 		<img v-show="!avatarLoaded" src="/avatar.svg" class="fixed -z-10 size-full object-cover" />
@@ -106,7 +106,7 @@ const avatarLoaded = ref(false);
 				:href="social.link"
 				target="_blank"
 				class="both flex w-full justify-center px-6 py-3 text-lg hover:font-bold"
-				:class="(social.special === true) ? 'special-link' : 'normal-link'"
+				:class="social.special === true ? 'special-link' : 'normal-link'"
 				>{{ social.desc }}</a
 			>
 		</div>
@@ -114,7 +114,7 @@ const avatarLoaded = ref(false);
 
 	<div
 		v-if="networkStatus === 'error'"
-		class="flex h-[100vh] flex-col items-center justify-center gap-5"
+		class="flex h-screen flex-col items-center justify-center gap-5"
 	>
 		<span class="text-5xl">🤷</span
 		><span class="text-xl text-white/85">Artist not found in database</span>
