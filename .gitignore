@@ -25,4 +25,5 @@ logs
 target/
 
 src/public/artists
-.eslintcache
+*.eslintcache
+*.bak
