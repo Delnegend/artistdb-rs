@@ -31,6 +31,51 @@ Bottom to top
 
 <samp>
 
+## 📃 Custom format, no more wasm
+
+An effort to simplify the process.
+
+### Backend format
+
+```
+<username>,<display name>[,<avatar || _>,<alias 1>,<alias 2>...]
+<*name@code || social link>[,<display name>]
+...
+
+```
+
+- For each artist, the first line is the main info, the rest is their socials
+- Information line:
+    - `<username>`: the artist's username, use internally for indexing
+    - `<display name>`: the text to be render on the frontend, a.k.a the display name and the flag. This eliminates the need for a separate field for the flag
+    - `<avatar>` (optional): the artist's avatar, if not provided (or use `_` if need to specify alias), will be inferred from the socials
+    - `<alias 1>`, `<alias 2>`, ... (optional): the artist's alias, if any
+- Socials:
+    - 1st parameter:
+        - `*`: render the link as special on the frontend
+        - 1st case: if contains `@`, infer as `username@social_code`
+        - 2nd case: if starts with `//`, infer as a link
+        - everything else: throw a warning and ignore
+    - `<display name>` (optional): the text to be render on the frontend, should be provided if the 1st parameter is a link
+- Each artist's info is separated by a newline
+- To use `,` in the display name or `*` in username, escape it with `\`
+
+### Frontend format
+Will looks near identical to the backend format, with few differences
+
+```
+<display name>,<avatar url || _>
+<*social link>,<display name>
+...
+
+With this custom format, there's no need for bitcode, wasm or anything fancy in the middle
+```
+
+- All aliases are removed
+- `<display name>` always be provided
+- `<avatar>` transformed into `<avatar url>`; use `_` to use the default `/avatar.svg` instead. If the url starts with
+- `username@social` transformed into `<social link>`
+
 ## ✅ Small updates
 Improved TOML structure
 ```toml
