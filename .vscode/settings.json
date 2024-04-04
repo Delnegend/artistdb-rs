@@ -10,11 +10,11 @@
         "commands": [
             {
                 "name": "💄 Lint",
-                "command": "time bun run --bun lint"
+                "command": "time pnpm lint"
             },
             {
                 "name": "🧑‍💻 Dev",
-                "command": "bun run --bun dev"
+                "command": "pnpm dev"
             },
             {
                 "name": "⬆️ artists.toml",
