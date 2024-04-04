@@ -128,7 +128,7 @@ const avatarLoaded = ref(false);
 
 <style scoped>
 .display-name {
-	font-family: "Twemoji Country Flags", "NSD", sans-serif;
+	font-family: "NSD", "Twemoji Country Flags", sans-serif;
 }
 
 .both {
