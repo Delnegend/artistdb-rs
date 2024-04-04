@@ -6,7 +6,6 @@
     "dev": "concurrently \"nuxt dev\" \"./artist-encoder -w\"",
     "lint": "eslint --fix --cache ./src/**/*.vue",
     "generate": "./artist-encoder && nuxt generate",
-    "build-bridge": "zsh src-rust/build-bridge.sh",
     "build-tool": "zsh src-rust/build-tool.sh",
     "postinstall": "nuxt prepare"
   },
