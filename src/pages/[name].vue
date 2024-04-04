@@ -98,7 +98,7 @@ const avatarLoaded = ref(false);
 		</div>
 
 		<div
-			class="desc flex w-full flex-row items-center justify-center gap-3 py-7 text-center text-3xl font-bold text-white"
+			class="display-name flex w-full flex-row items-center justify-center gap-3 py-7 text-center text-4xl font-bold text-white"
 		>
 			{{ displayName }}
 		</div>
@@ -110,7 +110,7 @@ const avatarLoaded = ref(false);
 				:key="social.link"
 				:href="`https:${social.link}`"
 				target="_blank"
-				class="both flex w-full justify-center px-6 py-3 text-lg hover:font-bold"
+				class="both flex w-full justify-center px-6 py-3 text-xl hover:font-bold"
 				:class="social.isSpecial === true ? 'special-link' : 'normal-link'"
 				>{{ social.desc }}</a
 			>
