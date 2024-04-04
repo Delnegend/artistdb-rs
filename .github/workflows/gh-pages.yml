@@ -13,7 +13,7 @@ jobs:
                     bun-version: latest
             -   uses: actions/checkout@v4
             -   name: 📦 Install dependencies
-                run: bun install --frozen-lockfile
+                run: bun install
             -   name: 🛠️ Build
                 run: bun run --bun generate
             -   name: 🚀 Deploy
