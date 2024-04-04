@@ -1,23 +1,27 @@
 mod utils;
 
-use clap::{command, Parser};
+use std::rc::Rc;
+
+use clap::{arg, command, Parser};
 use inotify::{Inotify, WatchMask};
 use std::path::PathBuf;
 use tracing::error;
-use utils::{constants::Constants, pipeline::Pipeline};
+use utils::{process_artists::Artists, supported_socials::SupportedSocials};
 
 #[derive(Parser, Debug)]
 #[command(version, about, long_about = None)]
 struct Args {
     #[arg(short, long)]
     watch: bool,
+    #[arg(short, long)]
+    format: bool,
 
-    #[arg(short, long, default_value = "./artists.toml")]
-    input_file: String,
+    #[arg(short, long, default_value = "./artists.txt")]
+    in_file: String,
     #[arg(short, long, default_value = "./src/public/artists")]
-    output_dir: String,
+    out_dir: String,
     #[arg(long, default_value = "500")]
-    toml_save_delay_ms: u64,
+    save_delay: u64,
 }
 
 fn main() {
@@ -25,10 +29,33 @@ fn main() {
         .with_max_level(tracing::Level::DEBUG)
         .init();
 
-    let constants = Constants::default();
     let args = Args::parse();
-    let mut pipeline = Pipeline::new(&constants, &args);
 
+    if args.format {
+        let new_contents =
+            Artists::from_file(Rc::from(SupportedSocials::default()), &args.in_file).to_original();
+        let old_content = std::fs::read_to_string(&args.in_file).unwrap();
+
+        let bak_path = format!(
+            "{}-{}.bak",
+            &args.in_file,
+            std::time::SystemTime::now()
+                .duration_since(std::time::UNIX_EPOCH)
+                .unwrap()
+                .as_secs()
+        );
+
+        std::fs::write(bak_path, old_content).unwrap();
+        std::fs::write(&args.in_file, new_contents).unwrap();
+
+        return;
+    }
+
+    let pipeline = crate::utils::pipeline::Pipeline {
+        in_file: &args.in_file,
+        out_dir: &args.out_dir,
+        supported_socials: Rc::from(SupportedSocials::default()),
+    };
     pipeline.run();
 
     if !args.watch {
@@ -40,7 +67,7 @@ fn main() {
     // Watch for modify and close events.
     inotify
         .watches()
-        .add(PathBuf::from(&args.input_file).as_path(), WatchMask::MODIFY)
+        .add(PathBuf::from(&args.in_file).as_path(), WatchMask::MODIFY)
         .expect("Failed to add file watch");
 
     // Read events that were added with `Watches::add` above.

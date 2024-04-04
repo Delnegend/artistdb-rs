@@ -1,112 +1,54 @@
-use std::path::PathBuf;
+use std::{path::PathBuf, rc::Rc};
 
-use crate::{
-    utils::{artists_serde::ArtistsSerde, constants::Constants},
-    Args,
+use crate::utils::{
+    process_artists::{Artist, Artists},
+    supported_socials::SupportedSocials,
 };
-use bridge::Artist;
-use tracing::{error, info};
+use tracing::error;
 
 pub struct Pipeline<'a> {
-    args: &'a Args,
-    constants: &'a Constants,
-    last_content_hash: u128,
+    pub in_file: &'a String,
+    pub out_dir: &'a String,
+    pub supported_socials: Rc<SupportedSocials>,
 }
 
 impl<'a> Pipeline<'a> {
-    pub fn new(constants: &'a Constants, args: &'a Args) -> Self {
-        Self {
-            args,
-            constants,
-            last_content_hash: 0,
-        }
-    }
-
-    /// Read toml -> preprocess -> format -> write .toml and bincode files
-    pub fn run(&mut self) {
-        let artists_serde = ArtistsSerde::from(&self.args.input_file, self.constants);
-
-        let something_changed = 'scoped: {
-            let curr_content_hash = super::artists_hasher(&artists_serde.artists);
-
-            let content_hash_changed =
-                curr_content_hash != self.last_content_hash && curr_content_hash != 0;
-
-            if content_hash_changed {
-                info!("content hash changed");
-                self.last_content_hash = curr_content_hash;
-                break 'scoped true;
-            }
-
-            if artists_serde.content_change_after_post_proc {
-                info!("content changed after post processing");
-                break 'scoped true;
-            }
-            false
-        };
-
-        if !something_changed {
-            return;
-        }
+    pub fn run(&self) {
+        let artists = Artists::from_file(self.supported_socials.clone(), "artists.txt");
 
         // re-create output dir, write files
-        self.re_create_output_dir()
+        self.recreate_out_dir()
             .unwrap_or_else(|err| error!("{}", err));
 
-        artists_serde
-            .pre_bitcode_ser()
-            .into_iter()
-            .for_each(|(username, artist)| {
-                self.write_bincode(&username, artist)
-                    .unwrap_or_else(|err| error!("{}: {}", username, err));
-            });
-
-        std::thread::sleep(std::time::Duration::from_millis(
-            self.args.toml_save_delay_ms,
-        ));
-
-        // write back to toml
-        std::fs::write(
-            &self.args.input_file,
-            artists_serde.to_toml_string().unwrap_or_default(),
-        )
-        .map_err(|err| error!("can't write toml file: {}", err))
-        .ok();
+        artists.get_artists().iter().for_each(|artist| {
+            self.write_to_out_dir(artist)
+                .unwrap_or_else(|err| error!("{}", err));
+        });
     }
 
-    fn re_create_output_dir(&self) -> Result<(), String> {
-        if std::path::Path::new(&self.args.output_dir).exists() {
-            std::fs::remove_dir_all(&self.args.output_dir)
+    fn recreate_out_dir(&self) -> Result<(), String> {
+        if std::path::Path::new(&self.out_dir).exists() {
+            std::fs::remove_dir_all(self.out_dir)
                 .map_err(|err| format!("can't remove output dir: {}", err))?
         }
-        std::fs::create_dir_all(&self.args.output_dir)
+        std::fs::create_dir_all(self.out_dir)
             .map_err(|err| format!("can't create output dir: {}", err))?;
 
         Ok(())
     }
 
-    fn write_bincode(&mut self, username: &String, artist: Artist) -> Result<(), String> {
+    fn write_to_out_dir(&self, artist: &Artist) -> Result<(), String> {
         // Main files
-        let bincode_string = artist.to_bitcode()?;
-        let path = PathBuf::from(format!(
-            "{}/{}",
-            self.args.output_dir,
-            username.to_lowercase()
-        ));
+        let path = PathBuf::from(format!("{}/{}", self.out_dir, artist.username));
+        let contents = artist.serialize()?;
 
-        std::fs::write(path, bincode_string)
-            .map_err(|err| format!("{}: can't write bincode file: {}", username, err))?;
+        std::fs::write(path, contents)
+            .map_err(|err| format!("{}: can't write dist file: {}", artist.username, err))?;
 
-        // Alias files
-        let alias = match &artist.alias {
-            Some(alias) => alias,
-            None => return Ok(()),
-        };
-
-        // Content: "@" + username
-        alias.iter().for_each(|alias| {
-            let content = format!("@{}", username);
-            let path = PathBuf::from(format!("{}/{}", self.args.output_dir, alias.to_lowercase()));
+        // Alias files, contents: "@" + username
+        artist.alias.iter().for_each(|alias| {
+            let content = format!("@{}", artist.username);
+            let path = PathBuf::from(format!("{}/{}", self.out_dir, alias));
             std::fs::write(path, content)
                 .unwrap_or_else(|err| error!("{}: can't write alias file: {}", alias, err));
         });
