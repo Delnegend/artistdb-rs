@@ -1,7 +1,7 @@
 [workspace]
 resolver = "2"
 
-members = ["src-rust/artist-encoder", "src-rust/bridge"]
+members = ["src-rust/artist-encoder"]
 
 [profile.release]
 lto = true
