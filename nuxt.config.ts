@@ -10,7 +10,7 @@ export default defineNuxtConfig({
 	},
 	devtools: { enabled: false },
 	modules: ["@nuxtjs/tailwindcss"],
-	css: ["~/assets/css/main.css"],
+	css: ["~/assets/main.css"],
 	experimental: { viewTransition: true },
 	vite: {
 		plugins: [wasm()],
