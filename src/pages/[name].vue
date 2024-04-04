@@ -133,8 +133,6 @@ const avatarLoaded = ref(false);
 }
 
 .both {
-	font-family: "NSD", sans-serif;
-
 	transition-property: background, color, border, font-weight;
 	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 	transition-duration: 150ms;
