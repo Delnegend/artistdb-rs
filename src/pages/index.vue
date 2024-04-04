@@ -1,3 +1,7 @@
+<script setup>
+document.title = `ArtistDB`;
+</script>
+
 <template>
 	<div class="flex h-screen w-full flex-col items-center justify-center bg-black text-white/90">
 		<div class="text-6xl serif-display">Hi!</div>

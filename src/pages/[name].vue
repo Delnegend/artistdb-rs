@@ -51,6 +51,8 @@ watchEffect(() => {
 	const firstLine = lines[0].split(",");
 
 	displayName.value = firstLine[0];
+	document.title = `${displayName.value} | ArtistDB`;
+
 	const tempAvatar = firstLine[1];
 
 	if (tempAvatar === "_") {
