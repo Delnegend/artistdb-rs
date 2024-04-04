@@ -51,7 +51,13 @@ watchEffect(() => {
 	const firstLine = lines[0].split(",");
 
 	displayName.value = firstLine[0];
-	avatar.value = `https://unavatar.io/${firstLine[1]}?size=400&fallback=https://artistdb.delnegend.com/avatar.svg`;
+	const tempAvatar = firstLine[1];
+
+	if (tempAvatar === "_") {
+		avatar.value = "/avatar.svg";
+	} else {
+		avatar.value = `https://unavatar.io/${firstLine[1]}?size=400&fallback=https://artistdb.delnegend.com/avatar.svg`;
+	}
 
 	socials.value = lines.slice(1).map((line) => {
 		const [link, desc] = line.split(",");
