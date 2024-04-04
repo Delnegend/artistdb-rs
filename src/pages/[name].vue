@@ -98,7 +98,7 @@ const avatarLoaded = ref(false);
 		</div>
 
 		<div
-			class="display-name flex w-full flex-row items-center justify-center gap-3 py-7 text-center text-4xl font-bold text-white"
+			class="display-name flex w-full flex-row items-center justify-center gap-3 py-7 text-center text-5xl font-bold text-white"
 		>
 			{{ displayName }}
 		</div>
