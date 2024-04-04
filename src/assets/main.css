@@ -15,7 +15,7 @@
     font-family: 'Noto Serif';
     font-style: normal;
     font-weight: 400;
-    src: url('../ns-23-regular.woff2') format('woff2');
+    src: url('./ns-23-regular.woff2') format('woff2');
 }
 
 @font-face {
@@ -23,7 +23,7 @@
     font-family: 'Noto Serif';
     font-style: normal;
     font-weight: 500;
-    src: url('../ns-23-500.woff2') format('woff2');
+    src: url('./ns-23-500.woff2') format('woff2');
 }
 
 @font-face {
@@ -31,7 +31,7 @@
     font-family: 'Noto Serif';
     font-style: normal;
     font-weight: 600;
-    src: url('../ns-23-600.woff2') format('woff2');
+    src: url('./ns-23-600.woff2') format('woff2');
 }
 
 @font-face {
@@ -39,7 +39,7 @@
     font-family: 'Noto Serif';
     font-style: normal;
     font-weight: 700;
-    src: url('../ns-23-700.woff2') format('woff2');
+    src: url('./ns-23-700.woff2') format('woff2');
 }
 
 * {
