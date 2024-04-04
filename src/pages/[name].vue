@@ -1,67 +1,67 @@
 <script setup lang="ts">
 import { useRoute } from "vue-router";
-import { Artist, get_alias as getAlias } from "~/composables/bridge";
-
-type NetworkStatus = "error" | "loaded" | "loading";
 
 const router = useRoute();
+
+type NetworkStatus = "error" | "loaded" | "loading";
 const networkStatus = ref<NetworkStatus>("loading");
 
-const username = ref<string>("");
-const artistInfo = ref<Artist | undefined>(undefined);
-const avatar = ref<string>("");
+type Social = {
+	isSpecial: boolean;
+	link: string;
+	desc: string;
+};
+
+const usernameToFetch = ref<string>("");
 
 if (Array.isArray(router.params.name)) {
-	username.value = router.params.name[0].toLowerCase().trim();
+	usernameToFetch.value = router.params.name[0].toLowerCase().trim();
 } else {
-	username.value = router.params.name.toLowerCase().trim();
+	usernameToFetch.value = router.params.name.toLowerCase().trim();
 }
 
-(async () => {
-	try {
-		const res = await fetch(`/artists/${username.value}`);
-		const body = new Uint8Array(await res.arrayBuffer());
+const rawContent = ref<string>("");
 
-		const artistFromBitcode = Artist.from_bitcode(body);
+const displayName = ref<string>("");
+const avatar = ref<string>("");
+const socials = ref<Array<Social>>([]);
 
-		if (artistFromBitcode !== undefined) {
-			artistInfo.value = artistFromBitcode;
-			networkStatus.value = "loaded";
-			return;
-		}
-
-		const alias = getAlias(body);
-
-		if (alias === undefined) {
+fetchUserInfo(usernameToFetch.value)
+	.then((res) => {
+		if (res === "") {
 			networkStatus.value = "error";
 			return;
 		}
 
-		const resAlias = await fetch(`/artists/${alias}`);
-		const bodyAlias = new Uint8Array(await resAlias.arrayBuffer());
+		networkStatus.value = "loaded";
 
-		const artistFromAliasBitcode = Artist.from_bitcode(bodyAlias);
-
-		if (artistFromAliasBitcode !== undefined) {
-			artistInfo.value = artistFromAliasBitcode;
-			networkStatus.value = "loaded";
-			return;
-		}
-
+		rawContent.value = res;
+	})
+	.catch(() => {
 		networkStatus.value = "error";
-	} catch {
-		networkStatus.value = "error";
-	}
-})().catch(() => {
-	networkStatus.value = "error";
-});
+	});
 
 watchEffect(() => {
-	if (artistInfo.value !== undefined) {
-		avatar.value = artistInfo.value.avatar ?? "/avatar.svg";
+	if (rawContent.value === "") {
+		return;
 	}
 
-	document.title = `${artistInfo.value?.name ?? username.value} | Artist DB`;
+	const lines = rawContent.value.split("\n");
+
+	const firstLine = lines[0].split(",");
+
+	displayName.value = firstLine[0];
+	avatar.value = `https://unavatar.io/${firstLine[1]}?size=400&fallback=https://artistdb.delnegend.com/avatar.svg`;
+
+	socials.value = lines.slice(1).map((line) => {
+		const [link, desc] = line.split(",");
+
+		if (link.startsWith("*")) {
+			return { isSpecial: true, link: link.slice(1), desc };
+		}
+
+		return { isSpecial: false, link, desc };
+	});
 });
 
 const avatarLoaded = ref(false);
@@ -92,21 +92,20 @@ const avatarLoaded = ref(false);
 		</div>
 
 		<div
-			class="flex w-full flex-row items-center justify-center gap-3 py-7 text-center text-3xl font-bold text-white"
+			class="desc flex w-full flex-row items-center justify-center gap-3 py-7 text-center text-3xl font-bold text-white"
 		>
-			<div>{{ artistInfo?.name ?? username }}</div>
-			<Flag v-if="artistInfo?.flag !== undefined">{{ artistInfo?.flag }}</Flag>
+			{{ displayName }}
 		</div>
 
 		<!-- links -->
 		<div class="px-1rem flex w-full flex-col gap-3">
 			<a
-				v-for="social in artistInfo?.socials"
-				:key="social.code"
-				:href="social.link"
+				v-for="social in socials"
+				:key="social.link"
+				:href="`https:${social.link}`"
 				target="_blank"
 				class="both flex w-full justify-center px-6 py-3 text-lg hover:font-bold"
-				:class="social.special === true ? 'special-link' : 'normal-link'"
+				:class="social.isSpecial === true ? 'special-link' : 'normal-link'"
 				>{{ social.desc }}</a
 			>
 		</div>
@@ -122,7 +121,13 @@ const avatarLoaded = ref(false);
 </template>
 
 <style scoped>
+.display-name {
+	font-family: "Twemoji Country Flags", "NSD", sans-serif;
+}
+
 .both {
+	font-family: "NSD", sans-serif;
+
 	transition-property: background, color, border, font-weight;
 	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 	transition-duration: 150ms;
