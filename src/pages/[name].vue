@@ -78,7 +78,7 @@ const avatarLoaded = ref(false);
 		<img v-show="!avatarLoaded" src="/avatar.svg" class="fixed -z-10 size-full object-cover" />
 	</div>
 
-	<div class="mx-auto max-w-96 py-12" v-if="networkStatus === 'loaded'">
+	<div class="mx-auto py-12" v-if="networkStatus === 'loaded'">
 		<!-- avatar -->
 		<div class="flex w-full justify-center">
 			<img
@@ -100,7 +100,7 @@ const avatarLoaded = ref(false);
 		</div>
 
 		<!-- links -->
-		<div class="px-1rem flex w-full flex-col gap-3">
+		<div class="px-1rem flex max-w-96 mx-auto w-full flex-col gap-3">
 			<a
 				v-for="social in socials"
 				:key="social.link"
