@@ -202,7 +202,7 @@ mod tests {
             }
             .serialize()
             .unwrap(),
-            "//instagram.com/username,hi"
+            "//instagram.com/username,Instagram | hi"
         );
 
         assert_eq!(
