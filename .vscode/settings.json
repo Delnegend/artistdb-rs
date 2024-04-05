@@ -17,8 +17,8 @@
                 "command": "pnpm dev"
             },
             {
-                "name": "⬆️ artists.toml",
-                "command": "git add artists.toml && git commit -m '🖌️' && git push"
+                "name": "⬆️ artists.txt",
+                "command": "git add artists.txt && git commit -m '🖌️' && git push"
             },
         ],
         "defaultColor": "white",
