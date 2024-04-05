@@ -42,8 +42,9 @@ fetchUserInfo(usernameToFetch.value)
 	});
 
 watchEffect(() => {
-	if (rawContent.value === "") {
-		return;
+	if (networkStatus.value === "error" || rawContent.value === "") {
+		document.title = "ArtistDB";
+		return
 	}
 
 	const lines = rawContent.value.split("\n");
