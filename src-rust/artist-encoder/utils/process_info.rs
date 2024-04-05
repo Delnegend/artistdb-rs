@@ -15,7 +15,7 @@ impl Artist {
     pub fn parse_info(&mut self, raw: &str) -> Result<(), String> {
         let components = super::split_components(raw)?;
 
-        if components.len() < 1 {
+        if components.is_empty() {
             return Err("missing fields to parse the info".to_string());
         }
 
