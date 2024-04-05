@@ -65,6 +65,7 @@ impl Default for SupportedSocials {
             ("twitch", "Twitch", "www.twitch.tv/<@>"),
             ("lit.link", "Lit.link", "lit.link/<@>"),
             ("potofu.me", "Potofu.me", "potofu.me/<@>"),
+            ("boosty", "Boosty", "boosty.to/<@>"),
         ]
         .into_iter()
         .map(|(code, name, url)| (code.to_string(), (name.to_string(), url.to_string())))
