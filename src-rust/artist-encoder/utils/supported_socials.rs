@@ -129,3 +129,54 @@ impl SupportedSocials {
         self.extended.contains_key(code)
     }
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_get() {
+        let supported_socials = SupportedSocials::default();
+
+        let (profile_url, description) = supported_socials
+            .get("username", "twitter", &None)
+            .expect("twitter should be supported");
+        assert_eq!(profile_url, "//twitter.com/username");
+        assert_eq!(description, "𝕏");
+
+        let (profile_url, description) = supported_socials
+            .get("username", "twitter", &Some("description".to_string()))
+            .expect("twitter should be supported");
+        assert_eq!(profile_url, "//twitter.com/username");
+        assert_eq!(description, "𝕏 | description");
+
+        let (profile_url, description) = supported_socials
+            .get("username", "fa", &None)
+            .expect("fa should be supported");
+        assert_eq!(profile_url, "//www.furaffinity.net/user/username/");
+        assert_eq!(description, "FurAffinity 🐾");
+
+        let (profile_url, description) = supported_socials
+            .get("username", "fa", &Some("description".to_string()))
+            .expect("fa should be supported");
+        assert_eq!(profile_url, "//www.furaffinity.net/user/username/");
+        assert_eq!(description, "FurAffinity 🐾 | description");
+
+        let _ = supported_socials
+            .get("username", "unknown", &None)
+            .expect_err("unknown should not be supported");
+    }
+
+    #[test]
+    fn test_is_special() {
+        let supported_socials = SupportedSocials::default();
+
+        assert!(supported_socials.is_special(&Some("potofu.me".to_string())));
+        assert!(supported_socials.is_special(&Some("carrd.co".to_string())));
+        assert!(supported_socials.is_special(&Some("linktr.ee".to_string())));
+        assert!(supported_socials.is_special(&Some("lit.link".to_string())));
+
+        assert!(!supported_socials.is_special(&Some("unknown".to_string())));
+        assert!(!supported_socials.is_special(&None));
+    }
+}
