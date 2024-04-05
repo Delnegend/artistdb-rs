@@ -53,14 +53,7 @@ watchEffect(() => {
 
 	displayName.value = firstLine[0];
 	document.title = `${displayName.value} | ArtistDB`;
-
-	const tempAvatar = firstLine[1];
-
-	if (tempAvatar === "_") {
-		avatar.value = "/avatar.svg";
-	} else {
-		avatar.value = `https://unavatar.io/${firstLine[1]}?size=400&fallback=https://artistdb.delnegend.com/avatar.svg`;
-	}
+	avatar.value = avatarParser(firstLine[1]);
 
 	socials.value = lines.slice(1).map((line) => {
 		const [link, desc] = line.split(",");
