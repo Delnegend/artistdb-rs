@@ -19,7 +19,7 @@ impl Artist {
             return Err("missing fields to parse the info".to_string());
         }
 
-        let username = components
+        self.username = components
             .first()
             .map(|username| cleanup_name(username))
             .ok_or("missing username")?;
@@ -43,7 +43,6 @@ impl Artist {
             .map(|alias| cleanup_name(alias))
             .collect();
 
-        self.username = username.to_string();
         Ok(())
     }
 
