@@ -51,7 +51,7 @@ impl Artist {
             let mut social = Social::new(Rc::clone(&new.supported_socials));
             match social.parse(line) {
                 Ok(_) => new.socials.push(social),
-                Err(err) => warn!("{}: failed to parse social: {}", &new.username, err),
+                Err(err) => warn!("{}: failed to parse social: {}", &line, err),
             }
         });
 
