@@ -101,9 +101,9 @@ impl SupportedSocials {
                 format!("//{}", template.replace("<@>", social_username)),
                 social_name.clone(),
             )),
-            (Some((_, template)), Some(description)) => Ok((
+            (Some((social_name, template)), Some(description)) => Ok((
                 format!("//{}", template.replace("<@>", social_username)),
-                description.clone(),
+                format!("{} | {}", social_name, description.clone()),
             )),
         }
     }
