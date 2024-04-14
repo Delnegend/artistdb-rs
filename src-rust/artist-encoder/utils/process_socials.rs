@@ -52,7 +52,7 @@ impl Social {
             self.social_username = Some(social_username.to_string());
         }
         if let Some(social_code) = parts.next() {
-            let social_code = social_code.to_string();
+            let social_code = social_code.to_ascii_lowercase();
             if supported_socials.is_supported(&social_code) {
                 self.social_code = Some(social_code);
                 return Ok(());
