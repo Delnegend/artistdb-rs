@@ -17,10 +17,11 @@ jobs:
             -   name: 🛠️ Build
                 run: bun run --bun generate
             -   name: 🚀 Deploy
-                uses: JamesIves/github-pages-deploy-action@v4
+                uses: peaceiris/actions-gh-pages@v4
                 with:
-                    branch: gh-pages
-                    folder: .output/public
+                    deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+                    external_repository: Delnegend/artist-db-dist
+                    publish_dir: .output/public
     delete-old-runs:
         runs-on: ubuntu-latest
         permissions:
