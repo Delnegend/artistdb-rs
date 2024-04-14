@@ -44,7 +44,7 @@ fetchUserInfo(usernameToFetch.value)
 watchEffect(() => {
 	if (networkStatus.value === "error" || rawContent.value === "") {
 		document.title = "ArtistDB";
-		return
+		return;
 	}
 
 	const lines = rawContent.value.split("\n");
@@ -100,7 +100,7 @@ const avatarLoaded = ref(false);
 		</div>
 
 		<!-- links -->
-		<div class="px-1rem flex max-w-96 mx-auto w-full flex-col gap-3">
+		<div class="px-1rem mx-auto flex w-full max-w-96 flex-col gap-3">
 			<a
 				v-for="social in socials"
 				:key="social.link"
