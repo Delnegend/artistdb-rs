@@ -66,6 +66,7 @@ impl Default for SupportedSocials {
             ("lit.link", "Lit.link", "lit.link/<@>"),
             ("potofu.me", "Potofu.me", "potofu.me/<@>"),
             ("boosty", "Boosty", "boosty.to/<@>"),
+            ("itch.io", "Itch.io", "itch.io/profile/<@>")
         ]
         .into_iter()
         .map(|(code, name, url)| (code.to_string(), (name.to_string(), url.to_string())))
